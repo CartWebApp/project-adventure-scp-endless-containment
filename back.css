@@ -1,12 +1,5 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Coral+Pixels&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&display=swap');
-
 body:not(starter) {
     background-color: black;
-    display: flex;
-    flex-direction: column;
 }
 
 header {
@@ -14,131 +7,19 @@ header {
     flex-direction: column;
 }
 
-.coral-pixels-regular {
-    font-family: "Coral Pixels", serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-
-
-.libre-baskerville {
-  font-family: "Libre Baskerville", serif;
-  font-optical-sizing: auto;
-  font-weight: 200;
-  font-style: normal;
-}
-  
-.pixelify-sans{
-    font-family: "Pixelify Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-  }
-
 .theimage {
-    height: 100vh;
+    background-image: url(images/image\ 80.png);
+    height: 3000vh;
     width: 400vh;
     background-repeat: no-repeat;
 }
 
-label {
-color: white;
-font-family: "Pixelify Sans", sans-serif;
-font-size: 25px;
-}
-
-.symbol {
-    height: 30px;
-    width: 30px;
-}
-
-#healthbar, #sanitybar {
-    border-color: white;
-    border-radius: 5px;
-}
-
-.container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 80vh;
-    position: relative;
-}
-
-#roomImage {
-    max-width: 80%;
-    max-height: 80%;
-    border: 2px solid white;
-}
-
-.arrow {
-    width: 50px;
-    height: 50px;
-    margin-top: 10px;
-    cursor: pointer;
-    position: absolute;
-    
-}
-
-progress {
-    height: 20px;
-    -webkit-appearance: none;
-    appearance: none;
-    color:yellow;
-}
-
-.playerDialogue  {
-    color: #ff7f50;
-    font-family: "Coral Pixels", serif;
-    display: flex;
-    justify-content: center;
-    font-size: 35px;
-}
-
-.rotate0 {
-    transform: rotate(0deg);
-}
-
-.rotate90 {
-    transform: rotate(90deg);
-}
-
-.rotate180 {
-    transform: rotate(180deg);
-}
-
-.rotate270 {
-    transform: rotate(270deg);
-}
-
-#menu {
+.starter {
     background-image: url(images/SCPtitle.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    justify-content: flex-start;
 }
 
-#options {
-    display: flex;
-    flex-direction: column;
-    appearance: none;
-}
-
-.autio {
-    appearance: none;
-    display: none;
-}
-
-button {
+.button { 
     background-color: black;
-    color: white;
-    border-color: white;
-    height: 60px;
-    width: 140px;
-    font-size: 15px;
-    font-family: "Libre Baskerville", serif;
+    font: white;
+    border: white;
 }
-
-
