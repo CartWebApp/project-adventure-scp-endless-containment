@@ -1,23 +1,30 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Coral+Pixels&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&display=swap');
 
-body:not(menu) {
-    background-color: black;
+body:not(.menu) {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    background-color: black;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas: 
+    "bars bars . . invent" 
+    ". imagery imagery imagery ."
+    ". imagery imagery imagery ."
+    ". dialogue dialogue dialogue map";
     grid-column-gap: 0px;
     grid-row-gap: 9px;
+    height: 100vh;
 }
 
-header {
-    grid-column: span 2 / span 2;
+header:not(#options) {
+    display: grid;
+    grid-area: bars;
 }
 
-.coral-pixels-regular {
-    font-family: "Coral Pixels", serif;
+.press-start-2p-regular {
+    font-family: "Press Start 2P", system-ui;
     font-weight: 400;
     font-style: normal;
   }
@@ -36,12 +43,6 @@ header {
     font-style: normal;
   }
 
-.theimage {
-    height: 100vh;
-    width: 400vh;
-    background-repeat: no-repeat;
-}
-
 label {
 color: white;
 font-family: "Pixelify Sans", sans-serif;
@@ -58,20 +59,21 @@ font-size: 25px;
     border-radius: 5px;
 }
 
-.container {
+#THEcontainer {
+    display: grid;
     position: relative;
-    grid-column: span 3 / span 3;
-    grid-row: span 2 / span 2;
-    grid-column-start: 3;
-    grid-row-start: 2;
+    grid-area: imagery;
     place-items: center;
     height: 39vh;
 }
 
 #roomImage {
-    max-width: 120%;
-    max-height: 120%;
+    max-height: 470px;
     border: 2px solid white;
+    position: relative;
+    place-items: center;
+    max-width: auto;
+    background-repeat: no-repeat;
 }
 
 .arrow {
@@ -84,16 +86,16 @@ font-size: 25px;
 
 progress {
     height: 20px;
-    -webkit-appearance: none;
     appearance: none;
-    color:yellow;
+    color:rgb(255, 255, 0);
 }
 
 .playerDialogue  {
-    color: #ff7f50;
-    font-family: "Coral Pixels", serif;
     display: grid;
-    grid-area: 3 / 4 / 4 / 5;
+    font-family: "Press Start 2P", system-ui;
+    color: #e7e43d;
+    grid-area: dialogue;
+    place-items: center;
     font-size: 35px;
 }
 
@@ -115,17 +117,12 @@ progress {
 
 
 #mappy {
-    position: absolute;
+    display: grid;
+    grid-area: map;
     height: 370px;
     width: 263px;
 }
 
-#mappy-container {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    width: 100%;
-}
 
 #menu {
     background-image: url(images/SCPtitle.png);
