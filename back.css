@@ -99,6 +99,8 @@ progress {
     font-size: 35px;
 }
 
+
+
 .rotate0 {
     transform: rotate(0deg);
 }
@@ -142,6 +144,7 @@ button {
     width: 250px;
     font-size: 25px;
     font-family: "Courier New", Courier, monospace;
+
 }
 
 
