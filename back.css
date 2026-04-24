@@ -133,6 +133,7 @@ progress {
 }
 
 #options {
+    position: absolute;
     display: flex;
     flex-direction: column;
     appearance: none;
