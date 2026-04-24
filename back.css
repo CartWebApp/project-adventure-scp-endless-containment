@@ -136,6 +136,8 @@ progress {
     display: flex;
     flex-direction: column;
     appearance: none;
+    left: 10px;
+    bottom: 10px;
 }
 
 .autio {
@@ -148,9 +150,9 @@ button {
     color: white;
     border-color: white;
     height: 60px;
-    width: 140px;
-    font-size: 15px;
-    font-family: "Libre Baskerville", serif;
+    width: 250px;
+    font-size: 25px;
+    font-family: "Courier New", Courier, monospace;
 }
 
 
