@@ -13,8 +13,6 @@ header {
     display: flex;
     flex-direction: column;
     position: absolute;
-    left: 10px;
-    bottom: 10px;
 }
 
 .coral-pixels-regular {
@@ -127,6 +125,8 @@ progress {
     display: flex;
     flex-direction: column;
     appearance: none;
+    left: 10px;
+    bottom: 10px;
 }
 
 .autio {
