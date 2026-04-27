@@ -59,6 +59,19 @@ font-size: 25px;
     border-radius: 5px;
 }
 
+#inventory {
+    display: flex;
+    flex-direction: row;
+    grid-area: ivnent;
+    gap: 10px;
+}
+
+.box {
+    width: 80px;
+    height: 80px;
+    background-color: lightgrey;
+}
+
 #THEcontainer {
     display: grid;
     position: relative;
@@ -85,13 +98,13 @@ font-size: 25px;
 }
 
 progress {
+    display: grid;
     height: 20px;
     appearance: none;
     color:rgb(255, 255, 0);
 }
 
 .playerDialogue  {
-    display: grid;
     font-family: "Press Start 2P", system-ui;
     color: #e7e43d;
     grid-area: dialogue;
