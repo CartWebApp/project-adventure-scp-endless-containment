@@ -150,10 +150,6 @@ document.addEventListener('DOMContentLoaded', () => {
 function playoption () {
     
 }
-const sound = newAudio('autio')
-
-sound.play
-
 
 //video
 let intro = document.getElementById("introductory");
@@ -161,111 +157,128 @@ let resume = document.getElementById('start');
 let newGame = document.getElementById('new-game');
 let quit = document.getElementById('quit');
 
-const buttons = [resume, newGame, Exit]
+const buttons = [resume, newGame, quit]
 
-for (let q = 0; q < buttons.length, q++) {
-    switch(buttons[q]) {
-        case quit:
-            window.close(document.getElementById("index.html"));
-            break;
-        case Newgame:
-            
+buttons.forEach((b)=> b.addEventListener('click', (e) => pickone(e.target)))
+
+function pickone(event) {
+    switch(event.innerText) {
+        case 'START':
+        console.log('start');
+        break;
+        case 'NEW GAME':
+        console.log('new game');
+        break;
+        case 'QUIT':
+        console.log('quit');
+        break;
     }
 }
 
+function starter(pickone) {
+
+}
+
+function newer(pickone) {
+
+}
+
+function quitter(pickone) {
+    
+}
 
 //story stuff
-let storyContainer = document.getElementById("ourvlogger");
+// let storyContainer = document.getElementById("ourvlogger");
     
-let buttonContainer = document.getElementById("dialogue");
+// let buttonContainer = document.getElementById("dialogue");
 
-let history = ["intro"];
+// let history = ["intro"];
 
-const story = {
-    intro : {
-        text : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ullamcorper eget nulla facilisi etiam. Ultricies mi eget mauris pharetra et ultrices neque ornare. Non curabitur gravida arcu ac tortor dignissim. Nec ullamcorper sit amet risus. Quam quisque id diam vel quam. Ac tortor vitae purus faucibus ornare. Pulvinar etiam non quam lacus suspendisse faucibus interdum posuere lorem. Gravida cum sociis natoque penatibus et magnis dis parturient montes. Scelerisque viverra mauris in aliquam sem fringilla ut. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. Enim ut tellus elementum sagittis vitae. Lorem sed risus ultricies tristique nulla aliquet. Accumsan sit amet nulla facilisi morbi. Lacus suspendisse faucibus interdum posuere lorem ipsum dolor sit amet. Ut aliquam purus sit amet luctus venenatis lectus. Aliquet bibendum enim facilisis gravida neque. Eleifend mi in nulla posuere sollicitudin aliquam. Accumsan tortor posuere ac ut consequat semper viverra nam libero.",
-        choices : [
-            ["Go to page 1", "page1"],
-            ["Go to page 2", "page2"],
-            ["Go to page 3", "page3"]
-        ]
-    },
-    page1 : {
-        text : "Faucibus in ornare quam viverra orci sagittis eu. Arcu ac tortor dignissim convallis aenean et. Sodales ut etiam sit amet nisl purus in mollis nunc. Non nisi est sit amet facilisis magna etiam tempor orci. Dignissim sodales ut eu sem integer vitae justo eget. Integer feugiat scelerisque varius morbi enim nunc. Sed felis eget velit aliquet sagittis id consectetur purus. Vitae congue eu consequat ac felis. Non blandit massa enim nec dui. Vulputate mi sit amet mauris commodo quis imperdiet massa tincidunt. Eget nulla facilisi etiam dignissim diam quis. Massa sapien faucibus et molestie ac feugiat sed lectus vestibulum. Neque viverra justo nec ultrices dui sapien eget mi. Sapien et ligula ullamcorper malesuada proin libero nunc. Fermentum et sollicitudin ac orci. Ut eu sem integer vitae justo. Vivamus at augue eget arcu dictum varius duis. Tortor id aliquet lectus proin nibh nisl condimentum.",
-        choices : [
-            ["Go to page 2", "page2"],
-            ["Go to page 3", "page3"],
-            ["Go to page 4", "page4"]
-        ]
-    },
-    page2 : {
-        text : "Faucibus in ornare quam viverra orci sagittis eu. Arcu ac tortor dignissim convallis aenean et. Sodales ut etiam sit amet nisl purus in mollis nunc. Non nisi est sit amet facilisis magna etiam tempor orci. Dignissim sodales ut eu sem integer vitae justo eget. Integer feugiat scelerisque varius morbi enim nunc. Sed felis eget velit aliquet sagittis id consectetur purus. Vitae congue eu consequat ac felis. Non blandit massa enim nec dui. Vulputate mi sit amet mauris commodo quis imperdiet massa tincidunt. Eget nulla facilisi etiam dignissim diam quis. Massa sapien faucibus et molestie ac feugiat sed lectus vestibulum. Neque viverra justo nec ultrices dui sapien eget mi. Sapien et ligula ullamcorper malesuada proin libero nunc. Fermentum et sollicitudin ac orci. Ut eu sem integer vitae justo. Vivamus at augue eget arcu dictum varius duis. Tortor id aliquet lectus proin nibh nisl condimentum.",
-        choices : [
-            ["Go to page 3", "page3"],
-            ["Go to page 4", "page4"],
-            ["Go to page 5", "page5"]
-        ]
-    },
-    page3 : {
-        text : "Interdum velit euismod in pellentesque massa placerat duis. Ut sem nulla pharetra diam sit amet. Suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Tortor aliquam nulla facilisi cras fermentum odio eu. Etiam erat velit scelerisque in. Porta nibh venenatis cras sed felis eget velit aliquet sagittis. Aliquam eleifend mi in nulla. Mus mauris vitae ultricies leo. Cursus in hac habitasse platea dictumst quisque sagittis. Vitae tortor condimentum lacinia quis vel eros. Sem integer vitae justo eget magna fermentum iaculis. Penatibus et magnis dis parturient montes nascetur ridiculus mus. Quam id leo in vitae turpis massa sed elementum tempus. Ultrices gravida dictum fusce ut placerat orci nulla pellentesque. Amet luctus venenatis lectus magna fringilla urna porttitor. Fermentum odio eu feugiat pretium nibh ipsum consequat nisl vel. Pellentesque diam volutpat commodo sed egestas egestas fringilla. Ultrices sagittis orci a scelerisque.",
-        choices : [
-            ["Go to page 4", "page4"],
-            ["Go to page 5", "page5"]
-        ]
-    },
-    page4 : {
-        text : "Vitae justo eget magna fermentum iaculis eu non diam. Pellentesque elit eget gravida cum sociis natoque. Et tortor consequat id porta nibh venenatis cras sed felis. Cursus risus at ultrices mi tempus. In ornare quam viverra orci sagittis eu. Sapien nec sagittis aliquam malesuada. Suscipit tellus mauris a diam. Placerat duis ultricies lacus sed turpis tincidunt id aliquet. Egestas tellus rutrum tellus pellentesque. Morbi tincidunt ornare massa eget egestas purus viverra accumsan in. Arcu risus quis varius quam quisque id diam vel quam. Aenean euismod elementum nisi quis eleifend quam adipiscing.",
-        choices : [
-            ["Go to page 5", "page5"]
-        ]
-    },
-    page5 : {
-        text : "Massa tincidunt dui ut ornare lectus. Pretium quam vulputate dignissim suspendisse in est. Aliquet risus feugiat in ante metus. Ullamcorper morbi tincidunt ornare massa. Neque convallis a cras semper auctor neque vitae. In aliquam sem fringilla ut morbi tincidunt augue interdum velit. Amet mauris commodo quis imperdiet massa tincidunt. Leo in vitae turpis massa sed elementum tempus egestas. Praesent elementum facilisis leo vel fringilla est ullamcorper. Eget velit aliquet sagittis id consectetur purus. Ac odio tempor orci dapibus ultrices in iaculis nunc sed. Odio tempor orci dapibus ultrices in iaculis nunc. Semper quis lectus nulla at volutpat diam. Rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque habitant.",
-        choices : []
-    }
-}
+// const story = {
+//     intro : {
+//         text : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ullamcorper eget nulla facilisi etiam. Ultricies mi eget mauris pharetra et ultrices neque ornare. Non curabitur gravida arcu ac tortor dignissim. Nec ullamcorper sit amet risus. Quam quisque id diam vel quam. Ac tortor vitae purus faucibus ornare. Pulvinar etiam non quam lacus suspendisse faucibus interdum posuere lorem. Gravida cum sociis natoque penatibus et magnis dis parturient montes. Scelerisque viverra mauris in aliquam sem fringilla ut. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. Enim ut tellus elementum sagittis vitae. Lorem sed risus ultricies tristique nulla aliquet. Accumsan sit amet nulla facilisi morbi. Lacus suspendisse faucibus interdum posuere lorem ipsum dolor sit amet. Ut aliquam purus sit amet luctus venenatis lectus. Aliquet bibendum enim facilisis gravida neque. Eleifend mi in nulla posuere sollicitudin aliquam. Accumsan tortor posuere ac ut consequat semper viverra nam libero.",
+//         choices : [
+//             ["Go to page 1", "page1"],
+//             ["Go to page 2", "page2"],
+//             ["Go to page 3", "page3"]
+//         ]
+//     },
+//     page1 : {
+//         text : "Faucibus in ornare quam viverra orci sagittis eu. Arcu ac tortor dignissim convallis aenean et. Sodales ut etiam sit amet nisl purus in mollis nunc. Non nisi est sit amet facilisis magna etiam tempor orci. Dignissim sodales ut eu sem integer vitae justo eget. Integer feugiat scelerisque varius morbi enim nunc. Sed felis eget velit aliquet sagittis id consectetur purus. Vitae congue eu consequat ac felis. Non blandit massa enim nec dui. Vulputate mi sit amet mauris commodo quis imperdiet massa tincidunt. Eget nulla facilisi etiam dignissim diam quis. Massa sapien faucibus et molestie ac feugiat sed lectus vestibulum. Neque viverra justo nec ultrices dui sapien eget mi. Sapien et ligula ullamcorper malesuada proin libero nunc. Fermentum et sollicitudin ac orci. Ut eu sem integer vitae justo. Vivamus at augue eget arcu dictum varius duis. Tortor id aliquet lectus proin nibh nisl condimentum.",
+//         choices : [
+//             ["Go to page 2", "page2"],
+//             ["Go to page 3", "page3"],
+//             ["Go to page 4", "page4"]
+//         ]
+//     },
+//     page2 : {
+//         text : "Faucibus in ornare quam viverra orci sagittis eu. Arcu ac tortor dignissim convallis aenean et. Sodales ut etiam sit amet nisl purus in mollis nunc. Non nisi est sit amet facilisis magna etiam tempor orci. Dignissim sodales ut eu sem integer vitae justo eget. Integer feugiat scelerisque varius morbi enim nunc. Sed felis eget velit aliquet sagittis id consectetur purus. Vitae congue eu consequat ac felis. Non blandit massa enim nec dui. Vulputate mi sit amet mauris commodo quis imperdiet massa tincidunt. Eget nulla facilisi etiam dignissim diam quis. Massa sapien faucibus et molestie ac feugiat sed lectus vestibulum. Neque viverra justo nec ultrices dui sapien eget mi. Sapien et ligula ullamcorper malesuada proin libero nunc. Fermentum et sollicitudin ac orci. Ut eu sem integer vitae justo. Vivamus at augue eget arcu dictum varius duis. Tortor id aliquet lectus proin nibh nisl condimentum.",
+//         choices : [
+//             ["Go to page 3", "page3"],
+//             ["Go to page 4", "page4"],
+//             ["Go to page 5", "page5"]
+//         ]
+//     },
+//     page3 : {
+//         text : "Interdum velit euismod in pellentesque massa placerat duis. Ut sem nulla pharetra diam sit amet. Suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Tortor aliquam nulla facilisi cras fermentum odio eu. Etiam erat velit scelerisque in. Porta nibh venenatis cras sed felis eget velit aliquet sagittis. Aliquam eleifend mi in nulla. Mus mauris vitae ultricies leo. Cursus in hac habitasse platea dictumst quisque sagittis. Vitae tortor condimentum lacinia quis vel eros. Sem integer vitae justo eget magna fermentum iaculis. Penatibus et magnis dis parturient montes nascetur ridiculus mus. Quam id leo in vitae turpis massa sed elementum tempus. Ultrices gravida dictum fusce ut placerat orci nulla pellentesque. Amet luctus venenatis lectus magna fringilla urna porttitor. Fermentum odio eu feugiat pretium nibh ipsum consequat nisl vel. Pellentesque diam volutpat commodo sed egestas egestas fringilla. Ultrices sagittis orci a scelerisque.",
+//         choices : [
+//             ["Go to page 4", "page4"],
+//             ["Go to page 5", "page5"]
+//         ]
+//     },
+//     page4 : {
+//         text : "Vitae justo eget magna fermentum iaculis eu non diam. Pellentesque elit eget gravida cum sociis natoque. Et tortor consequat id porta nibh venenatis cras sed felis. Cursus risus at ultrices mi tempus. In ornare quam viverra orci sagittis eu. Sapien nec sagittis aliquam malesuada. Suscipit tellus mauris a diam. Placerat duis ultricies lacus sed turpis tincidunt id aliquet. Egestas tellus rutrum tellus pellentesque. Morbi tincidunt ornare massa eget egestas purus viverra accumsan in. Arcu risus quis varius quam quisque id diam vel quam. Aenean euismod elementum nisi quis eleifend quam adipiscing.",
+//         choices : [
+//             ["Go to page 5", "page5"]
+//         ]
+//     },
+//     page5 : {
+//         text : "Massa tincidunt dui ut ornare lectus. Pretium quam vulputate dignissim suspendisse in est. Aliquet risus feugiat in ante metus. Ullamcorper morbi tincidunt ornare massa. Neque convallis a cras semper auctor neque vitae. In aliquam sem fringilla ut morbi tincidunt augue interdum velit. Amet mauris commodo quis imperdiet massa tincidunt. Leo in vitae turpis massa sed elementum tempus egestas. Praesent elementum facilisis leo vel fringilla est ullamcorper. Eget velit aliquet sagittis id consectetur purus. Ac odio tempor orci dapibus ultrices in iaculis nunc sed. Odio tempor orci dapibus ultrices in iaculis nunc. Semper quis lectus nulla at volutpat diam. Rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque habitant.",
+//         choices : []
+//     }
+// }
 
-function makeButton(btnText, choice){
-    let button = document.createElement("button");
+// function makeButton(btnText, choice){
+//     let button = document.createElement("button");
 
-    button.innerHTML = btnText;
+//     button.innerHTML = btnText;
 
-    buttonContainer.appendChild(button);
+//     buttonContainer.appendChild(button);
 
-    button.addEventListener ("click", function() {
-        history.push(choice);
-        showStory();
-    });
-}
+//     button.addEventListener ("click", function() {
+//         history.push(choice);
+//         showStory();
+//     });
+// }
 
 
-function buildStory(text) {
-    let storyItem = document.createElement("p");
+// function buildStory(text) {
+//     let storyItem = document.createElement("p");
 
-    storyItem.innerText = text;
+//     storyItem.innerText = text;
 
-    storyContainer.appendChild(storyItem);
+//     storyContainer.appendChild(storyItem);
 
-}
+// }
 
-function showStory(){
+// function showStory(){
 
-    let currentPage = history[history.length - 1]; // set currentPage to last index of history array.
+//     let currentPage = history[history.length - 1]; // set currentPage to last index of history array.
 
-    storyContainer.innerHTML = ""; // reset html
-    buttonContainer.innerHTML = ""; // reset buttons
+//     storyContainer.innerHTML = ""; // reset html
+//     buttonContainer.innerHTML = ""; // reset buttons
     
 
-    for(let page of history){ // build story text from items in history array
-        buildStory(story[page].text);
-    }
+//     for(let page of history){ // build story text from items in history array
+//         buildStory(story[page].text);
+//     }
     
-    for(let choice of story[currentPage].choices){ // build buttons from choices property of most recent story choice
-        makeButton(choice[0], choice[1])
-    }
-}
+//     for(let choice of story[currentPage].choices){ // build buttons from choices property of most recent story choice
+//         makeButton(choice[0], choice[1])
+//     }
+// }
 
-showStory();
+// showStory();
 
 
 
