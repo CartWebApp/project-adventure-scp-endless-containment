@@ -1,33 +1,28 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Coral+Pixels&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&display=swap');
 
-body:not(.menu) {
-    display: grid;
+body:not(starter) {
     background-color: black;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    grid-template-areas: 
-    "bars bars . . invent" 
-    ". imagery imagery imagery ."
-    ". imagery imagery imagery ."
-    ". dialogue dialogue dialogue map";
-    grid-column-gap: 0px;
-    grid-row-gap: 9px;
-    height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-header:not(#options) {
-    display: grid;
-    grid-area: bars;
+header {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
 }
 
-.press-start-2p-regular {
-    font-family: "Press Start 2P", system-ui;
+.coral-pixels-regular {
+    font-family: "Coral Pixels", serif;
     font-weight: 400;
     font-style: normal;
   }
+
 
 .libre-baskerville {
   font-family: "Libre Baskerville", serif;
@@ -42,6 +37,12 @@ header:not(#options) {
     font-weight: 400;
     font-style: normal;
   }
+
+.theimage {
+    height: 100vh;
+    width: 400vh;
+    background-repeat: no-repeat;
+}
 
 label {
 color: white;
@@ -75,18 +76,12 @@ font-size: 25px;
 #THEcontainer {
     display: grid;
     position: relative;
-    grid-area: imagery;
-    place-items: center;
-    height: 39vh;
 }
 
 #roomImage {
-    max-height: 470px;
+    max-width: 80%;
+    max-height: 80%;
     border: 2px solid white;
-    position: relative;
-    place-items: center;
-    max-width: auto;
-    background-repeat: no-repeat;
 }
 
 .arrow {
@@ -95,13 +90,15 @@ font-size: 25px;
     margin-top: 10px;
     cursor: pointer;
     position: absolute;
+    
 }
 
 progress {
     display: grid;
     height: 20px;
+    -webkit-appearance: none;
     appearance: none;
-    color:rgb(255, 255, 0);
+    color:yellow;
 }
 
 .playerDialogue  {
@@ -112,45 +109,36 @@ progress {
     font-size: 35px;
 }
 
-#rotate0 {
+
+
+.rotate0 {
     transform: rotate(0deg);
 }
 
-#rotate90 {
+.rotate90 {
     transform: rotate(90deg);
 }
 
-#rotate180 {
+.rotate180 {
     transform: rotate(180deg);
 }
 
-#rotate270 {
+.rotate270 {
     transform: rotate(270deg);
 }
-
-
-#mappy {
-    display: grid;
-    grid-area: map;
-    height: 370px;
-    width: 263px;
-}
-
 
 #menu {
     background-image: url(images/SCPtitle.png);
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
 }
 
 #options {
     display: flex;
     flex-direction: column;
     appearance: none;
-    left: 10px;
-    bottom: 10px;
 }
 
 .autio {
@@ -166,6 +154,7 @@ button {
     width: 250px;
     font-size: 25px;
     font-family: "Courier New", Courier, monospace;
+
 }
 
 
