@@ -155,6 +155,25 @@ const sound = newAudio('autio')
 sound.play
 
 
+//video
+let intro = document.getElementById("introductory");
+let resume = document.getElementById('start');
+let newGame = document.getElementById('new-game');
+let quit = document.getElementById('quit');
+
+const buttons = [resume, newGame, Exit]
+
+for (let q = 0; q < buttons.length, q++) {
+    switch(buttons[q]) {
+        case quit:
+            window.close(document.getElementById("index.html"));
+            break;
+        case Newgame:
+            
+    }
+}
+
+
 //story stuff
 let storyContainer = document.getElementById("ourvlogger");
     
