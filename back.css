@@ -60,12 +60,21 @@ font-size: 25px;
     border-radius: 5px;
 }
 
-.container {
+#inventory {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 80vh;
+    flex-direction: row;
+    grid-area: ivnent;
+    gap: 10px;
+}
+
+.box {
+    width: 80px;
+    height: 80px;
+    background-color: lightgrey;
+}
+
+#THEcontainer {
+    display: grid;
     position: relative;
 }
 
@@ -85,6 +94,7 @@ font-size: 25px;
 }
 
 progress {
+    display: grid;
     height: 20px;
     -webkit-appearance: none;
     appearance: none;
@@ -92,10 +102,10 @@ progress {
 }
 
 .playerDialogue  {
-    color: #ff7f50;
-    font-family: "Coral Pixels", serif;
-    display: flex;
-    justify-content: center;
+    font-family: "Press Start 2P", system-ui;
+    color: #e7e43d;
+    grid-area: dialogue;
+    place-items: center;
     font-size: 35px;
 }
 
