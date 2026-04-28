@@ -8,7 +8,7 @@ const imageslevel0 = [
     {image: 'images/iconic.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
     {image: 'images/view.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
     {image: 'images/THEimage.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
-    {image: 'images/vhs.png', weight: 1000, arrows: [{top: '48%', left: '4.5%'}, {top: '42%', right: '76%'}, {top: '46%', right: '60%'}, {bottom: '10%', left: '50%'}]},
+    {image: 'images/vhs.png', weight: 10, arrows: [{top: '48%', left: '4.5%'}, {top: '42%', right: '76%'}, {top: '46%', right: '60%'}, {bottom: '10%', left: '50%'}]},
     {image: 'images/hall 1.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
     {image: 'images/chairs.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
     {image: 'images/noshelves.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]}
