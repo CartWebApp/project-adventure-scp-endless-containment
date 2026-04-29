@@ -178,6 +178,7 @@ video {
     display: flex;
     flex-direction: column;
     appearance: none;
+    position: absolute;
     left: 10px;
     bottom: 10px;
 }
