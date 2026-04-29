@@ -3,15 +3,15 @@
 const imageslevel0 = [
     {image: 'images/level0.png', weight: 20, arrows: [{top: '57%', left: '46%'}, {top: '60%', right: '68%'}, {top: '65%', right: '19%'}]},
     {image: 'images/door.png', weight: 10, arrows: [{top: '56%', left: '47.5%'}]},
-    {image: 'images/arrows.png', weight: 10, arrows: [{top: '60%', left: '40%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
+    {image: 'images/arrows.png', weight: 10, arrows: [{top: '78%', left: '36%'}, {top: '67%', right: '52%'}, {top: '79%', right: '34%'}, {bottom: '38%', left: '39%'}]},
     {image: 'images/dark 1.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
     {image: 'images/iconic.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
     {image: 'images/view.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
-    {image: 'images/THEimage.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
-    {image: 'images/vhs.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
+    {image: 'images/THEimage.png', weight: 10, arrows: [{top: '56%', left: '66%'}, {top: '56%', right: '29.7%'}, {top: '64%', right: '37%'}, {bottom: '1%', left: '25%'}]},
+    {image: 'images/vhs.png', weight: 1000, arrows: [{top: '60%', left: '25%'}, {top: '55%', right: '40%'}, {top: '55%', right: '54%'}, {bottom: '1%', left: '70%'}]},
     {image: 'images/hall 1.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
     {image: 'images/chairs.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
-    {image: 'images/noshelves.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]}
+    {image: 'images/noshelves.png', weight: 10, arrows: [{top: '40%', left: '40%'}, {top: '44%', right: '25%'}, {top: '44%', right: '25%'}, {bottom: '3%', left: '50%'}]}
 ];
 
 const imageslevel1 = [//make sure to position all arrrows.
