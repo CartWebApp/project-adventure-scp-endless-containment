@@ -62,7 +62,7 @@ font-size: 25px;
 #inventory {
     display: flex;
     flex-direction: row;
-    grid-area: ivnent;
+    grid-area: invent;
     gap: 10px;
 }
 
@@ -104,13 +104,6 @@ progress {
     color:rgb(255, 255, 0);
 }
 
-.playerDialogue  {
-    font-family: "Press Start 2P", system-ui;
-    color: #e7e43d;
-    grid-area: dialogue;
-    place-items: center;
-    font-size: 35px;
-}
 
 #rotate0 {
     transform: rotate(0deg);
@@ -136,6 +129,21 @@ progress {
     width: 263px;
 }
 
+#story  {
+    font-family: "Press Start 2P", system-ui;
+    display: flex;
+    grid-area: dialogue;
+    color: #e7e43d;
+    font-size: 35px;
+    text-align: center;
+}
+
+.loguetainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: dialogue;
+}
 
 #menu {
     background-image: url(images/SCPtitle.png);
@@ -143,6 +151,8 @@ progress {
     background-size: cover;
     display: flex;
     justify-content: flex-end;
+    place-items: center;
+    text-align: center;
 }
 
 #options {
