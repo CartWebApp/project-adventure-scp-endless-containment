@@ -85,16 +85,28 @@ function weightedRandom(items) {
     return availableItems[0];
 }
 
+function getSavedImageForLevel(levelName, currentPool) {
+    if (!currentPool) return null;
+
+    const savedLevel = localStorage.getItem('savedGameLevel');
+    const savedImage = localStorage.getItem('savedGameImage');
+
+    if (savedLevel === levelName && savedImage) {
+        const match = currentPool.find(item => item.image === savedImage);
+        if (match) {
+            localStorage.removeItem('savedGameLevel');
+            localStorage.removeItem('savedGameImage');
+            return match;
+        }
+    }
+    return null;
+}
+
 function repositionArrows(imageData) {
     const arrows = document.querySelectorAll('.arrow');
     
-    if (!imageData || !imageData.arrows) {
-        console.warn('No arrow positions defined for this image');
-        return;
-    }
-    
     arrows.forEach((arrow, index) => {
-        if (index < imageData.arrows.length) {
+        if (index < (imageData && imageData.arrows ? imageData.arrows.length : 0)) {
             const position = imageData.arrows[index];
             
             // Clear all position properties first
@@ -102,18 +114,34 @@ function repositionArrows(imageData) {
             arrow.style.bottom = 'auto';
             arrow.style.left = 'auto';
             arrow.style.right = 'auto';
+            arrow.style.display = 'block';
             
             // Apply the stored positions
             if (position.top) arrow.style.top = position.top;
             if (position.bottom) arrow.style.bottom = position.bottom;
             if (position.left) arrow.style.left = position.left;
             if (position.right) arrow.style.right = position.right;
+        } else {
+            arrow.style.display = 'none';
         }
     });
 }
 
 function changeImage() {
-    const levelName = document.title.trim(); // (Level 1)
+    const imgElement = document.getElementById('roomImage');
+    if (!imgElement) return;
+
+    if (imgElement.tagName === 'VIDEO') {
+        const selectedVideo = localStorage.getItem('selectedGameVideo');
+        const source = imgElement.querySelector('source');
+        if (selectedVideo && source) {
+            source.src = selectedVideo;
+            imgElement.load();
+        }
+        return;
+    }
+
+    const levelName = document.title.trim();
     const currentPool = imageArrays[levelName];
     
     if (!currentPool) {
@@ -121,21 +149,20 @@ function changeImage() {
         return;
     }
     
-    const selected = weightedRandom(currentPool);
-    const imgElement = document.getElementById('roomImage');
+    const selected = getSavedImageForLevel(levelName, currentPool) || weightedRandom(currentPool);
+    const imgElementImage = imgElement;
     
-    if (imgElement && selected) {
+    if (imgElementImage && selected) {
         lastImage = selected.image;
-        imgElement.src = selected.image;
+        imgElementImage.src = selected.image;
         repositionArrows(selected); 
         
-        // protopyte Level exit logic (only works for level 0 door at the moment)
         if (selected.image === 'images/door.png') {
-            imgElement.style.cursor = 'pointer';
-            imgElement.onclick = (arrow) => window.location.href = 'level1.html';
+            imgElementImage.style.cursor = 'pointer';
+            imgElementImage.onclick = () => window.location.href = 'level1.html';
         } else {
-            imgElement.style.cursor = 'default';
-            imgElement.onclick = null; 
+            imgElementImage.style.cursor = 'default';
+            imgElementImage.onclick = null; 
         }
     }
 }
@@ -145,17 +172,62 @@ window.changeImage = changeImage;
 
 document.addEventListener('DOMContentLoaded', () => {
     changeImage();
+
+    const startButton = document.getElementById('start-button');
+    const newGameButton = document.getElementById('new-game-button');
+    const quitButton = document.getElementById('quit-button');
+
+    if (startButton) {
+        startButton.addEventListener('click', () => {
+            const selected = weightedRandom(imageslevel0);
+            if (selected) {
+                localStorage.setItem('savedGameImage', selected.image);
+                localStorage.setItem('savedGameLevel', 'Level 0');
+            }
+            window.location.href = 'Level0.html';
+        });
+    }
+
+    if (newGameButton) {
+        newGameButton.addEventListener('click', () => {
+            const selectedVideo = 'opening cut scene Nate.mp4';
+            localStorage.setItem('selectedGameVideo', selectedVideo);
+            window.location.href = 'beninging.html';
+        });
+    }
+
+    if (quitButton) {
+        quitButton.addEventListener('click', () => {
+            window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
+        });
+    }
+
+
+    const audios = document.querySelectorAll('audio');
+    audios.forEach(audio => {
+        audio.play().catch(e => console.log('Autoplay blocked for audio:', e));
+    });
 });
 
 function playoption () {
     
 }
-const sound = newAudio('autio')
 
-sound.play
+document.addEventListener('DOMContentLoaded', () => {
+    const video = document.getElementById('roomImage');
+        const endState = document.getElementById('end-state');
 
+    if (video && endState) {
+            video.addEventListener('ended', () => {
+            video.style.display = 'none';
+            endState.style.display = 'block';
+        });
+    }
+});
 
 //story stuff
+
+
 let storyContainer = document.getElementById("ourvlogger");
     
 let buttonContainer = document.getElementById("dialogue");
