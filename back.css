@@ -62,7 +62,7 @@ font-size: 25px;
 #inventory {
     display: flex;
     flex-direction: row;
-    grid-area: invent;
+    grid-area:invent;
     gap: 10px;
 }
 
