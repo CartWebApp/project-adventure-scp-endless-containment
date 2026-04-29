@@ -115,13 +115,6 @@ progress {
     color:rgb(255, 255, 0);
 }
 
-.playerDialogue  {
-    font-family: "Press Start 2P", system-ui;
-    color: #e7e43d;
-    grid-area: dialogue;
-    place-items: center;
-    font-size: 35px;
-}
 
 #rotate0 {
     transform: rotate(0deg);
@@ -146,6 +139,22 @@ progress {
     width: 263px;
 }
 
+#story  {
+    font-family: "Press Start 2P", system-ui;
+    display: flex;
+    grid-area: dialogue;
+    color: #e7e43d;
+    font-size: 35px;
+    text-align: center;
+}
+
+.loguetainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: dialogue;
+}
+
 video {
     appearance: none;
     -webkit-apppearance: none;
@@ -160,7 +169,9 @@ video {
     background-size: cover;
     background-position: center -80px;
     display: flex;
-   align-items: flex-end;
+    justify-content: flex-end;
+    place-items: center;
+    text-align: center;
 }
 
 #options {
