@@ -21,6 +21,7 @@ body:not(.menu) {
 header:not(#options) {
     display: grid;
     grid-area: bars;
+    gap: ;
 }
 
 .press-start-2p-regular {
@@ -57,6 +58,12 @@ font-size: 25px;
 #healthbar, #sanitybar {
     border-color: white;
     border-radius: 5px;
+}
+
+progress {
+appearance: none;
+height: 20px;
+background-color: #f6ff00; 
 }
 
 #inventory {
@@ -107,12 +114,6 @@ font-size: 25px;
     top: 80%;
     left: 50%;
     rotate: 40deg;
-}
-progress {
-    display: grid;
-    height: 20px;
-    appearance: none;
-    color:rgb(255, 255, 0);
 }
 
 
