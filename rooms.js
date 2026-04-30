@@ -225,9 +225,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+//healt, and sanity bar
+bar = document.getElementById("sanitybar");
+
+function updateSanityBar(sanity) {
+
+    if (sanity < 0) sanity = 0;
+    for 
 //story stuff
-
-
 let storyContainer = document.getElementById("ourvlogger");
     
 let buttonContainer = document.getElementById("dialogue");
