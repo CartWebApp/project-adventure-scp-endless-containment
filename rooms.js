@@ -59,7 +59,7 @@ const imageslevellimbo = [
 const imageArrays = {
     'Level 0': imageslevel0,
     'Level 1': imageslevel1,
-    'level 5': imageslevel5,
+    'Level 5': imageslevel5,
     'Level 37': imageslevel37,
     'Level 94': imageslevel94,
     'limbo': imageslevellimbo
