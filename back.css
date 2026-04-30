@@ -21,6 +21,7 @@ body:not(.menu) {
 header:not(#options) {
     display: grid;
     grid-area: bars;
+    gap: 0px;
 }
 
 .press-start-2p-regular {
