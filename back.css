@@ -41,7 +41,7 @@ header:not(#options) {
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-  }
+}
 
 label {
 color: white;
@@ -49,14 +49,31 @@ font-family: "Pixelify Sans", sans-serif;
 font-size: 25px;
 }
 
+#healthbar, #sanitybar {
+    border: 2px solid white;
+    width: 240px;
+    height: 40px;
+}
+
+progress {
+    appearance: none;
+    -webkit-appearance: none;
+    height: 20px;
+    background-color: #333;
+    overflow: hidden;
+}
+
+progress::-webkit-progress-bar {
+    background-color: #333;
+}
+
+progress::-webkit-progress-value {
+    background-color: yellow;
+}
+
 .symbol {
     height: 30px;
     width: 30px;
-}
-
-#healthbar, #sanitybar {
-    border-color: white;
-    border-radius: 5px;
 }
 
 #inventory {
@@ -108,13 +125,6 @@ font-size: 25px;
     left: 50%;
     rotate: 40deg;
 }
-progress {
-    display: grid;
-    height: 20px;
-    appearance: none;
-    color:rgb(255, 255, 0);
-}
-
 
 #rotate0 {
     transform: rotate(0deg);
