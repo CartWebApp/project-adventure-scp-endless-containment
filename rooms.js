@@ -20,7 +20,9 @@ const imageslevel1 = [//make sure to position all arrrows.
     {image: 'images/idkitslevel1.png', weight: 10, arrows: [{top: '60%', left: '20%'}, {top: '55%', right: '30%'}, {top: '55%', right: '30%'}, {bottom: '-20%', left: '30%'}]},
     {image: 'images/image 67.png', weight: 10, arrows: [{top: '50%', left: '5%'}, {top: '59%', right: '4%'}, {top: '59%', right: '4%'}, {bottom: '-15%', left: '43%'}]},
     {image: 'images/rako games 1.png', weight: 10, arrows: [{top: '80%', left: '95%'}, {top: '65%', right: '40%'}, {top: '65%', right: '40%'}, {bottom: '-20%', left: '10%'}]},
-    {image: 'images/whichway.png', weight: 10, arrows: [{top: '90%', left: '34%'}, {top: '75%', right: '10%'}, {top: '75%', right: '10%'}, {bottom: '-25%', left: '75%'}]}
+    {image: 'images/whichway.png', weight: 10, arrows: [{top: '90%', left: '34%'}, {top: '75%', right: '10%'}, {top: '75%', right: '10%'}, {bottom: '-25%', left: '75%'}]},
+    {image: 'images/shyguy(2).png', enemyactive: true, weight: 1, arrows: [{top: '90%', left: '34%'}, {top: '75%', right: '10%'}, {top: '75%', right: '10%'}, {bottom: '-25%', left: '75%'}]},
+    {image: 'images/shyguy(1).png', enemyactive: true, weight: 1, arrows: [{top: '90%', left: '34%'}, {top: '75%', right: '10%'}, {top: '75%', right: '10%'}, {bottom: '-25%', left: '75%'}]}
 ];
 
 const imageslevel5 = [
@@ -83,6 +85,12 @@ function weightedRandom(items) {
         if (random <= 0) return item;
     }
     return availableItems[0];
+
+    let currentweight = item.weight || 10;
+
+    if (DepleteSanity === true && item.enemyactive === true) {
+        currentweight = currentweight * threatLevel;
+    }
 }
 
 function getSavedImageForLevel(levelName, currentPool) {
@@ -150,7 +158,23 @@ function changeImage() {
     }
     
     const selected = getSavedImageForLevel(levelName, currentPool) || weightedRandom(currentPool);
+
+    let playerDamage;
+
+    clearInterval(playerDamage);
+
+    if (selected.enemyactive === true){
+        let playerDamage = setInterval(() => {
+            health.value -= 5;
+            if (health.value <= 0) {
+            clearInterval(playerDamage);
+            window.location.href = 'gameover.html';;
+            }
+        }, 2000);
+    }
+
     const imgElementImage = imgElement;
+    
     
     if (imgElementImage && selected) {
         lastImage = selected.image;
@@ -225,18 +249,38 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+
+//health and sanity bar
+function updateHealthBar(health) {
+    if (health < 0) health = 0;
+    if (health > 100) health = 100;
+}
+
+const health = document.getElementById("health");
+
+DepleteSanity = false;
+
 function updateSanityBar(sanity) {
     if (sanity < 0) sanity = 0;
     if (sanity > 20) sanity = 20;    
 }
 
-//healt, and sanity bar
 const bar = document.getElementById("bars");
 
 let timer = setInterval(() => {
-    sanity.value -= 0.1;
+    sanity.value -= 6;
+    if (sanity.value <= 0) {
+        DepleteSanity = true;
+    }
 }, 1000);
 
+let threat = 1
+
+let threatLevel = setInterval(() => {
+    if (DepleteSanity === true) {    
+        threat += 1;;
+}
+}, 1000);
 
 //story stuff
 let storyContainer = document.getElementById("story");
@@ -330,6 +374,3 @@ function showStory(){
 }
 
 showStory();
-
-
-
