@@ -11,7 +11,9 @@ const imageslevel0 = [
     {image: 'images/vhs.png', weight: 10, arrows: [{top: '70%', left: '12%'}, {top: '62%', right: '35%'}, {top: '62%', right: '54%'}, {bottom: '-25%', left: '75%'}]},
     {image: 'images/hall 1.png', weight: 10, arrows: [{top: '51%', left: '32%'}, {top: '50%', right: '45%'}, {top: '50%', right: '45%'}, {bottom: '-15%', left: '40%'}]},
     {image: 'images/chairs.png', weight: 10, arrows: [{top: '90%', left: '5%'}, {top: '70%', right: '8%'}, {top: '64%', right: '17%'}, {bottom: '-25%', left: '50%'}]},
-    {image: 'images/noshelves.png', weight: 10, arrows: [{top: '40%', left: '35%'}, {top: '44%', right: '15%'}, {top: '44%', right: '15%'}, {bottom: '3%', left: '50%'}]}
+    {image: 'images/noshelves.png', weight: 10, arrows: [{top: '40%', left: '35%'}, {top: '44%', right: '15%'}, {top: '44%', right: '15%'}, {bottom: '3%', left: '50%'}]},
+    {image: 'images/lizart(1).png', enemyactive: true, weight: 10, arrows: [{top: '90%', left: '5%'}, {top: '70%', right: '8%'}, {top: '64%', right: '17%'}, {bottom: '-25%', left: '50%'}]},
+    {image: 'images/lizart(2).png', enemyactive: true, weight: 10, arrows: [{top: '51%', left: '32%'}, {top: '50%', right: '45%'}, {top: '50%', right: '45%'}, {bottom: '-15%', left: '40%'}]}
 ];
 
 const imageslevel1 = [//make sure to position all arrrows.
@@ -32,7 +34,9 @@ const imageslevel5 = [
     {image: 'images/Level-5-Ballroom 1.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
     {image: 'images/levl5shall.jpg', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
     {image: 'images/mainhall.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
-]
+    {image: 'images/doctor(1).png', enemyactive: true, weight: 1, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
+    {image: 'images/doctor(2).jpg', enemyactive: true, weight: 1, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
+];
 
 const imageslevel37 = [
     {image: 'images/poolhall.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
@@ -89,7 +93,7 @@ function weightedRandom(items) {
     let currentweight = item.weight || 10;
 
     if (DepleteSanity === true && item.enemyactive === true) {
-        currentweight = currentweight * threatLevel;
+        currentweight = currentweight * threat;
     }
 }
 
@@ -268,7 +272,7 @@ function updateSanityBar(sanity) {
 const bar = document.getElementById("bars");
 
 let timer = setInterval(() => {
-    sanity.value -= 6;
+    sanity.value -= 0.1;
     if (sanity.value <= 0) {
         DepleteSanity = true;
     }
@@ -278,7 +282,7 @@ let threat = 1
 
 let threatLevel = setInterval(() => {
     if (DepleteSanity === true) {    
-        threat += 1;;
+        threat += 1;
 }
 }, 1000);
 
@@ -293,7 +297,7 @@ const story = {
     intro : {
         text : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ullamcorper eget nulla facilisi etiam. Ultricies mi eget mauris pharetra et ultrices neque ornare. Non curabitur gravida arcu ac tortor dignissim. Nec ullamcorper sit amet risus. Quam quisque id diam vel quam. Ac tortor vitae purus faucibus ornare. Pulvinar etiam non quam lacus suspendisse faucibus interdum posuere lorem. Gravida cum sociis natoque penatibus et magnis dis parturient montes. Scelerisque viverra mauris in aliquam sem fringilla ut. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. Enim ut tellus elementum sagittis vitae. Lorem sed risus ultricies tristique nulla aliquet. Accumsan sit amet nulla facilisi morbi. Lacus suspendisse faucibus interdum posuere lorem ipsum dolor sit amet. Ut aliquam purus sit amet luctus venenatis lectus. Aliquet bibendum enim facilisis gravida neque. Eleifend mi in nulla posuere sollicitudin aliquam. Accumsan tortor posuere ac ut consequat semper viverra nam libero.",
         choices : [
-            ["Go to page 1", "page1"],
+            ["Move around", "Stay Put"],
             ["Go to page 2", "page2"],
             ["Go to page 3", "page3"]
         ]

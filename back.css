@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&display=swap');
 
-body:not(.menu) {
+body:not(.menu, #gameSetMatch) {
     display: grid;
     background-color: black;
     grid-template-columns: repeat(5, 1fr);
@@ -16,6 +16,22 @@ body:not(.menu) {
     grid-column-gap: 0px;
     grid-row-gap: 9px;
     height: 100vh;
+}
+
+#gameSetMatch {
+    background-image: url(images/youlose.png);
+}
+
+h1, #Rewind {
+    position: absolute;
+    display: flex;
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: 50px;
+    bottom: 65%;
+    right: 85%;
+    color: white;
+    text-decoration: none;
+    gap: 70px;
 }
 
 header:not(#options) {
