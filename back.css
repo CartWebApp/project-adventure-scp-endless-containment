@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&display=swap');
 
-body:not(.menu, #gameSetMatch) {
+body:not(.menu) {
     display: grid;
     background-color: black;
     grid-template-columns: repeat(5, 1fr);
@@ -121,6 +121,17 @@ progress::-webkit-progress-value {
     place-items: center;
     max-width: auto;
     background-repeat: no-repeat;
+}
+
+
+.autio {
+    appearance: none;
+    display: none;
+}
+
+.autio {
+    appearance: none;
+    display: none;
 }
 
 .arrow {
