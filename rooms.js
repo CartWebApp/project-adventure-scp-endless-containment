@@ -226,14 +226,19 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 //healt, and sanity bar
-bar = document.getElementById("sanitybar");
+const bar = document.getElementById("sanitybar");
 
+let timer = setInterval(() => {
+    
 function updateSanityBar(sanity) {
-
     if (sanity < 0) sanity = 0;
-    for 
+    if (sanity > 20) sanity = 20;    
+}
+}, 1000);
+
+
 //story stuff
-let storyContainer = document.getElementById("ourvlogger");
+let storyContainer = document.getElementById("story");
     
 let buttonContainer = document.getElementById("dialogue");
 
