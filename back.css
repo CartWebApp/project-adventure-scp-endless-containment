@@ -194,12 +194,7 @@ video {
     bottom: 10px;
 }
 
-.autio {
-    appearance: none;
-    display: none;
-}
-
-button {
+.button { 
     background-color: black;
     color: white;
     border-color: white;
