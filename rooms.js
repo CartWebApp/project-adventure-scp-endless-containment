@@ -225,15 +225,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-//healt, and sanity bar
-const bar = document.getElementById("sanitybar");
-
-let timer = setInterval(() => {
-    
 function updateSanityBar(sanity) {
     if (sanity < 0) sanity = 0;
     if (sanity > 20) sanity = 20;    
 }
+
+//healt, and sanity bar
+const bar = document.getElementById("bars");
+
+let timer = setInterval(() => {
+    sanity.value -= 0.1;
 }, 1000);
 
 
