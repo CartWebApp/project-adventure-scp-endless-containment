@@ -170,11 +170,47 @@ progress::-webkit-progress-value {
     transform: rotate(270deg);
 }
 
+#mappytainer {
+    display: grid;
+    grid-area: map;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas: 
+    '1 2 3 4 5 6 ' 
+    '1 2 3 4 5 6 '
+    '1 2 3 4 5 6 ' 
+    '1 2 3 4 5 6 ' 
+    '1 2 3 4 5 6 '
+    '1 2 3 4 5 6 ';
+    height: 226px;
+    width: 226px;
+    place-items: center;
+}
+
 #mappy {
+    position: absolute;
     display: grid;
     grid-area: map;
     height: 370px;
     width: 263px;
+}
+
+#player {
+    position: absolute;
+    grid-area: map;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: white;
+}
+
+#exit {
+    position: absolute;
+    grid-area: map;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: red;
 }
 
 #story  {
