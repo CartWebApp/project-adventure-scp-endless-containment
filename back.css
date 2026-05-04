@@ -121,6 +121,7 @@ progress::-webkit-progress-value {
     place-items: center;
     max-width: auto;
     background-repeat: no-repeat;
+    transition: background-color 0.5s ease-in-out 0.2s;
 }
 
 
@@ -140,6 +141,7 @@ progress::-webkit-progress-value {
     margin-top: 10px;
     cursor: pointer;
     position: absolute;
+    z-index: 10;
 }
 
 
@@ -188,7 +190,6 @@ progress::-webkit-progress-value {
 }
 
 #mappy {
-    position: absolute;
     display: grid;
     grid-area: map;
     height: 370px;

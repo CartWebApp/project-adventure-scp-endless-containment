@@ -2,7 +2,7 @@
 //Defining our arrays
 const imageslevel0 = [
     {image: 'images/level0.png', weight: 10, arrows: [{top: '57%', left: '46%'}, {top: '60%', right: '68%'}, {top: '65%', right: '19%'}]},
-    {image: 'images/door.png', weight: 10, arrows: [{top: '56%', left: '47.5%'}]},
+    {image: 'images/door.png', weight: 10, arrows: [{top: '56%', left: '47.5%', exiteer: true}]},
     {image: 'images/arrows.png', weight: 10, arrows: [{top: '79%', left: '32%'}, {top: '67%', right: '52%'}, {top: '72%', right: '27%'}, {bottom: '-18%', left: '51%'}]},
     {image: 'images/dark 1.png', weight: 10, arrows: [{top: '63%', left: '41%'}, {top: '63%', right: '53%'}, {top: '63%', right: '53%'}, {bottom: '-20%', left: '60%'}]},
     {image: 'images/iconic.png', weight: 10, arrows: [{top: '40%', left: '21%'}, {top: '38%', right: '40%'}, {top: '38%', right: '40%'}, {bottom: '-10%', left: '35%'}]},
@@ -24,7 +24,8 @@ const imageslevel1 = [//make sure to position all arrrows.
     {image: 'images/rako games 1.png', weight: 10, arrows: [{top: '80%', left: '95%'}, {top: '65%', right: '40%'}, {top: '65%', right: '40%'}, {bottom: '-20%', left: '10%'}]},
     {image: 'images/whichway.png', weight: 10, arrows: [{top: '90%', left: '34%'}, {top: '75%', right: '10%'}, {top: '75%', right: '10%'}, {bottom: '-25%', left: '75%'}]},
     {image: 'images/shyguy(2).png', enemyactive: true, weight: 1, arrows: [{top: '90%', left: '34%'}, {top: '75%', right: '10%'}, {top: '75%', right: '10%'}, {bottom: '-25%', left: '75%'}]},
-    {image: 'images/shyguy(1).png', enemyactive: true, weight: 1, arrows: [{top: '90%', left: '34%'}, {top: '75%', right: '10%'}, {top: '75%', right: '10%'}, {bottom: '-25%', left: '75%'}]}
+    {image: 'images/shyguy(1).png', enemyactive: true, weight: 1, arrows: [{top: '90%', left: '34%'}, {top: '75%', right: '10%'}, {top: '75%', right: '10%'}, {bottom: '-25%', left: '75%'}]},
+    {image:  'images/door 2.png', weight: 10, arrows: [{top: '53%', left: '77%', exiteer: true}, {top: '53%', right: '17%'}, {top: '53%', right: '17%'}, {bottom: '-20%', left: '20%', exiteer: true}]}
 ];
 
 const imageslevel5 = [
@@ -46,6 +47,10 @@ const imageslevel37 = [
     {image: 'images/courtyard.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]}
 ];
 
+const imageslevel232 = [
+
+];
+
 const imageslevel94 = [
     {image: 'images/house clear view.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
     {image: 'images/insidehouse(1).png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
@@ -62,48 +67,84 @@ const imageslevellimbo = [
 ];
 
 //all documents used
-const imageArrays = {
-    'Level 0': imageslevel0,
-    'Level 1': imageslevel1,
-    'Level 5': imageslevel5,
-    'Level 37': imageslevel37,
-    'Level 94': imageslevel94,
-    'limbo': imageslevellimbo
+const levTitl = {
+    'Level 0': 0,
+    'Level 1': 1,
+    'Level 5': 2,
+    'Level 37': 3,
+    'Level 232': 4,
+    'Level 94': 5,
+    'limbo': 6
 };
 
+const levelOrder = [
+    'Level0.html',
+    'level1.html',
+    'level5.html',
+    'level37.html',
+    'level232.html',
+    'level94.html',
+    'limbo.html'
+];
+
+const pageTitle = document.title.trim();
+let Current = levTitl[pageTitle];
+if (Current === undefined) {
+    const fallbackLevel = parseInt(pageTitle.replace('Level ', '').trim(), 10);
+    Current = Number.isFinite(fallbackLevel) ? fallbackLevel : 0;
+}
+
+const imageArrays = [
+    imageslevel0,
+    imageslevel1,
+    imageslevel5,
+    imageslevel37,
+    imageslevel232,
+    imageslevel94,
+    imageslevellimbo
+];
+
+
+console.log('imageArrays.indexof imageslevel 0:', imageArrays['0']);
+console.log('imageArrays.indexof imageslevel 1:', imageArrays['1']);
+console.log('imageArrays.indexof imageslevel 5:', imageArrays['2']);
+console.log('imageArrays.indexof imageslevel 37:', imageArrays['3']);
+console.log('imageArrays.indexof imageslevel 232:', imageArrays['4']);
+console.log('imageArrays.indexof imageslevel 94:', imageArrays['5']);
+
 let lastImage = null;
+
 
 function weightedRandom(items) {
     if (!items || items.length === 0) return null;
     
-    // Filter to avoid immediate image reapeats
+    // Filter to avoid immediate image repeats
     let availableItems = items.length > 1 
     ? items.filter(item => item.image !== lastImage) 
     : items;
 
     const weightedItems = availableItems.map(item => {
-        let currentweight = item.weight || 10
-
+        let currentweight = item.weight || 10;
         if (typeof DepleteSanity !== 'undefined' && DepleteSanity === true && item.enemyactive === true) {
             const multiplier = typeof threat !== 'undefined' ? threat : 1;
             currentweight = currentweight * multiplier;
         }
-
         return { ...item, tempweight: currentweight };
     });
 
-    const totalWeight = availableItems.reduce((sum, item) => sum + (item.weight || 10), 0);
-
+    const totalWeight = weightedItems.reduce((sum, item) => sum + item.tempweight, 0);
     let random = Math.random() * totalWeight;
     
-    for (const item of availableItems) {
-        random -= (item.weight || 10);
+    for (const item of weightedItems) {
+        random -= item.tempweight;
         if (random <= 0) return item;
     }
     
-    return availableItems[0];
-
+    return weightedItems[0];
 }
+
+let currentData = imageArrays[Current];
+let selectedItem = weightedRandom(currentData);
 
 function getSavedImageForLevel(levelName, currentPool) {
     if (!currentPool) return null;
@@ -126,25 +167,50 @@ function repositionArrows(imageData) {
     const arrows = document.querySelectorAll('.arrow');
     
     arrows.forEach((arrow, index) => {
-        if (index < (imageData && imageData.arrows ? imageData.arrows.length : 0)) {
-            const position = imageData.arrows[index];
-            
-            // Clear all position properties first
+        const position = imageData && imageData.arrows ? imageData.arrows[index] : null;
+        if (position) {
             arrow.style.top = 'auto';
             arrow.style.bottom = 'auto';
             arrow.style.left = 'auto';
             arrow.style.right = 'auto';
             arrow.style.display = 'block';
+            arrow.dataset.index = index;
+            arrow.dataset.exit = position.exiteer ? 'true' : 'false';
+            arrow.classList.toggle('exit-arrow', !!position.exiteer);
             
-            // Apply the stored positions
             if (position.top) arrow.style.top = position.top;
             if (position.bottom) arrow.style.bottom = position.bottom;
             if (position.left) arrow.style.left = position.left;
             if (position.right) arrow.style.right = position.right;
         } else {
             arrow.style.display = 'none';
+            arrow.dataset.index = '';
+            arrow.dataset.exit = 'false';
+            arrow.classList.remove('exit-arrow');
         }
     });
+}
+
+function onArrowClick(event) {
+    const arrow = event.currentTarget;
+    const clickIndex = parseInt(arrow.dataset.index, 10);
+    const arrowData = selectedItem?.arrows?.[clickIndex];
+
+    if (arrowData?.exiteer) {
+        goToNextLevel();
+        return;
+    }
+
+    changeImage();
+}
+
+function goToNextLevel() {
+    if (Current >= 0 && Current < levelOrder.length - 1) {
+        const nextPage = levelOrder[Current + 1];
+        window.location.href = nextPage;
+    } else {
+        console.log('No next level available for:', pageTitle);
+    }
 }
 
 
@@ -163,7 +229,7 @@ function changeImage() {
     }
 
     const levelName = document.title.trim();
-    const currentPool = imageArrays[levelName];
+    const currentPool = imageArrays[Current];
     
     if (!currentPool) {
         console.error("Could not find image pool for:", levelName);
@@ -180,8 +246,8 @@ function changeImage() {
         let playerDamage = setInterval(() => {
             health.value -= 5;
             if (health.value <= 0) {
-            clearInterval(playerDamage);
-            window.location.href = 'gameover.html';;
+                clearInterval(playerDamage);
+                window.location.href = 'gameover.html';
             }
         }, 2000);
     }
@@ -191,36 +257,36 @@ function changeImage() {
     
     if (imgElementImage && selected) {
         lastImage = selected.image;
+        selectedItem = selected;
         imgElementImage.src = selected.image;
         repositionArrows(selected); 
-        
-        if (selected.image === 'images/door.png') {
-            imgElementImage.style.cursor = 'pointer';
-            imgElementImage.onclick = () => window.location.href = 'level1.html';
-        } else {
-            imgElementImage.style.cursor = 'default';
-            imgElementImage.onclick = null; 
-        }
     }
 }
 
-const mapElement = document.getElementById('mapppytinaer');
+const mapElement = document.getElementById('mappytainer');
 
 const playerElement = document.getElementById('player');
 
 const exitElement = document.getElementById('exit');
 
 function maptrack() {
-    const cells = document.querySelectorAll('mappytainer');
+    const cells = document.querySelector('#mappytainer');
 
+    if (typeof playerRow !== 'undefined' && typeof exitRow !== 'undefined' && playerRow === exitRow && playerCol === exitCol) {
+        goToNextLevel();
+    }
 
+    const distanceToExit = Math.sqrt(Math.pow(playerX - exitX, 2) + Math.pow(playerY - exitY, 2));
+}
 
-    const distanceToExit = Math.sqrt(Math.pow(playerX - exitX, 2) + Math.pow(playerY - exitY, 2));    
-
+function ExitToLevel() {
+    goToNextLevel();
 }
 
 // Ensuring that the Html function is available globally
 window.changeImage = changeImage;
+window.onArrowClick = onArrowClick;
+window.goToNextLevel = goToNextLevel;
 
 document.addEventListener('DOMContentLoaded', () => {
     changeImage();
@@ -254,6 +320,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    document.querySelectorAll('.arrow').forEach(arrow => {
+        arrow.onclick = onArrowClick;
+    });
 
     const audios = document.querySelectorAll('audio');
     audios.forEach(audio => {
@@ -293,7 +362,7 @@ function updateSanityBar(sanity) {
     if (sanity > 20) sanity = 20;    
 }
 
-const bar = document.getElementById("bars");
+const bar = document.getElementById("sanity");
 
 let timer = setInterval(() => {
     sanity.value -= 0.1;
