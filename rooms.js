@@ -2,7 +2,7 @@
 //Defining our arrays
 const imageslevel0 = [
     {image: 'images/level0.png', weight: 10, arrows: [{top: '57%', left: '46%'}, {top: '60%', right: '68%'}, {top: '65%', right: '19%'}]},
-    {image: 'images/door.png', weight: 10, arrows: [{top: '56%', left: '47.5%', exiteer: true}]},
+    {image: 'images/door.png', weight: 1, arrows: [{top: '56%', left: '47.5%', exiteer: true}]},
     {image: 'images/arrows.png', weight: 10, arrows: [{top: '79%', left: '32%'}, {top: '67%', right: '52%'}, {top: '72%', right: '27%'}, {bottom: '-18%', left: '51%'}]},
     {image: 'images/dark 1.png', weight: 10, arrows: [{top: '63%', left: '41%'}, {top: '63%', right: '53%'}, {top: '63%', right: '53%'}, {bottom: '-20%', left: '60%'}]},
     {image: 'images/iconic.png', weight: 10, arrows: [{top: '40%', left: '21%'}, {top: '38%', right: '40%'}, {top: '38%', right: '40%'}, {bottom: '-10%', left: '35%'}]},
@@ -12,8 +12,8 @@ const imageslevel0 = [
     {image: 'images/hall 1.png', weight: 10, arrows: [{top: '51%', left: '32%'}, {top: '50%', right: '45%'}, {top: '50%', right: '45%'}, {bottom: '-15%', left: '40%'}]},
     {image: 'images/chairs.png', weight: 10, arrows: [{top: '90%', left: '5%'}, {top: '70%', right: '8%'}, {top: '64%', right: '17%'}, {bottom: '-25%', left: '50%'}]},
     {image: 'images/noshelves.png', weight: 10, arrows: [{top: '40%', left: '35%'}, {top: '44%', right: '15%'}, {top: '44%', right: '15%'}, {bottom: '3%', left: '50%'}]},
-    {image: 'images/lizart(1).png', enemyactive: true, weight: 1, arrows: [{top: '90%', left: '5%'}, {top: '70%', right: '8%'}, {top: '64%', right: '17%'}, {bottom: '-25%', left: '50%'}]},
-    {image: 'images/lizart(2).png', enemyactive: true, weight: 1, arrows: [{top: '51%', left: '32%'}, {top: '50%', right: '45%'}, {top: '50%', right: '45%'}, {bottom: '-15%', left: '40%'}]}
+    {image: 'images/lizart(1).png', enemyactive: true, weight: 3, arrows: [{top: '90%', left: '5%'}, {top: '70%', right: '8%'}, {top: '64%', right: '17%'}, {bottom: '-25%', left: '50%'}]},
+    {image: 'images/lizart(2).png', enemyactive: true, weight: 3, arrows: [{top: '51%', left: '32%'}, {top: '50%', right: '45%'}, {top: '50%', right: '45%'}, {bottom: '-15%', left: '40%'}]}
 ];
 
 const imageslevel1 = [//make sure to position all arrrows.
@@ -23,9 +23,9 @@ const imageslevel1 = [//make sure to position all arrrows.
     {image: 'images/image 67.png', weight: 10, arrows: [{top: '50%', left: '5%'}, {top: '59%', right: '4%'}, {top: '59%', right: '4%'}, {bottom: '-15%', left: '43%'}]},
     {image: 'images/rako games 1.png', weight: 10, arrows: [{top: '80%', left: '95%'}, {top: '65%', right: '40%'}, {top: '65%', right: '40%'}, {bottom: '-20%', left: '10%'}]},
     {image: 'images/whichway.png', weight: 10, arrows: [{top: '90%', left: '34%'}, {top: '75%', right: '10%'}, {top: '75%', right: '10%'}, {bottom: '-25%', left: '75%'}]},
-    {image: 'images/shyguy(2).png', enemyactive: true, weight: 1, arrows: [{top: '90%', left: '34%'}, {top: '75%', right: '10%'}, {top: '75%', right: '10%'}, {bottom: '-25%', left: '75%'}]},
-    {image: 'images/shyguy(1).png', enemyactive: true, weight: 1, arrows: [{top: '90%', left: '34%'}, {top: '75%', right: '10%'}, {top: '75%', right: '10%'}, {bottom: '-25%', left: '75%'}]},
-    {image:  'images/door 2.png', weight: 10, arrows: [{top: '53%', left: '77%', exiteer: true}, {top: '53%', right: '17%'}, {top: '53%', right: '17%'}, {bottom: '-20%', left: '20%', exiteer: true}]}
+    {image: 'images/shyguy(2).png', enemyactive: true, weight: 3, arrows: [{top: '90%', left: '34%'}, {top: '75%', right: '10%'}, {top: '75%', right: '10%'}, {bottom: '-25%', left: '75%'}]},
+    {image: 'images/shyguy(1).png', enemyactive: true, weight: 3, arrows: [{top: '90%', left: '34%'}, {top: '75%', right: '10%'}, {top: '75%', right: '10%'}, {bottom: '-25%', left: '75%'}]},
+    {image:  'images/door 2.png', weight: 1, arrows: [{top: '53%', left: '77%', exiteer: true}, {top: '53%', right: '17%'}, {top: '53%', right: '17%'}, {bottom: '-20%', left: '20%', exiteer: true}]}
 ];
 
 const imageslevel5 = [
