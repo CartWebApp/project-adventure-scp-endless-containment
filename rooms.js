@@ -379,6 +379,23 @@ let threatLevel = setInterval(() => {
 }
 }, 1000);
 
+// TEST** tryna make a typewriter effect text for dialogue/storytelling :p //
+const div = document.querySelector(".text");
+const text = "What is this place..? Where am I?";
+
+function textTypingEffect(element, text, i = 0) {
+    if (i === 0) {
+        element.textContent = "";
+    }
+
+    element.textContent += text[i];
+    if (i === text.length - 1) {
+        return;
+    }
+    setTimeout(() => textTypingEffect(element, text, i + 1), 50);
+}
+
+textTypingEffect(div, text);
 //story stuff
 // let storyContainer = document.getElementById("story");
     
