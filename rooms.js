@@ -221,6 +221,7 @@ function goToNextLevel() {
 
 function changeImage() {
     const imgElement = document.getElementById('roomImage');
+    const aroow = document.getElementById('arrow-container');
     if (!imgElement) return;
 
     if (imgElement.tagName === 'VIDEO') {
