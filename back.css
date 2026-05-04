@@ -18,6 +18,22 @@ body:not(.menu) {
     height: 100vh;
 }
 
+#gameSetMatch {
+    background-image: url(images/youlose.png);
+}
+
+h1, #Rewind {
+    position: absolute;
+    display: flex;
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: 50px;
+    bottom: 65%;
+    right: 85%;
+    color: white;
+    text-decoration: none;
+    gap: 70px;
+}
+
 header:not(#options) {
     display: grid;
     grid-area: bars;
@@ -105,6 +121,18 @@ progress::-webkit-progress-value {
     place-items: center;
     max-width: auto;
     background-repeat: no-repeat;
+    transition: background-color 0.5s ease-in-out 0.2s;
+}
+
+
+.autio {
+    appearance: none;
+    display: none;
+}
+
+.autio {
+    appearance: none;
+    display: none;
 }
 
 .arrow {
@@ -113,6 +141,7 @@ progress::-webkit-progress-value {
     margin-top: 10px;
     cursor: pointer;
     position: absolute;
+    z-index: 10;
 }
 
 
@@ -143,11 +172,46 @@ progress::-webkit-progress-value {
     transform: rotate(270deg);
 }
 
+#mappytainer {
+    display: grid;
+    grid-area: map;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas: 
+    '1 2 3 4 5 6 ' 
+    '1 2 3 4 5 6 '
+    '1 2 3 4 5 6 ' 
+    '1 2 3 4 5 6 ' 
+    '1 2 3 4 5 6 '
+    '1 2 3 4 5 6 ';
+    height: 226px;
+    width: 226px;
+    place-items: center;
+}
+
 #mappy {
     display: grid;
     grid-area: map;
     height: 370px;
     width: 263px;
+}
+
+#player {
+    position: absolute;
+    grid-area: map;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: white;
+}
+
+#exit {
+    position: absolute;
+    grid-area: map;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: red;
 }
 
 #story  {
@@ -192,6 +256,30 @@ video {
     position: absolute;
     left: 10px;
     bottom: 10px;
+}
+
+#options {
+    display: flex;
+    flex-direction: column;
+    appearance: none;
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+}
+
+.autio {
+    appearance: none;
+    display: none;
+}
+
+button {
+    background-color: black;
+    color: white;
+    border-color: white;
+    height: 60px;
+    width: 250px;
+    font-size: 25px;
+    font-family: "Courier New", Courier, monospace;
 }
 
 .button { 
