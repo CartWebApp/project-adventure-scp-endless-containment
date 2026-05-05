@@ -253,6 +253,7 @@ function changeImage() {
             health.value -= 5;
             if (health.value <= 0) {
                 clearInterval(playerDamage);
+                localStorage.setItem(Current, JSON.stringify(Current));
                 window.location.href = 'gameover.html';
             }
         }, 2000);
@@ -260,29 +261,173 @@ function changeImage() {
 
     const imgElementImage = imgElement;
     
-    
     if (imgElementImage && selected) {
-        lastImage = selected.image;
-        selectedItem = selected;
-        imgElementImage.src = selected.image;
-        repositionArrows(selected); 
+    //transition wow
+        imgElementImage.classList.remove('fading-in');
+        imgElementImage.classList.add('fading-out');
+        
+        setTimeout(() => {
+            lastImage = selected.image;
+            selectedItem = selected;
+            imgElementImage.src = selected.image;
+            repositionArrows(selected);
+            
+            imgElementImage.classList.remove('fading-out');
+            imgElementImage.classList.add('fading-in');
+        }, 300);
     }
 }
 
 const mapElement = document.getElementById('mappytainer');
-
 const playerElement = document.getElementById('player');
-
 const exitElement = document.getElementById('exit');
+const mapHintElement = document.getElementById('mapHint') || document.querySelector('.story');
 
-function maptrack() {
-    const cells = document.querySelector('#mappytainer');
+const gridSize = 6;
+let playerRow = 0;
+let playerCol = 0;
+let exitRow = 0;
+let exitCol = 0;
+let previousDistance = null;
+let mapActive = false;
+let exitFound = false;
+let activeExitArrowIndex = null;
 
-    if (typeof playerRow !== 'undefined' && typeof exitRow !== 'undefined' && playerRow === exitRow && playerCol === exitCol) {
-        goToNextLevel();
+function getRandomGridCell() {
+    return {
+        row: Math.floor(Math.random() * gridSize),
+        col: Math.floor(Math.random() * gridSize)
+    };
+}
+
+function getDistance() {
+    return Math.abs(playerRow - exitRow) + Math.abs(playerCol - exitCol);
+}
+
+function updateMap() {
+    if (!mapElement || !playerElement || !exitElement) return;
+
+    playerElement.style.gridRowStart = playerRow + 1;
+    playerElement.style.gridColumnStart = playerCol + 1;
+    exitElement.style.gridRowStart = exitRow + 1;
+    exitElement.style.gridColumnStart = exitCol + 1;
+
+    const distance = getDistance();
+    exitFound = playerRow === exitRow && playerCol === exitCol;
+    activeExitArrowIndex = exitFound ? 0 : null;
+
+    if (mapHintElement) {
+        if (exitFound) {
+            mapHintElement.textContent = 'Exit located! Find the glowing exit arrow.';
+        } else if (previousDistance === null) {
+            mapHintElement.textContent = 'Use the arrows to move. The map shows your position and the exit.';
+        } else if (distance < previousDistance) {
+            mapHintElement.textContent = 'You are getting closer to the exit.';
+        } else if (distance > previousDistance) {
+            mapHintElement.textContent = 'You are getting farther from the exit.';
+        } else {
+            mapHintElement.textContent = 'You are moving on the same path. Try a different direction.';
+        }
     }
 
-    const distanceToExit = Math.sqrt(Math.pow(playerX - exitX, 2) + Math.pow(playerY - exitY, 2));
+    previousDistance = distance;
+}
+
+function initializeThePowerSequence() {
+    if (!mapElement || !playerElement || !exitElement) {
+        mapActive = false;
+        return;
+    }
+
+    mapActive = true;
+    exitFound = false;
+
+    exitRow = Math.floor(Math.random() * gridSize);
+    exitCol = Math.floor(Math.random() * gridSize);
+
+    do {
+        playerRow = Math.floor(Math.random() * gridSize);
+        playerCol = Math.floor(Math.random() * gridSize);
+    } while (Math.abs(playerRow - exitRow) + Math.abs(playerCol - exitCol) < 3);
+
+    previousDistance = getDistance();
+    updateMap();
+}
+
+function moveitmoveit(clickIndex) {
+    if (!mapActive) return;
+
+    const moves = [
+        { dr: -1, dc: 0 },
+        { dr: 0, dc: 1 },
+        { dr: 0, dc: -1 },
+        { dr: 1, dc: 0 }
+    ];
+
+    const move = moves[clickIndex] || { dr: 0, dc: 0 };
+    const newRow = playerRow + move.dr;
+    const newCol = playerCol + move.dc;
+
+    if (newRow < 0 || newRow >= gridSize || newCol < 0 || newCol >= gridSize) {
+        if (mapHintElement) {
+            mapHintElement.textContent = 'You hit a wall. Try a different direction.';
+        }
+        return;
+    }
+
+    playerRow = newRow;
+    playerCol = newCol;
+    updateMap();
+}
+
+function repositionArrows(imageData) {
+    const arrows = document.querySelectorAll('.arrow');
+
+    arrows.forEach((arrow, index) => {
+        const position = imageData && imageData.arrows ? imageData.arrows[index] : null;
+        if (position) {
+            arrow.style.top = 'auto';
+            arrow.style.bottom = 'auto';
+            arrow.style.left = 'auto';
+            arrow.style.right = 'auto';
+            arrow.style.display = 'block';
+            arrow.dataset.index = index;
+            const isExit = position.exiteer || (exitFound && activeExitArrowIndex === index);
+            arrow.dataset.exit = isExit ? 'true' : 'false';
+            arrow.classList.toggle('exit-arrow', isExit);
+
+            if (position.top) arrow.style.top = position.top;
+            if (position.bottom) arrow.style.bottom = position.bottom;
+            if (position.left) arrow.style.left = position.left;
+            if (position.right) arrow.style.right = position.right;
+        } else {
+            arrow.style.display = 'none';
+            arrow.dataset.index = '';
+            arrow.dataset.exit = 'false';
+            arrow.classList.remove('exit-arrow');
+        }
+    });
+}
+
+function onArrowClick(event) {
+    const arrow = event.currentTarget;
+    const clickIndex = parseInt(arrow.dataset.index, 10);
+    const arrowData = selectedItem?.arrows?.[clickIndex];
+    const isExitArrow = arrow.dataset.exit === 'true';
+
+    if (arrowData?.exiteer || isExitArrow) {
+        if (isExitArrow && exitFound) {
+            goToNextLevel();
+            return;
+        }
+        if (arrowData?.exiteer) {
+            goToNextLevel();
+            return;
+        }
+    }
+
+    moveitmoveit(clickIndex);
+    changeImage();
 }
 
 function ExitToLevel() {
@@ -295,6 +440,7 @@ window.onArrowClick = onArrowClick;
 window.goToNextLevel = goToNextLevel;
 
 document.addEventListener('DOMContentLoaded', () => {
+ initializeThePowerSequence();
     changeImage();
 
     const startButton = document.getElementById('start-button');
