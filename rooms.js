@@ -542,9 +542,8 @@ let threatLevel = setInterval(() => {
 //     intro : {
 //         text : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ullamcorper eget nulla facilisi etiam. Ultricies mi eget mauris pharetra et ultrices neque ornare. Non curabitur gravida arcu ac tortor dignissim. Nec ullamcorper sit amet risus. Quam quisque id diam vel quam. Ac tortor vitae purus faucibus ornare. Pulvinar etiam non quam lacus suspendisse faucibus interdum posuere lorem. Gravida cum sociis natoque penatibus et magnis dis parturient montes. Scelerisque viverra mauris in aliquam sem fringilla ut. Facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. Enim ut tellus elementum sagittis vitae. Lorem sed risus ultricies tristique nulla aliquet. Accumsan sit amet nulla facilisi morbi. Lacus suspendisse faucibus interdum posuere lorem ipsum dolor sit amet. Ut aliquam purus sit amet luctus venenatis lectus. Aliquet bibendum enim facilisis gravida neque. Eleifend mi in nulla posuere sollicitudin aliquam. Accumsan tortor posuere ac ut consequat semper viverra nam libero.",
 //         choices : [
-//             ["Move around", "Stay Put"],
-//             ["Go to page 2", "page2"],
-//             ["Go to page 3", "page3"]
+//             ["Move around", "moving"],
+//             ["Stay Put", "stay"],
 //         ]
 //     },
 //     page1 : {
