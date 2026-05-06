@@ -2,7 +2,7 @@
 //Defining our arrays
 const imageslevel0 = [
     {image: 'images/level0.png', weight: 10, arrows: [{top: '67%', left: '50%'}, {top: '67%', right: '69%'}, {top: '69%', right: '15%'}]},
-    {image: 'images/door.png', weight: 1, arrows: [{top: '56%', left: '47.5%', exiteer: true}]},
+    {image: 'images/door.png', weight: 7, arrows: [{top: '56%', left: '47.5%', exiteer: true}]},
     {image: 'images/arrows.png', weight: 10, arrows: [{top: '71%', left: '35%'}, {top: '63.5%', right: '52%'}, {top: '72%', right: '32%'}, {bottom: '-18%', left: '51%'}]},
     {image: 'images/dark 1.png', weight: 10, arrows: [{top: '63%', left: '42.6%'}, {top: '63%', right: '53%'}, {top: '63%', right: '53%'}, {bottom: '-20%', left: '63%'}]},
     {image: 'images/iconic.png', weight: 10, arrows: [{top: '50%', left: '28%'}, {top: '45%', right: '45%'}, {top: '45%', right: '45%'}, {bottom: '-20%', left: '35%'}]},
@@ -17,14 +17,14 @@ const imageslevel0 = [
 ];
 
 const imageslevel1 = [//make sure to position all arrrows.
-    {image: 'images/parkingarge.png', weight: 10, arrows: [{top: '53%', left: '77%'}, {top: '53%', right: '17%'}, {top: '53%', right: '17%'}, {bottom: '-20%', left: '20%'}]},
-    {image: 'images/flickering 1.png', weight: 10, arrows: [{top: '60%', left: '5%'}, {top: '60%', right: '5%'}, {top: '60%', right: '5%'}, {bottom: '-20%', left: '50%'}]},
-    {image: 'images/idkitslevel1.png', weight: 10, arrows: [{top: '60%', left: '20%'}, {top: '55%', right: '30%'}, {top: '55%', right: '30%'}, {bottom: '-20%', left: '30%'}]},
-    {image: 'images/image 67.png', weight: 10, arrows: [{top: '50%', left: '5%'}, {top: '59%', right: '4%'}, {top: '59%', right: '4%'}, {bottom: '-15%', left: '43%'}]},
-    {image: 'images/rako games 1.png', weight: 10, arrows: [{top: '80%', left: '95%'}, {top: '65%', right: '40%'}, {top: '65%', right: '40%'}, {bottom: '-20%', left: '10%'}]},
-    {image: 'images/whichway.png', weight: 10, arrows: [{top: '90%', left: '34%'}, {top: '75%', right: '10%'}, {top: '75%', right: '10%'}, {bottom: '-25%', left: '75%'}]},
-    {image: 'images/shyguy(2).png', enemyactive: true, weight: 3, arrows: [{top: '90%', left: '34%'}, {top: '75%', right: '10%'}, {top: '75%', right: '10%'}, {bottom: '-25%', left: '75%'}]},
-    {image: 'images/shyguy(1).png', enemyactive: true, weight: 3, arrows: [{top: '90%', left: '34%'}, {top: '75%', right: '10%'}, {top: '75%', right: '10%'}, {bottom: '-25%', left: '75%'}]},
+    {image: 'images/parkingarge.png', weight: 10, arrows: [{top: '53%', left: '68.5%'}, {top: '53%', right: '27%'}, {top: '53%', right: '27%'}, {bottom: '-20%', left: '30%'}]},
+    {image: 'images/flickering 1.png', weight: 10, arrows: [{top: '60%', left: '22%'}, {top: '60%', right: '25%'}, {top: '60%', right: '25%'}, {bottom: '-20%', left: '50%'}]},
+    {image: 'images/idkitslevel1.png', weight: 10, arrows: [{top: '60%', left: '30%'}, {top: '55%', right: '35%'}, {top: '55%', right: '35%'}, {bottom: '-20%', left: '30%'}]},
+    {image: 'images/image 67.png', weight: 10, arrows: [{top: '45%', left: '20%'}, {top: '59%', right: '24%'}, {top: '59%', right: '24%'}, {bottom: '-15%', left: '43%'}]},
+    {image: 'images/rako games 1.png', weight: 10, arrows: [{top: '65%', left: '55.5%'}, {top: '65%', right: '40%'}, {top: '65%', right: '40%'}, {bottom: '-20%', left: '80%'}]},
+    {image: 'images/whichway.png', weight: 10, arrows: [{top: '90%', left: '39%'}, {top: '75%', right: '22%'}, {top: '75%', right: '22%'}, {bottom: '-25%', left: '69%'}]},
+    {image: 'images/shyguy(2).png', enemyactive: true, weight: 3, arrows: [{top: '60%', left: '22%'}, {top: '60%', right: '25%'}, {top: '60%', right: '25%'}, {bottom: '-20%', left: '50%'}]},
+    {image: 'images/shyguy(1).png', enemyactive: true, weight: 3, arrows: [{top: '60%', left: '22%'}, {top: '60%', right: '29%'}, {top: '60%', right: '29%'}, {bottom: '-25%', left: '50%'}]},
     {image:  'images/Door 2.png', weight: 1, arrows: [{top: '53%', left: '77%', exiteer: true}, {top: '53%', right: '17%'}, {top: '53%', right: '17%'}, {bottom: '-20%', left: '20%', exiteer: true}]}
 ];
 
