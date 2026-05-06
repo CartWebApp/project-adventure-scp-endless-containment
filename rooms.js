@@ -3,7 +3,7 @@
 const imageslevel0 = [
     {image: 'images/level0.png', weight: 10, arrows: [{top: '57%', left: '46%'}, {top: '60%', right: '68%'}, {top: '65%', right: '19%'}]},
     {image: 'images/door.png', weight: 1, arrows: [{top: '56%', left: '47.5%', exiteer: true}]},
-    {image: 'images/arrows.png', weight: 1000, arrows: [{top: '71%', left: '36%'}, {top: '63.5%', right: '52%'}, {top: '72%', right: '27%'}, {bottom: '-18%', left: '51%'}]},
+    {image: 'images/arrows.png', weight: 10, arrows: [{top: '71%', left: '36%'}, {top: '63.5%', right: '52%'}, {top: '72%', right: '27%'}, {bottom: '-18%', left: '51%'}]},
     {image: 'images/dark 1.png', weight: 10, arrows: [{top: '63%', left: '43%'}, {top: '63%', right: '53%'}, {top: '63%', right: '64%'}, {bottom: '-20%', left: '60%'}]},
     {image: 'images/iconic.png', weight: 10, arrows: [{top: '40%', left: '21%'}, {top: '38%', right: '40%'}, {top: '38%', right: '40%'}, {bottom: '-10%', left: '35%'}]},
     {image: 'images/view.png', weight: 10, arrows: [{top: '30%', left: '42.4%'}, {top: '30%', right: '53.5%'}, {top: '30%', right: '53.5%'}, {bottom: '-15%', left: '70%'}]},
@@ -253,7 +253,7 @@ function changeImage() {
             health.value -= 5;
             if (health.value <= 0) {
                 clearInterval(playerDamage);
-                localStorage.setItem(Current, JSON.stringify(Current));
+                localStorage.setItem("savedGameLevel", levelOrder[Current]);
                 window.location.href = 'gameover.html';
             }
         }, 2000);
@@ -320,11 +320,11 @@ function updateMap() {
         if (exitFound) {
             mapHintElement.textContent = 'Exit located! Find the glowing exit arrow.';
         } else if (previousDistance === null) {
-            mapHintElement.textContent = 'Use the arrows to move. The map shows your position and the exit.';
+            mapHintElement.textContent = 'Use arrows to move. The map shows your position and the exit.';
         } else if (distance < previousDistance) {
-            mapHintElement.textContent = 'You are getting closer to the exit.';
+            mapHintElement.textContent = 'getting closer to nearest instability point(exit).';
         } else if (distance > previousDistance) {
-            mapHintElement.textContent = 'You are getting farther from the exit.';
+            mapHintElement.textContent = ' further from nearest instability point(exit).';
         } else {
             mapHintElement.textContent = 'You are moving on the same path. Try a different direction.';
         }
@@ -471,7 +471,14 @@ document.addEventListener('DOMContentLoaded', () => {
             window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
         });
     }
-
+    const RewindIt = document.getElementById('Rewind');
+    if (RewindIt) {
+        RewindIt.addEventListener('click', (event) => {
+            event.preventDefault();
+            const savedFile = localStorage.getItem('savedGameLevel');
+            window.location.href = (savedFile && savedFile.trim()) ? savedFile : 'Level0.html';
+        });
+    }
     document.querySelectorAll('.arrow').forEach(arrow => {
         arrow.onclick = onArrowClick;
     });
@@ -514,11 +521,13 @@ function updateSanityBar(sanity) {
     if (sanity > 20) sanity = 20;    
 }
 
-const bar = document.getElementById("sanity");
+const sanityBar = document.getElementById("sanity");
 
 let timer = setInterval(() => {
-    sanity.value -= 0.1;
-    if (sanity.value <= 0) {
+    if (!sanityBar) return;
+
+    sanityBar.value = Math.max(0, sanityBar.value - 0.1);
+    if (sanityBar.value <= 0) {
         DepleteSanity = true;
     }
 }, 1000);
@@ -536,6 +545,8 @@ const div = document.querySelector(".text");
 const text = "What is this place..? Where am I?";
 
 function textTypingEffect(element, text, i = 0) {
+    if (!element || typeof element.textContent === 'undefined') return;
+
     if (i === 0) {
         element.textContent = "";
     }
@@ -547,7 +558,9 @@ function textTypingEffect(element, text, i = 0) {
     setTimeout(() => textTypingEffect(element, text, i + 1), 50);
 }
 
-textTypingEffect(div, text);
+if (div) {
+    textTypingEffect(div, text);
+}
 
 //story stuff
  let storyContainer = document.getElementById("story");
@@ -601,10 +614,10 @@ let history = ["intro"];
  };
 
  function makeButton(btnText, choice){
+     if (!buttonContainer) return;
+
      let button = document.createElement("button");
-
      button.innerHTML = btnText;
-
      buttonContainer.appendChild(button);
 
      button.addEventListener ("click", function() {
@@ -613,24 +626,22 @@ let history = ["intro"];
      });
  }
 
-
  function buildStory(text) {
+     if (!storyContainer) return;
+
      let storyItem = document.createElement("p");
-
      storyItem.innerText = text;
-
      storyContainer.appendChild(storyItem);
-
  }
 
  function showStory(){
+     if (!storyContainer || !buttonContainer) return;
 
      let currentPage = history[history.length - 1]; // set currentPage to last index of history array.
 
-    storyContainer.innerHTML = ""; // reset html
-    buttonContainer.innerHTML = ""; // reset buttons
+     storyContainer.innerHTML = ""; // reset html
+     buttonContainer.innerHTML = ""; // reset buttons
     
-
      for(let page of history){ // build story text from items in history array
          buildStory(story[page].text);
     }
@@ -640,4 +651,6 @@ let history = ["intro"];
      }
  }
 
- showStory();
+ if (storyContainer && buttonContainer) {
+     showStory();
+ }
