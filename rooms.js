@@ -1,18 +1,18 @@
 
 //Defining our arrays
 const imageslevel0 = [
-    {image: 'images/level0.png', weight: 10, arrows: [{top: '57%', left: '46%'}, {top: '60%', right: '68%'}, {top: '65%', right: '19%'}]},
+    {image: 'images/level0.png', weight: 10, arrows: [{top: '67%', left: '50%'}, {top: '67%', right: '69%'}, {top: '69%', right: '15%'}]},
     {image: 'images/door.png', weight: 1, arrows: [{top: '56%', left: '47.5%', exiteer: true}]},
-    {image: 'images/arrows.png', weight: 10, arrows: [{top: '71%', left: '36%'}, {top: '63.5%', right: '52%'}, {top: '72%', right: '27%'}, {bottom: '-18%', left: '51%'}]},
-    {image: 'images/dark 1.png', weight: 1000, arrows: [{top: '63%', left: '42.6%'}, {top: '63%', right: '53%'}, {top: '63%', right: '53%'}, {bottom: '-20%', left: '60%'}]},
+    {image: 'images/arrows.png', weight: 10, arrows: [{top: '71%', left: '35%'}, {top: '63.5%', right: '52%'}, {top: '72%', right: '32%'}, {bottom: '-18%', left: '51%'}]},
+    {image: 'images/dark 1.png', weight: 10, arrows: [{top: '63%', left: '42.6%'}, {top: '63%', right: '53%'}, {top: '63%', right: '53%'}, {bottom: '-20%', left: '63%'}]},
     {image: 'images/iconic.png', weight: 10, arrows: [{top: '50%', left: '28%'}, {top: '45%', right: '45%'}, {top: '45%', right: '45%'}, {bottom: '-20%', left: '35%'}]},
-    {image: 'images/view.png', weight: 10, arrows: [{top: '30%', left: '42.4%'}, {top: '30%', right: '53.5%'}, {top: '30%', right: '53.5%'}, {bottom: '-15%', left: '70%'}]},
-    {image: 'images/THEimage.png', weight: 10, arrows: [{top: '70%', left: '66%'}, {top: '60%', right: '18%'}, {top: '70%', right: '28%'}, {bottom: '-18%', left: '50%'}]},
-    {image: 'images/vhs.png', weight: 10, arrows: [{top: '70%', left: '12%'}, {top: '62%', right: '35%'}, {top: '62%', right: '54%'}, {bottom: '-25%', left: '75%'}]},
-    {image: 'images/hall 1.png', weight: 10, arrows: [{top: '51%', left: '32%'}, {top: '50%', right: '45%'}, {top: '50%', right: '45%'}, {bottom: '-15%', left: '40%'}]},
-    {image: 'images/chairs.png', weight: 10, arrows: [{top: '90%', left: '5%'}, {top: '70%', right: '8%'}, {top: '64%', right: '17%'}, {bottom: '-25%', left: '50%'}]},
-    {image: 'images/noshelves.png', weight: 10, arrows: [{top: '40%', left: '35%'}, {top: '44%', right: '15%'}, {top: '44%', right: '15%'}, {bottom: '3%', left: '50%'}]},
-    {image: 'images/lizart(1).png', enemyactive: true, weight: 3, arrows: [{top: '90%', left: '5%'}, {top: '70%', right: '8%'}, {top: '64%', right: '17%'}, {bottom: '-25%', left: '50%'}]},
+    {image: 'images/view.png', weight: 10, arrows: [{top: '30%', left: '42.2%'}, {top: '30%', right: '53.5%'}, {top: '30%', right: '53.5%'}, {bottom: '-15%', left: '70%'}]},
+    {image: 'images/THEimage.png', weight: 10, arrows: [{top: '70%', left: '66%'}, {top: '70%', right: '29.7%'}, {top: '70%', right: '29.7%'}, {bottom: '-18%', left: '50%'}]},
+    {image: 'images/vhs.png', weight: 10, arrows: [{top: '70%', left: '24.1%'}, {top: '62%', right: '35%'}, {top: '62%', right: '54%'}, {bottom: '-25%', left: '70%'}]},
+    {image: 'images/hall 1.png', weight: 10, arrows: [{top: '51%', left: '36%'}, {top: '50%', right: '45%'}, {top: '50%', right: '45%'}, {bottom: '-15%', left: '40%'}]},
+    {image: 'images/chairs.png', weight: 10, arrows: [{top: '67%', left: '68.7%'}, {top: '67%', right: '27%'}, {top: '67%', right: '27%'}, {bottom: '-25%', left: '50%'}]},
+    {image: 'images/noshelves.png', weight: 10, arrows: [{top: '44%', left: '39%'}, {top: '44%', right: '24%'}, {top: '44%', right: '24%'}, {bottom: '3%', left: '50%'}]},
+    {image: 'images/lizart(1).png', enemyactive: true, weight: 3, arrows: [{top: '67%', left: '68.7%'}, {top: '67%', right: '27%'}, {top: '67%', right: '27%'}, {bottom: '-25%', left: '50%'}]},
     {image: 'images/lizart(2).png', enemyactive: true, weight: 3, arrows: [{top: '51%', left: '32%'}, {top: '50%', right: '45%'}, {top: '50%', right: '45%'}, {bottom: '-15%', left: '40%'}]}
 ];
 
