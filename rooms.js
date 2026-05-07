@@ -25,14 +25,14 @@ const imageslevel1 = [//make sure to position all arrrows.
     {image: 'images/whichway.png', weight: 10, arrows: [{top: '90%', left: '39%'}, {top: '75%', right: '22%'}, {top: '75%', right: '22%'}, {bottom: '-25%', left: '69%'}]},
     {image: 'images/shyguy(2).png', enemyactive: true, weight: 3, arrows: [{top: '60%', left: '22%'}, {top: '60%', right: '25%'}, {top: '60%', right: '25%'}, {bottom: '-20%', left: '50%'}]},
     {image: 'images/shyguy(1).png', enemyactive: true, weight: 3, arrows: [{top: '60%', left: '22%'}, {top: '60%', right: '29%'}, {top: '60%', right: '29%'}, {bottom: '-25%', left: '50%'}]},
-    {image:  'images/Door 2.png', weight: 1, arrows: [{top: '53%', left: '77%', exiteer: true}, {top: '53%', right: '17%'}, {top: '53%', right: '17%'}, {bottom: '-20%', left: '20%', exiteer: true}]}
+    {image:  'images/Door 2.png', weight: 7, arrows: [{top: '53%', left: '77%', exiteer: true}, {top: '53%', right: '17%'}, {top: '53%', right: '17%'}, {bottom: '-20%', left: '20%', exiteer: true}]}
 ];
 
 const imageslevel5 = [
     {image: 'images/The_Hotel 1.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
     {image: 'images/redcarpet.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
-    {image: 'images/checkin.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
-    {image: 'images/Level-5-Ballroom 1.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
+    {image: 'images/checkin.png', weight: 1000, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
+    {image: 'images/Level-5-Ballroom 1.png', weight: 10, arrows: [{top: '60%', left: '22%'}, {top: '60%', right: '23%'}, {top: '60%', right: '23%'}, {bottom: '-20%', left: '50%'}]},
     {image: 'images/levl5hall.jpg', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
     {image: 'images/mainhall.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
     {image: 'images/doctor(1).png', enemyactive: true, weight: 1, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
