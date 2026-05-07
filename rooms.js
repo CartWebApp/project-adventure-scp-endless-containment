@@ -1,38 +1,38 @@
 
 //Defining our arrays
 const imageslevel0 = [
-    {image: 'images/level0.png', weight: 10, arrows: [{top: '57%', left: '46%'}, {top: '60%', right: '68%'}, {top: '65%', right: '19%'}]},
-    {image: 'images/door.png', weight: 1, arrows: [{top: '56%', left: '47.5%', exiteer: true}]},
-    {image: 'images/arrows.png', weight: 1000, arrows: [{top: '71%', left: '36%'}, {top: '63.5%', right: '52%'}, {top: '72%', right: '27%'}, {bottom: '-18%', left: '51%'}]},
-    {image: 'images/dark 1.png', weight: 10, arrows: [{top: '63%', left: '43%'}, {top: '63%', right: '53%'}, {top: '63%', right: '64%'}, {bottom: '-20%', left: '60%'}]},
-    {image: 'images/iconic.png', weight: 10, arrows: [{top: '40%', left: '21%'}, {top: '38%', right: '40%'}, {top: '38%', right: '40%'}, {bottom: '-10%', left: '35%'}]},
-    {image: 'images/view.png', weight: 10, arrows: [{top: '30%', left: '42.4%'}, {top: '30%', right: '53.5%'}, {top: '30%', right: '53.5%'}, {bottom: '-15%', left: '70%'}]},
-    {image: 'images/THEimage.png', weight: 10, arrows: [{top: '70%', left: '66%'}, {top: '60%', right: '18%'}, {top: '70%', right: '28%'}, {bottom: '-18%', left: '50%'}]},
-    {image: 'images/vhs.png', weight: 10, arrows: [{top: '70%', left: '12%'}, {top: '62%', right: '35%'}, {top: '62%', right: '54%'}, {bottom: '-25%', left: '75%'}]},
-    {image: 'images/hall 1.png', weight: 10, arrows: [{top: '51%', left: '32%'}, {top: '50%', right: '45%'}, {top: '50%', right: '45%'}, {bottom: '-15%', left: '40%'}]},
-    {image: 'images/chairs.png', weight: 10, arrows: [{top: '90%', left: '5%'}, {top: '70%', right: '8%'}, {top: '64%', right: '17%'}, {bottom: '-25%', left: '50%'}]},
-    {image: 'images/noshelves.png', weight: 10, arrows: [{top: '40%', left: '35%'}, {top: '44%', right: '15%'}, {top: '44%', right: '15%'}, {bottom: '3%', left: '50%'}]},
-    {image: 'images/lizart(1).png', enemyactive: true, weight: 3, arrows: [{top: '90%', left: '5%'}, {top: '70%', right: '8%'}, {top: '64%', right: '17%'}, {bottom: '-25%', left: '50%'}]},
+    {image: 'images/level0.png', weight: 10, arrows: [{top: '67%', left: '50%'}, {top: '67%', right: '69%'}, {top: '69%', right: '15%'}]},
+    {image: 'images/door.png', weight: 7, arrows: [{top: '56%', left: '47.5%', exiteer: true}]},
+    {image: 'images/arrows.png', weight: 10, arrows: [{top: '71%', left: '35%'}, {top: '63.5%', right: '52%'}, {top: '72%', right: '32%'}, {bottom: '-18%', left: '51%'}]},
+    {image: 'images/dark 1.png', weight: 10, arrows: [{top: '63%', left: '42.6%'}, {top: '63%', right: '53%'}, {top: '63%', right: '53%'}, {bottom: '-20%', left: '63%'}]},
+    {image: 'images/iconic.png', weight: 10, arrows: [{top: '50%', left: '28%'}, {top: '45%', right: '45%'}, {top: '45%', right: '45%'}, {bottom: '-20%', left: '35%'}]},
+    {image: 'images/view.png', weight: 10, arrows: [{top: '30%', left: '42.2%'}, {top: '30%', right: '53.5%'}, {top: '30%', right: '53.5%'}, {bottom: '-15%', left: '70%'}]},
+    {image: 'images/THEimage.png', weight: 10, arrows: [{top: '70%', left: '66%'}, {top: '70%', right: '29.7%'}, {top: '70%', right: '29.7%',}, {bottom: '-18%', left: '50%', id: 'rotate180'}]},
+    {image: 'images/vhs.png', weight: 10, arrows: [{top: '70%', left: '24.1%'}, {top: '62%', right: '35%'}, {top: '62%', right: '54%'}, {bottom: '-25%', left: '70%'}]},
+    {image: 'images/hall 1.png', weight: 10, arrows: [{top: '51%', left: '36%'}, {top: '50%', right: '45%'}, {top: '50%', right: '45%'}, {bottom: '-15%', left: '40%'}]},
+    {image: 'images/chairs.png', weight: 10, arrows: [{top: '77%', left: '68.7%', id: 'rotate90'}, {bottom: '-16%', left: '20%', id: 'rotate270'}, {top: '67%', right: '100000%'}, {bottom: '-25%', left: '50%', id: 'rotate180'}]},
+    {image: 'images/noshelves.png', weight: 10, arrows: [{top: '53%', left: '45%'}, {top: '44%', right: '100000%'}, {top: '64%', right: '24%', id: 'rotate90'}, {bottom: '-23%', left: '50%', id: 'rotate180'}]},
+    {image: 'images/lizart(1).png', enemyactive: true, weight: 3, arrows:[{top: '77%', left: '68.7%', id: 'rotate90'}, {bottom: '-16%', left: '20%', id: 'rotate270'}, {top: '67%', right: '100000%'}, {bottom: '-25%', left: '50%', id: 'rotate180'}]},
     {image: 'images/lizart(2).png', enemyactive: true, weight: 3, arrows: [{top: '51%', left: '32%'}, {top: '50%', right: '45%'}, {top: '50%', right: '45%'}, {bottom: '-15%', left: '40%'}]}
 ];
 
 const imageslevel1 = [//make sure to position all arrrows.
-    {image: 'images/parkingarge.png', weight: 10, arrows: [{top: '53%', left: '77%'}, {top: '53%', right: '17%'}, {top: '53%', right: '17%'}, {bottom: '-20%', left: '20%'}]},
-    {image: 'images/flickering 1.png', weight: 10, arrows: [{top: '60%', left: '5%'}, {top: '60%', right: '5%'}, {top: '60%', right: '5%'}, {bottom: '-20%', left: '50%'}]},
-    {image: 'images/idkitslevel1.png', weight: 10, arrows: [{top: '60%', left: '20%'}, {top: '55%', right: '30%'}, {top: '55%', right: '30%'}, {bottom: '-20%', left: '30%'}]},
-    {image: 'images/image 67.png', weight: 10, arrows: [{top: '50%', left: '5%'}, {top: '59%', right: '4%'}, {top: '59%', right: '4%'}, {bottom: '-15%', left: '43%'}]},
-    {image: 'images/rako games 1.png', weight: 10, arrows: [{top: '80%', left: '95%'}, {top: '65%', right: '40%'}, {top: '65%', right: '40%'}, {bottom: '-20%', left: '10%'}]},
-    {image: 'images/whichway.png', weight: 10, arrows: [{top: '90%', left: '34%'}, {top: '75%', right: '10%'}, {top: '75%', right: '10%'}, {bottom: '-25%', left: '75%'}]},
-    {image: 'images/shyguy(2).png', enemyactive: true, weight: 3, arrows: [{top: '90%', left: '34%'}, {top: '75%', right: '10%'}, {top: '75%', right: '10%'}, {bottom: '-25%', left: '75%'}]},
-    {image: 'images/shyguy(1).png', enemyactive: true, weight: 3, arrows: [{top: '90%', left: '34%'}, {top: '75%', right: '10%'}, {top: '75%', right: '10%'}, {bottom: '-25%', left: '75%'}]},
-    {image:  'images/Door 2.png', weight: 1, arrows: [{top: '53%', left: '77%', exiteer: true}, {top: '53%', right: '17%'}, {top: '53%', right: '17%'}, {bottom: '-20%', left: '20%', exiteer: true}]}
+    {image: 'images/parkingarge.png', weight: 10, arrows: [{top: '69%', left: '68.5%', id: 'rotate90'}, {top: '53%', right: '100000%'}, {top: '56%', left: '57%'}, {bottom: '-20%', left: '30%', id: 'rotate180'}]},
+    {image: 'images/flickering 1.png', weight: 10, arrows: [{top: '70%', left: '22%'}, {top: '70%', right: '25%'}, {top: '10000%', right: '25%'}, {bottom: '-20%', left: '50%', id: 'rotate180'}]},
+    {image: 'images/idkitslevel1.png', weight: 10, arrows: [{top: '69%', left: '28%'}, {top: '55%', right: '100000%'}, {top: '61%', right: '38%'}, {bottom: '-20%', left: '45%', id: 'rotate180'}]},
+    {image: 'images/image 67.png', weight: 10, arrows: [{top: '45%', left: '20%'}, {top: '59%', right: '24%'}, {top: '59%', right: '24%'}, {bottom: '-15%', left: '43%'}]},
+    {image: 'images/rako games 1.png', weight: 10, arrows: [{top: '80%', left: '45%'}, {top: '65%', right: '400000%'}, {top: '65%', right: '40000000%'}, {bottom: '-20%', left: '80%', id: 'rotate90'}]},
+    {image: 'images/whichway.png', weight: 10, arrows: [{top: '90%', left: '39%'}, {top: '75%', right: '22%'}, {top: '75%', right: '22%'}, {bottom: '-25%', left: '69%', id: 'rotate180'}]},
+    {image: 'images/shyguy(2).png', enemyactive: true, weight: 3, arrows: [{top: '60%', left: '22%'}, {top: '60%', right: '25%'}, {top: '60%', right: '25%'}, {bottom: '-20%', left: '50%'}]},
+    {image: 'images/shyguy(1).png', enemyactive: true, weight: 3, arrows: [{top: '60%', left: '22%'}, {top: '60%', right: '29%'}, {top: '60%', right: '29%'}, {bottom: '-25%', left: '50%'}]},
+    {image:  'images/Door 2.png', weight: 7, arrows: [{top: '53%', left: '77%', exiteer: true}, {top: '53%', right: '17%'}, {top: '53%', right: '17%'}, {bottom: '-20%', left: '20%', exiteer: true}]}
 ];
 
 const imageslevel5 = [
     {image: 'images/The_Hotel 1.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
     {image: 'images/redcarpet.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
-    {image: 'images/checkin.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
-    {image: 'images/Level-5-Ballroom 1.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
+    {image: 'images/checkin.png', weight: 1000, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
+    {image: 'images/Level-5-Ballroom 1.png', weight: 10, arrows: [{top: '60%', left: '22%'}, {top: '60%', right: '23%'}, {top: '60%', right: '23%'}, {bottom: '-20%', left: '50%'}]},
     {image: 'images/levl5hall.jpg', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
     {image: 'images/mainhall.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
     {image: 'images/doctor(1).png', enemyactive: true, weight: 1, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
@@ -45,6 +45,8 @@ const imageslevel37 = [
     {image: 'images/pools 1.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
     {image: 'images/stairs.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
     {image: 'images/winding.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
+    {image: 'images/mask(1).png', enemyactive: true, weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
+    {image: 'images/mask(2).png', enemyactive: true, weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
     {image: 'images/courtyard.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
     {image: 'images/Door 37.png', weight: 1, arrows: [{top: '20%', left: '30%', exiteer: true}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]}
 ];
@@ -53,6 +55,11 @@ const imageslevel232 = [
     {image: 'images/endless.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
     {image: 'images/cart.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
     {image: 'images/smiler.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
+    {image: 'images/oohdark.jpg', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
+    {image: 'images/atmosphere.jpg', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
+    {image: 'images/Bargain.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
+    {image: 'images/zomboi(1).png', enemyactive: true, weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
+    {image: 'images/zomboi(2).png', enemyactive: true, weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
     {image: 'images/door 232.png', weight: 1, arrows: [{top: '20%', left: '30%', exiteer: true}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
 ];
 
@@ -60,6 +67,8 @@ const imageslevel94 = [
     {image: 'images/house clear view.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
     {image: 'images/insidehouse(1).png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
     {image: 'images/stop.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
+    {image: 'images/4666(2).png', enemyactive: true, weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
+    {image: 'images/4666(1).png', enemyactive: true, weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
     {image: 'images/brokeninside.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
     {image: 'images/nooutlet.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
     {image: 'images/stop.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]}
@@ -187,11 +196,13 @@ function repositionArrows(imageData) {
             if (position.bottom) arrow.style.bottom = position.bottom;
             if (position.left) arrow.style.left = position.left;
             if (position.right) arrow.style.right = position.right;
+            if (position.id) { arrow.id = position.id; }
         } else {
             arrow.style.display = 'none';
             arrow.dataset.index = '';
             arrow.dataset.exit = 'false';
             arrow.classList.remove('exit-arrow');
+            arrow.removeAttribute('id');
         }
     });
 }
@@ -253,7 +264,7 @@ function changeImage() {
             health.value -= 5;
             if (health.value <= 0) {
                 clearInterval(playerDamage);
-                localStorage.setItem(Current, JSON.stringify(Current));
+                localStorage.setItem("savedGameLevel", levelOrder[Current]);
                 window.location.href = 'gameover.html';
             }
         }, 2000);
@@ -318,13 +329,13 @@ function updateMap() {
 
     if (mapHintElement) {
         if (exitFound) {
-            mapHintElement.textContent = 'Exit located! Find the glowing exit arrow.';
+            mapHintElement.textContent = 'Nearest point of instability located! Proceed to red dot.';
         } else if (previousDistance === null) {
-            mapHintElement.textContent = 'Use the arrows to move. The map shows your position and the exit.';
+            mapHintElement.textContent = 'Use arrows to move. The map shows your position and the exit.';
         } else if (distance < previousDistance) {
-            mapHintElement.textContent = 'You are getting closer to the exit.';
+            mapHintElement.textContent = 'getting closer to nearest instability point(exit).';
         } else if (distance > previousDistance) {
-            mapHintElement.textContent = 'You are getting farther from the exit.';
+            mapHintElement.textContent = ' further from nearest instability point(exit).';
         } else {
             mapHintElement.textContent = 'You are moving on the same path. Try a different direction.';
         }
@@ -400,14 +411,21 @@ function repositionArrows(imageData) {
             if (position.bottom) arrow.style.bottom = position.bottom;
             if (position.left) arrow.style.left = position.left;
             if (position.right) arrow.style.right = position.right;
+            if (position.id) {
+                arrow.id = position.id;
+            } else {
+                arrow.removeAttribute('id');
+            }
         } else {
             arrow.style.display = 'none';
+            arrow.removeAttribute('id');
             arrow.dataset.index = '';
             arrow.dataset.exit = 'false';
             arrow.classList.remove('exit-arrow');
         }
     });
 }
+
 
 function onArrowClick(event) {
     const arrow = event.currentTarget;
@@ -454,7 +472,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 localStorage.setItem('savedGameImage', selected.image);
                 localStorage.setItem('savedGameLevel', 'Level 0');
             }
-            window.location.href = 'Level0.html';
         });
     }
 
@@ -471,7 +488,14 @@ document.addEventListener('DOMContentLoaded', () => {
             window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
         });
     }
-
+    const RewindIt = document.getElementById('Rewind');
+    if (RewindIt) {
+        RewindIt.addEventListener('click', (event) => {
+            event.preventDefault();
+            const savedFile = localStorage.getItem('savedGameLevel');
+            window.location.href = (savedFile && savedFile.trim()) ? savedFile : 'Level0.html';
+        });
+    }
     document.querySelectorAll('.arrow').forEach(arrow => {
         arrow.onclick = onArrowClick;
     });
@@ -514,11 +538,13 @@ function updateSanityBar(sanity) {
     if (sanity > 20) sanity = 20;    
 }
 
-const bar = document.getElementById("sanity");
+const sanityBar = document.getElementById("sanity");
 
 let timer = setInterval(() => {
-    sanity.value -= 0.1;
-    if (sanity.value <= 0) {
+    if (!sanityBar) return;
+
+    sanityBar.value = Math.max(0, sanityBar.value - 0.1);
+    if (sanityBar.value <= 0) {
         DepleteSanity = true;
     }
 }, 1000);
@@ -536,6 +562,8 @@ const div = document.querySelector(".text");
 const text = "What is this place..? Where am I?";
 
 function textTypingEffect(element, text, i = 0) {
+    if (!element || typeof element.textContent === 'undefined') return;
+
     if (i === 0) {
         element.textContent = "";
     }
@@ -547,7 +575,9 @@ function textTypingEffect(element, text, i = 0) {
     setTimeout(() => textTypingEffect(element, text, i + 1), 50);
 }
 
-textTypingEffect(div, text);
+if (div) {
+    textTypingEffect(div, text);
+}
 
 //story stuff
  let storyContainer = document.getElementById("story");
@@ -601,10 +631,10 @@ let history = ["intro"];
  };
 
  function makeButton(btnText, choice){
+     if (!buttonContainer) return;
+
      let button = document.createElement("button");
-
      button.innerHTML = btnText;
-
      buttonContainer.appendChild(button);
 
      button.addEventListener ("click", function() {
@@ -613,24 +643,22 @@ let history = ["intro"];
      });
  }
 
-
  function buildStory(text) {
+     if (!storyContainer) return;
+
      let storyItem = document.createElement("p");
-
      storyItem.innerText = text;
-
      storyContainer.appendChild(storyItem);
-
  }
 
  function showStory(){
+     if (!storyContainer || !buttonContainer) return;
 
      let currentPage = history[history.length - 1]; // set currentPage to last index of history array.
 
-    storyContainer.innerHTML = ""; // reset html
-    buttonContainer.innerHTML = ""; // reset buttons
+     storyContainer.innerHTML = ""; // reset html
+     buttonContainer.innerHTML = ""; // reset buttons
     
-
      for(let page of history){ // build story text from items in history array
          buildStory(story[page].text);
     }
@@ -640,4 +668,6 @@ let history = ["intro"];
      }
  }
 
- showStory();
+ if (storyContainer && buttonContainer) {
+     showStory();
+ }
