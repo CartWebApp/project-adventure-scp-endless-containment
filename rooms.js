@@ -33,7 +33,7 @@ const imageslevel5 = [
     {image: 'images/redcarpet.png', weight: 10, arrows: [{top: '60%', left: '48%'}, {top: '60%', right: '48%'}, {top: '60%', right: '48%'}, {bottom: '25%', left: '48%'}]},
     {image: 'images/checkin.png', weight: 10, arrows: [{top: '80%', left: '78%'}, {top: '80%', right: '18%'}, {top: '80%', right: '18%'}, {bottom: '5%', left: '78%'}]},
     {image: 'images/Level-5-Ballroom 1.png', weight: 10, arrows: [{top: '55%', left: '24%'}, {top: '55%', right: '72%'}, {top: '53%', right: '25%'}, {bottom: '32%', left: '71%'}]},
-    {image: 'images/level5hall.jpg', weight: 1000, arrows: [{top: '50%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
+    {image: 'images/level5hall.jpg', weight: 1000, arrows: [{top: '50%', left: '48%'}, {top: '50%', right: '48%'}, {top: '50%', right: '48%'}, {bottom: '35%', left: '48%'}]},
     {image: 'images/mainhall.png', weight: 10, arrows: [{top: '70%', left: '52%'}, {top: '90%', right: '67%'}, {top: '90%', right: '31%'}, {bottom: '15%', left: '43%'}]},
     {image: 'images/doctor(1).png', enemyactive: true, weight: 1, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
     {image: 'images/doctor(2).png', enemyactive: true, weight: 1, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
