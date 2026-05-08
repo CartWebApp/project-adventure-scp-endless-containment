@@ -74,7 +74,7 @@ const imageslevel1 = [//make sure to position all arrrows.
                 ["Run away", "run_Away"]
             ]
         } },
-    {image:  'images/Door 2.png', weight: 1000, arrows: [{top: '51%', left: '50%', exiteer: true}, {top: '51%', right: '1000%'}, {top: '53%', right: '1000%'}, {bottom: '34%', left: '50%', exiteer: true}],
+    {image:  'images/Door 2.png', weight: 10, arrows: [{top: '51%', left: '50%', exiteer: true}, {top: '51%', right: '1000%'}, {top: '53%', right: '1000%'}, {bottom: '34bh%', left: '50%', exiteer: true}],
      dialogue: {
             text: "Another door, finally!!",
             delay: 1500
@@ -90,7 +90,7 @@ const imageslevel5 = [
     {image: 'images/mainhall.png', weight: 10, arrows: [{top: '70%', left: '52%'}, {top: '90%', right: '67%'}, {top: '90%', right: '31%'}, {bottom: '15%', left: '43%'}]},
     {image: 'images/doctor(1).png', enemyactive: true, weight: 6, arrows: [{top: '55%', left: '24%'}, {top: '55%', right: '72%'}, {top: '53%', right: '25%'}, {bottom: '32%', left: '71%'}]},
     {image: 'images/doctor(2).png', enemyactive: true, weight: 6, arrows: [{top: '60%', left: '49%'}, {top: '60%', right: '47%'}, {top: '60%', right: '47%'}, {bottom: '25%', left: '49%'}]},
-    {image: 'images/Door 5.png', weight: 10, arrows: [{top: '70%', left: '50%', exiteer: true}, {top: '70%', right: '46%'}, {top: '70%', right: '46%'}, {bottom: '15%', left: '50%'}]},
+    {image: 'images/Door 5.png', weight: 1000, arrows: [{top: '70%', left: '50%', exiteer: true}, {top: '70%', right: '46%', exiteer: true}, {top: '70%', right: '46%'}, {bottom: '15%', left: '50%', exiteer: true}]},
 ];
 
 const imageslevel37 = [
