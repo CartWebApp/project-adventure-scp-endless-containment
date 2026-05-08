@@ -90,14 +90,14 @@ const imageslevel5 = [
     {image: 'images/mainhall.png', weight: 10, arrows: [{top: '70%', left: '52%'}, {top: '90%', right: '67%'}, {top: '90%', right: '31%'}, {bottom: '15%', left: '43%'}]},
     {image: 'images/doctor(1).png', enemyactive: true, weight: 6, arrows: [{top: '55%', left: '24%'}, {top: '55%', right: '72%'}, {top: '53%', right: '25%'}, {bottom: '32%', left: '71%'}]},
     {image: 'images/doctor(2).png', enemyactive: true, weight: 6, arrows: [{top: '60%', left: '49%'}, {top: '60%', right: '47%'}, {top: '60%', right: '47%'}, {bottom: '25%', left: '49%'}]},
-    {image: 'images/Door 5.png', weight: 1000, arrows: [{top: '70%', left: '50%', exiteer: true}, {top: '70%', right: '46%', exiteer: true}, {top: '70%', right: '46%'}, {bottom: '15%', left: '50%', exiteer: true}]},
+    {image: 'images/Door 5.png', weight: 7, arrows: [{top: '70%', left: '50%', exiteer: true}, {top: '70%', right: '46%', exiteer: true}, {top: '70%', right: '46%'}, {bottom: '15%', left: '50%', exiteer: true}]},
 ];
 
 const imageslevel37 = [
-    {image: 'images/poolhall.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
-    {image: 'images/pools 1.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
-    {image: 'images/stairs.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
-    {image: 'images/winding.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
+    {image: 'images/poolhall.png', weight: 10, arrows: [{top: '55%', left: '47%'}, {top: '55%', right: '49%'}, {top: '55%', right: '49%'}, {bottom: '30%', left: '47%'}]},
+    {image: 'images/pools 1.png', weight: 10, arrows: [{top: '60%', left: '32.5%'}, {top: '60%', right: '55%'}, {top: '60%', right: '41%'}, {bottom: '24%', left: '48%'}]},
+    {image: 'images/stairs.png', weight: 10, arrows: [{top: '30%', left: '50%'}, {top: '30%', right: '46%'}, {top: '70%', right: '36%'}, {bottom: '15%', left: '60%'}]},
+    {image: 'images/winding.png', weight: 10, arrows: [{top: '60%', left: '54%'}, {top: '60%', right: '42%'}, {top: '60%', right: '42%'}, {bottom: '24%', left: '54%'}]},
     {image: 'images/mask(1).png', enemyactive: true, weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
     {image: 'images/mask(2).png', enemyactive: true, weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
     {image: 'images/courtyard.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
