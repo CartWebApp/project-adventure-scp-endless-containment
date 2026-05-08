@@ -17,7 +17,7 @@ const imageslevel0 = [
             text: "",
             delay: 2000,
             choices: [
-                ["Y’know what– whatever, I’ll just stay here. The hole will open back up and everything will be fine.. Right?”", "stay_Put"],
+                ["Y’know what– whatever, I’ll just stay here. The hole will open back up and everything will be fine.. right?”", "stay_Put"],
                 ["I need to get out here. I shouldn’t stay too long in one place, it doesn’t seem like a good idea..", "go_Explore"]
             ]
         }},
@@ -27,9 +27,11 @@ const imageslevel0 = [
     {image: 'images/hall 1.png', weight: 10, arrows: [{top: '51%', left: '36%'}, {top: '50%', right: '45%'}, {top: '50%', right: '45%'}, {bottom: '-15%', left: '40%'}]},
     {image: 'images/chairs.png', weight: 10, arrows: [{top: '77%', left: '68.7%', id: 'rotate90'}, {bottom: '-16%', left: '20%', id: 'rotate270'}, {top: '67%', right: '100000%'}, {bottom: '-25%', left: '50%', id: 'rotate180'}]},
     {image: 'images/noshelves.png', weight: 10, arrows: [{top: '53%', left: '45%'}, {top: '44%', right: '100000%'}, {top: '64%', right: '24%', id: 'rotate90'}, {bottom: '-23%', left: '50%', id: 'rotate180'}]},
-    {image: 'images/lizart(1).png', enemyactive: true, weight: 3, arrows:[{top: '77%', left: '68.7%', id: 'rotate90'}, {bottom: '-16%', left: '20%', id: 'rotate270'}, {top: '67%', right: '100000%'}, {bottom: '-25%', left: '50%', id: 'rotate180'}]},
-    {image: 'images/lizart(2).png', enemyactive: true, weight: 3, arrows: [{top: '51%', left: '32%'}, {top: '50%', right: '45%'}, {top: '50%', right: '45%'}, {bottom: '-15%', left: '40%'}]}
-
+    {image: 'images/lizart(1).png', enemyactive: true, weight: 3, arrows:[{top: '77%', left: '68.7%', id: 'rotate90'}, {bottom: '-16%', left: '20%', id: 'rotate270'}, {top: '67%', right: '100000%'}, {bottom: '-25%', left: '50%', id: 'rotate180'}]
+    {image: 'images/lizart(2).png', enemyactive: true, weight: 3, arrows: [{top: '51%', left: '32%'}, {top: '50%', right: '45%'}, {top: '50%', right: '45%'}, {bottom: '-15%', left: '40%'}],         dialogue: {
+            text: "This is new",
+            delay: 1500
+        } },
 ];
 
 const imageslevel1 = [//make sure to position all arrrows.
@@ -46,7 +48,7 @@ const imageslevel1 = [//make sure to position all arrrows.
 
 const imageslevel5 = [
     {image: 'images/The_Hotel 1.png', weight: 10, arrows: [{top: '60%', left: '49%'}, {top: '60%', right: '47%'}, {top: '60%', right: '47%'}, {bottom: '25%', left: '49%'}]},
-    {image: 'images/redcarpet.png', weight: 10, arrows: [{top: '60%', left: '48%'}, {top: '60%', right: '48%'}, {top: '60%', right: '48%'}, {bottom: '25%', left: '48%'}]},
+    {image: 'images/redcarpet.png', weight: 1000, arrows: [{top: '60%', left: '46.7%'}, {top: '60%', right: '49%'}, {top: '60%', right: '49%'}, {bottom: '23%', left: '46.9%'}]},
     {image: 'images/checkin.png', weight: 10, arrows: [{top: '80%', left: '78%'}, {top: '80%', right: '18%'}, {top: '80%', right: '18%'}, {bottom: '5%', left: '78%'}]},
     {image: 'images/Level-5-Ballroom 1.png', weight: 10, arrows: [{top: '55%', left: '24%'}, {top: '55%', right: '72%'}, {top: '53%', right: '25%'}, {bottom: '32%', left: '71%'}]},
     {image: 'images/level5hall.jpg', weight: 10, arrows: [{top: '54%', left: '48%'}, {top: '54%', right: '48%'}, {top: '54%', right: '48%'}, {bottom: '31%', left: '48%'}]},
