@@ -299,7 +299,7 @@ video {
     bottom: 10px;
 }
 
-#autio {
+.autio {
     appearance: none;
     display: none;
 }
