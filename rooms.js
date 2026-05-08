@@ -1,5 +1,5 @@
 
-//Defining our arrays
+//all arrrays/dialogue
 const imageslevel0 = [
     {image: 'images/level0.png', weight: 10, arrows: [{top: '67%', left: '50%'}, {top: '67%', right: '69%'}, {top: '69%', right: '15%'}],        
     dialogue: {
@@ -13,15 +13,24 @@ const imageslevel0 = [
         } },
     {image: 'images/arrows.png', weight: 10, arrows: [{top: '71%', left: '35%'}, {top: '63.5%', right: '52%'}, {top: '72%', right: '32%'}, {bottom: '-18%', left: '51%'}]},
     {image: 'images/dark 1.png', weight: 10, arrows: [{top: '63%', left: '42.6%'}, {top: '63%', right: '53%'}, {top: '63%', right: '53%'}, {bottom: '-20%', left: '63%'}]},
-    {image: 'images/iconic.png', weight: 10, arrows: [{top: '50%', left: '28%'}, {top: '45%', right: '45%'}, {top: '45%', right: '45%'}, {bottom: '-20%', left: '35%'}],         
+    {image: 'images/iconic.png', weight: 100000, arrows: [{top: '50%', left: '28%'}, {top: '45%', right: '45%'}, {top: '45%', right: '45%'}, {bottom: '-20%', left: '35%'}],         
     dialogue: {
-            text: "",
+            text: "What if I never find my way back?",
             delay: 2000,
             choices: [
-                ["Y’know what– whatever, I’ll just stay here. The hole will open back up and everything will be fine.. Right?”", "stay_Put"],
-                ["I need to get out here. I shouldn’t stay too long in one place, it doesn’t seem like a good idea..", "go_Explore"]
-            ]
-        }},
+                ["Stay", "stay_Put"],
+                ["Keep going", "go_Explore"]
+            ],
+            stay_Put: {
+                text: "Y’know what– whatever, I’ll just stay here. The hole will open back up and everything will be fine.. Right?",
+                delay: 2000,
+            },
+            go_Explore: {
+                text: "I need to get out here. I shouldn’t stay too long in one place, it doesn’t seem like a good idea..",
+                delay: 2000, 
+            },
+        },
+    },
     {image: 'images/view.png', weight: 10, arrows: [{top: '30%', left: '42.2%'}, {top: '30%', right: '53.5%'}, {top: '30%', right: '53.5%'}, {bottom: '-15%', left: '70%'}]},
     {image: 'images/THEimage.png', weight: 10, arrows: [{top: '70%', left: '66%'}, {top: '70%', right: '29.7%'}, {top: '70%', right: '29.7%',}, {bottom: '-18%', left: '50%', id: 'rotate180'}]},
     {image: 'images/vhs.png', weight: 10, arrows: [{top: '70%', left: '24.1%'}, {top: '62%', right: '35%'}, {top: '62%', right: '54%'}, {bottom: '-25%', left: '70%'}]},
@@ -600,6 +609,8 @@ let threatLevel = setInterval(() => {
 const storyContainer = document.getElementById('story');
 const buttonContainer = document.getElementById('dialogue');
 
+
+
 function clearDialogue() {
     if (storyContainer) storyContainer.textContent = '';
     if (buttonContainer) buttonContainer.innerHTML = '';
@@ -634,6 +645,10 @@ function renderDialogue(dialogue) {
     } else {
         makeDialogueButton('Continue', clearDialogue);
     }
+}
+
+function action() {
+    triggerDialogue(imageData);
 }
 
 function triggerDialogue(imageData) {
