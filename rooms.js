@@ -458,9 +458,15 @@ window.onArrowClick = onArrowClick;
 window.goToNextLevel = goToNextLevel;
 
 document.addEventListener('DOMContentLoaded', () => {
- initializeThePowerSequence();
+    initializeThePowerSequence();
     changeImage();
-
+    
+    const audios = document.querySelectorAll('audio');
+    audios.forEach(audio => {
+        audio.play().catch(e => console.log('Autoplay blocked for audio:', e));
+    });
+    });
+    
     const startButton = document.getElementById('start-button');
     const newGameButton = document.getElementById('new-game-button');
     const quitButton = document.getElementById('quit-button');
@@ -500,15 +506,7 @@ document.addEventListener('DOMContentLoaded', () => {
         arrow.onclick = onArrowClick;
     });
 
-    const audios = document.querySelectorAll('audio');
-    audios.forEach(audio => {
-        audio.play().catch(e => console.log('Autoplay blocked for audio:', e));
-    });
-});
 
-function playoption () {
-    
-}
 
 document.addEventListener('DOMContentLoaded', () => {
     const video = document.getElementById('roomImage');
