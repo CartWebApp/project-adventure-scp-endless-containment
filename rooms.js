@@ -1,11 +1,26 @@
 
 //Defining our arrays
 const imageslevel0 = [
-    {image: 'images/level0.png', weight: 10, arrows: [{top: '67%', left: '50%'}, {top: '67%', right: '69%'}, {top: '69%', right: '15%'}]},
-    {image: 'images/door.png', weight: 7, arrows: [{top: '56%', left: '47.5%', exiteer: true}]},
+    {image: 'images/level0.png', weight: 10, arrows: [{top: '67%', left: '50%'}, {top: '67%', right: '69%'}, {top: '69%', right: '15%'}],        
+    dialogue: {
+            text: "Where am I? What is this place?",
+            delay: 1500
+        }},
+    {image: 'images/door.png', weight: 6, arrows: [{top: '56%', left: '47.5%', exiteer: true}],        
+    dialogue: {
+            text: "This is new",
+            delay: 1500
+        } },
     {image: 'images/arrows.png', weight: 10, arrows: [{top: '71%', left: '35%'}, {top: '63.5%', right: '52%'}, {top: '72%', right: '32%'}, {bottom: '-18%', left: '51%'}]},
     {image: 'images/dark 1.png', weight: 10, arrows: [{top: '63%', left: '42.6%'}, {top: '63%', right: '53%'}, {top: '63%', right: '53%'}, {bottom: '-20%', left: '63%'}]},
-    {image: 'images/iconic.png', weight: 10, arrows: [{top: '50%', left: '28%'}, {top: '45%', right: '45%'}, {top: '45%', right: '45%'}, {bottom: '-20%', left: '35%'}]},
+    {image: 'images/iconic.png', weight: 10, arrows: [{top: '50%', left: '28%'}, {top: '45%', right: '45%'}, {top: '45%', right: '45%'}, {bottom: '-20%', left: '35%'}],         dialogue: {
+            text: "",
+            delay: 2000,
+            choices: [
+                ["Y’know what– whatever, I’ll just stay here. The hole will open back up and everything will be fine.. Right?”", "stay_Put"],
+                ["I need to get out here. I shouldn’t stay too long in one place, it doesn’t seem like a good idea..", "go_Explore"]
+            ]
+        }},
     {image: 'images/view.png', weight: 10, arrows: [{top: '30%', left: '42.2%'}, {top: '30%', right: '53.5%'}, {top: '30%', right: '53.5%'}, {bottom: '-15%', left: '70%'}]},
     {image: 'images/THEimage.png', weight: 10, arrows: [{top: '70%', left: '66%'}, {top: '70%', right: '29.7%'}, {top: '70%', right: '29.7%',}, {bottom: '-18%', left: '50%', id: 'rotate180'}]},
     {image: 'images/vhs.png', weight: 10, arrows: [{top: '70%', left: '24.1%'}, {top: '62%', right: '35%'}, {top: '62%', right: '54%'}, {bottom: '-25%', left: '70%'}]},
@@ -14,6 +29,7 @@ const imageslevel0 = [
     {image: 'images/noshelves.png', weight: 10, arrows: [{top: '53%', left: '45%'}, {top: '44%', right: '100000%'}, {top: '64%', right: '24%', id: 'rotate90'}, {bottom: '-23%', left: '50%', id: 'rotate180'}]},
     {image: 'images/lizart(1).png', enemyactive: true, weight: 3, arrows:[{top: '77%', left: '68.7%', id: 'rotate90'}, {bottom: '-16%', left: '20%', id: 'rotate270'}, {top: '67%', right: '100000%'}, {bottom: '-25%', left: '50%', id: 'rotate180'}]},
     {image: 'images/lizart(2).png', enemyactive: true, weight: 3, arrows: [{top: '51%', left: '32%'}, {top: '50%', right: '45%'}, {top: '50%', right: '45%'}, {bottom: '-15%', left: '40%'}]}
+
 ];
 
 const imageslevel1 = [//make sure to position all arrrows.
@@ -285,8 +301,19 @@ function changeImage() {
             
             imgElementImage.classList.remove('fading-out');
             imgElementImage.classList.add('fading-in');
+            triggerDialogue(selected);
         }, 300);
     }
+}
+
+
+function triggerDialogue(imageData) {
+    clearDialogue();
+    const dialogue = imageData?.dialogue;
+    if (!dialogue) return;
+
+    const delay = typeof dialogue.delay === 'number' ? dialogue.delay : 1000;
+    setTimeout(() => renderDialogue(dialogue), delay);
 }
 
 const mapElement = document.getElementById('mappytainer');
@@ -500,15 +527,21 @@ document.addEventListener('DOMContentLoaded', () => {
         arrow.onclick = onArrowClick;
     });
 
+    //auzio
     const audios = document.querySelectorAll('audio');
-    audios.forEach(audio => {
-        audio.play().catch(e => console.log('Autoplay blocked for audio:', e));
-    });
-});
+    const startAudio = () => {
+        audios.forEach(audio => {
+            audio.play().catch(e => console.log('Audio play blocked or deferred:', e));
+        });
+        window.removeEventListener('click', startAudio);
+        window.removeEventListener('keydown', startAudio);
+    };
 
-function playoption () {
-    
-}
+    if (audios.length > 0) {
+        window.addEventListener('click', startAudio, { once: true });
+        window.addEventListener('keydown', startAudio, { once: true });
+    }
+});
 
 document.addEventListener('DOMContentLoaded', () => {
     const video = document.getElementById('roomImage');
@@ -557,117 +590,52 @@ let threatLevel = setInterval(() => {
 }
 }, 1000);
 
-// TEST** tryna make a typewriter effect text for dialogue/storytelling :p //
-const div = document.querySelector(".text");
-const text = "What is this place..? Where am I?";
+// Inline dialogue support for image-based events
+const storyContainer = document.getElementById('story');
+const buttonContainer = document.getElementById('dialogue');
 
-function textTypingEffect(element, text, i = 0) {
-    if (!element || typeof element.textContent === 'undefined') return;
-
-    if (i === 0) {
-        element.textContent = "";
-    }
-
-    element.textContent += text[i];
-    if (i === text.length - 1) {
-        return;
-    }
-    setTimeout(() => textTypingEffect(element, text, i + 1), 50);
+function clearDialogue() {
+    if (storyContainer) storyContainer.textContent = '';
+    if (buttonContainer) buttonContainer.innerHTML = '';
 }
 
-if (div) {
-    textTypingEffect(div, text);
+function makeDialogueButton(label, onClick) {
+    if (!buttonContainer) return;
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.textContent = label;
+    button.addEventListener('click', onClick);
+    buttonContainer.appendChild(button);
 }
 
-//story stuff
- let storyContainer = document.getElementById("story");
-    
-let buttonContainer = document.getElementById("dialogue");
+function renderDialogue(dialogue) {
+    if (!storyContainer || !buttonContainer || !dialogue) return;
+    clearDialogue();
 
-let history = ["intro"];
-
- const story = {
-     intro : {
-         text : "Ugh, my head.. hold up, where am I? What is this place?",
-         choices : [
-             ["Move around", "moving"],
-             ["Stay put", "staying"],
-         ]
-     },
-     staying : {
-         text : "Y'know what- whatever, I'll just stay here. That portal hole thing will just open back up and I'll just go back to my world. Everything will be just fine, right?",
-         choices : [
-             ["Stay put", "staying"]
-         ]
-     },
-
-     //^^ bad choice, resulting in bad ending #1^^
-
-     moving : {
-         text : "I need to get out of here. I shouldn't stay here for too long, I'm already getting bad vibes just sitting here.",
-         choices : [
-             ["Move around", "moving"],
-             ["Stay put", "staying"],
-         ]
-     },
-     moving : {
-         text : "Hello? Is anyone there?",
-         choices : [
-             ["Look around", "moving"],
-             ["Stay put", "staying"],
-         ]
-     },
-
-     moving : {
-         text : "Oh god, who are you? Are you okay?! What happened to you? Are you even real? I don't know what's going on, I just fell into this weird hole and all a sudden I-",
-         choices : [
-            ["Go to page 5", "page5"]
-         ]
-     },
-     placeholder : {
-         text : "Massa tincidunt dui ut ornare lectus. Pretium quam vulputate dignissim suspendisse in est. Aliquet risus feugiat in ante metus. Ullamcorper morbi tincidunt ornare massa. Neque convallis a cras semper auctor neque vitae. In aliquam sem fringilla ut morbi tincidunt augue interdum velit. Amet mauris commodo quis imperdiet massa tincidunt. Leo in vitae turpis massa sed elementum tempus egestas. Praesent elementum facilisis leo vel fringilla est ullamcorper. Eget velit aliquet sagittis id consectetur purus. Ac odio tempor orci dapibus ultrices in iaculis nunc sed. Odio tempor orci dapibus ultrices in iaculis nunc. Semper quis lectus nulla at volutpat diam. Rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque habitant.",
-         choices : []
-     }
- };
-
- function makeButton(btnText, choice){
-     if (!buttonContainer) return;
-
-     let button = document.createElement("button");
-     button.innerHTML = btnText;
-     buttonContainer.appendChild(button);
-
-     button.addEventListener ("click", function() {
-         history.push(choice);
-         showStory();
-     });
- }
-
- function buildStory(text) {
-     if (!storyContainer) return;
-
-     let storyItem = document.createElement("p");
-     storyItem.innerText = text;
-     storyContainer.appendChild(storyItem);
- }
-
- function showStory(){
-     if (!storyContainer || !buttonContainer) return;
-
-     let currentPage = history[history.length - 1]; // set currentPage to last index of history array.
-
-     storyContainer.innerHTML = ""; // reset html
-     buttonContainer.innerHTML = ""; // reset buttons
-    
-     for(let page of history){ // build story text from items in history array
-         buildStory(story[page].text);
+    if (dialogue.text) {
+        storyContainer.textContent = dialogue.text;
     }
-    
-     for(let choice of story[currentPage].choices){ // build buttons from choices property of most recent story choice
-         makeButton(choice[0], choice[1])
-     }
- }
 
- if (storyContainer && buttonContainer) {
-     showStory();
- }
+    if (Array.isArray(dialogue.choices) && dialogue.choices.length) {
+        dialogue.choices.forEach(([label, action]) => {
+            makeDialogueButton(label, () => {
+                clearDialogue();
+                if (typeof action === 'function') {
+                    action();
+                }
+            });
+        });
+    } else {
+        makeDialogueButton('Continue', clearDialogue);
+    }
+}
+
+function triggerDialogue(imageData) {
+    clearDialogue();
+    const dialogue = imageData?.dialogue;
+    if (!dialogue) return;
+
+    const delay = typeof dialogue.delay === 'number' ? dialogue.delay : 1000;
+    setTimeout(() => renderDialogue(dialogue), delay);
+}
+
