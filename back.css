@@ -184,6 +184,14 @@ progress::-webkit-progress-value {
     rotate: 40deg;
 }
 
+.arrow-forward {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    position: absolute;
+    z-index: 10;
+}
+
 #rotate0 {
     transform: rotate(0deg);
 }
@@ -290,15 +298,6 @@ video {
     bottom: 10px;
 }
 
-#options {
-    display: flex;
-    flex-direction: column;
-    appearance: none;
-    position: absolute;
-    left: 10px;
-    bottom: 10px;
-}
-
 .autio {
     appearance: none;
     display: none;
@@ -314,14 +313,5 @@ button {
     font-family: "Courier New", Courier, monospace;
 }
 
-.button { 
-    background-color: black;
-    color: white;
-    border-color: white;
-    height: 60px;
-    width: 250px;
-    font-size: 25px;
-    font-family: "Courier New", Courier, monospace;
-}
 
 
