@@ -16,18 +16,18 @@ const imageslevel0 = [
     {image: 'images/iconic.png', weight: 100000, arrows: [{top: '50%', left: '28%'}, {top: '45%', right: '45%'}, {top: '45%', right: '45%'}, {bottom: '-20%', left: '35%'}],         
     dialogue: {
             text: "What if I never find my way back?",
-            delay: 2000,
+            delay: 1500,
             choices: [
                 ["Stay", "stay_Put"],
                 ["Keep going", "go_Explore"]
             ],
             stay_Put: {
                 text: "Y’know what– whatever, I’ll just stay here. The hole will open back up and everything will be fine.. Right?",
-                delay: 2000,
+                delay: 1500,
             },
             go_Explore: {
                 text: "I need to get out here. I shouldn’t stay too long in one place, it doesn’t seem like a good idea..",
-                delay: 2000, 
+                delay: 1500, 
             },
         },
     },
@@ -176,6 +176,7 @@ const levelOrder = [
 ];
 
 const pageTitle = document.title.trim();
+const isEndingPage = pageTitle === 'You Won(?)' || pageTitle === 'Ending 2' || pageTitle.startsWith('Ending');
 let Current = levTitl[pageTitle];
 if (Current === undefined) {
     const fallbackLevel = parseInt(pageTitle.replace('Level ', '').trim(), 10);
@@ -299,7 +300,7 @@ function goToNextLevel() {
         const nextPage = levelOrder[Current + 1];
         window.location.href = nextPage;
     } else {
-        console.log('No next level available for:', pageTitle);
+        window.location.href = 'ending1.html';
     }
 }
 
@@ -543,13 +544,15 @@ window.onArrowClick = onArrowClick;
 window.goToNextLevel = goToNextLevel;
 
 document.addEventListener('DOMContentLoaded', () => {
-    initializeThePowerSequence();
-    changeImage();
-    
-    const audios = document.querySelectorAll('audio');
-    audios.forEach(audio => {
-        audio.play().catch(e => console.log('Autoplay blocked for audio:', e));
-    });
+    if (!isEndingPage) {
+        initializeThePowerSequence();
+        changeImage();
+        
+        const audios = document.querySelectorAll('audio');
+        audios.forEach(audio => {
+            audio.play().catch(e => console.log('Autoplay blocked for audio:', e));
+        });
+    }
     });
     
     const startButton = document.getElementById('start-button');
@@ -653,7 +656,7 @@ let threatLevel = setInterval(() => {
 }
 }, 1000);
 
-// Inline dialogue support for image-based events
+//story events
 const storyContainer = document.getElementById('story');
 const buttonContainer = document.getElementById('dialogue');
 
@@ -684,9 +687,22 @@ function renderDialogue(dialogue) {
     if (Array.isArray(dialogue.choices) && dialogue.choices.length) {
         dialogue.choices.forEach(([label, action]) => {
             makeDialogueButton(label, () => {
-                clearDialogue();
-                if (typeof action === 'function') {
+                const nextStep = dialogue[action] || ending1.dialogue[action];
+                
+                if (nextStep) {
+                    if (nextStep.image) {
+                        const img = document.getElementById('roomImage');
+                        if (img) img.src = nextStep.image;
+                    }
+                    
+                    const delay = typeof nextStep.delay === 'number' ? nextStep.delay : 0;
+                    clearDialogue();
+                    setTimeout(() => renderDialogue(nextStep), delay);
+                } 
+                else if (typeof action === 'function') {
                     action();
+                } else {
+                    clearDialogue();
                 }
             });
         });
@@ -695,16 +711,85 @@ function renderDialogue(dialogue) {
     }
 }
 
-function action() {
-    triggerDialogue(imageData);
-}
 
-function triggerDialogue(imageData) {
-    clearDialogue();
-    const dialogue = imageData?.dialogue;
-    if (!dialogue) return;
+const ending1 = {
+    image: 'images/houses.png',
+    dialogue: {
+        text: "It's GH0STSLAYER. I haven't seen people in 5 days.",
+        delay: 400,
+        choices: [['Continue', 'chunk2']],
+        chunk2: {
+            text: "There's no one in the streets. No one in the markets, the cars.....the houses.",
+            image: 'images/houses.png',
+            choices: [['Continue', 'chunk3']],
+        },
+        chunk3: {
+            text: "I broke into one. Nothing. Not a stain on the carpets.",
+            image: 'images/field.jpg',
+            choices: [['Continue', 'chunk4']],
+        },
+        chunk4: {
+            text: "I miss everyone. I miss my family, friends. The worst part is that I'm not alone.",
+            image: 'images/feild.png',
+            choices: [['Continue', 'chunk5']],
+        },
+        chunk5: {
+            text: "There's this thing watching me. It's not hurting me, or saying anything. It's just-",
+            image: 'images/watching.png',
+            choices: [['Continue', 'chunk6']],
+        },
+        chunk6: {
+            text: "I don't think I ever left. So there was no point in staying.",
+            image: 'images/laboutside.png',
+            choices: [['Continue', 'chunk7']],
+        }, 
+        chunk7: {
+            text: "May the wallpaper remain eternal",
+            image: "images/level0.png",
+            choices: [['Finish', () => window.location.href = 'index.html']],
+        }
+    }
+};
 
-    const delay = typeof dialogue.delay === 'number' ? dialogue.delay : 1000;
-    setTimeout(() => renderDialogue(dialogue), delay);
-}
 
+const ending2 = {
+    image: 'images/houses.png', 
+    dialogue: {
+        text: "I found an elevator. It's moving down.",
+        choices: [['Continue', 'chunk2']],
+        chunk2: {
+            text: "The doors opened to a familiar office... but the windows show only yellow fog.",
+            image: 'images/office_alt.png',
+            choices: [['Continue', 'chunk3']],
+        },
+        chunk3: {
+            text: "I guess this is my life now. Back to work.",
+            image: 'images/desk.jpg',
+            choices: [['Finish', () => window.location.href = 'index.html']],
+        }
+    }
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Logic for normal game levels
+    if (!isEndingPage) {
+        initializeThePowerSequence();
+        changeImage();
+        
+        const audios = document.querySelectorAll('audio');
+        audios.forEach(audio => {
+            audio.play().catch(e => console.log('Autoplay blocked:', e));
+        });
+    } 
+    // ADD THIS: Logic for the Ending Page
+    else {
+        if (typeof ending1 !== 'undefined') {
+            // Set the very first image immediately
+            const img = document.getElementById('roomImage');
+            if (img && ending1.image) img.src = ending1.image;
+            
+            // Start the dialogue sequence
+            renderDialogue(ending1.dialogue);
+        }
+    }
+});
