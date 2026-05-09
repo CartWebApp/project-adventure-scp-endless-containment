@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <link rel="Stylesheet" href="back.css">
+    <link rel="icon" type="image/png" href="images/scpfavicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Level 1</title>
 </head>
 <body>
-    <header>
+    <header id="bars">
     <div id="healthbar">
         <label for health><img class=symbol src="images/hrt.png">HP</label>
         <progress id="health" value="100" max="100"></progress>
@@ -16,9 +17,15 @@
         <label for sanity><img class=symbol src="images/brain.png">Sanity</label>
         <progress id="sanity" value="20" max="20"></progress>
     </div>
-    </header>
+</header>
 
-    <section class="container">
+<section id="inventory">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+</section>
+
+    <section id="THEcontainer">
     <img id="roomImage" src="" alt="Room" class="rotate0">
         <img src="images/arrow.png" class="arrow" onclick="changeImage()">
         <img src="images/arrow.png" class="arrow" onclick="changeImage()">
@@ -26,12 +33,21 @@
         <img src="images/arrow.png" class="arrow" onclick="changeImage()">
     </section>
     
+    <img id="mappy" src="images/im the map.png">
+    <section id="mappytainer">
+    <div id="exit"></div>
+    <div id="player"></div>
+</section>
+
+<section class="loguetainer">
+    <p id="story"></p>
+    <div id="dialogue"></div>
+</section>
+
     <audio controls autoplay loop class="autio">
-        <source src="backrooms-humming-sound-made-with-Voicemod.mp3" type="audio/mpeg">
-      </audio>
+        <source src="Spooky.mp3" type="audio/mpeg">
+    </audio>
 
-
-      <p class="playerDialogue">Well, this is new.</p>
 </body>
 <script src="rooms.js"></script>
 </html>

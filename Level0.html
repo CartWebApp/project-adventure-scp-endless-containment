@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="Stylesheet" href="back.css">
+    <link rel="icon" type="image/png" href="images/scpfavicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Level 0</title>
 </head>
@@ -13,8 +14,13 @@
             <progress id="health" value="100" max="100"></progress>
         </div>
     </header>
+    <section id="inventory">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </section>
 
-   <section class="container">
+   <section id="THEcontainer">
     <img id="roomImage" src="" alt="Room" class="rotate0">
     
     <img src="images/arrow.png" class="arrow" onclick="changeImage()">
@@ -23,10 +29,21 @@
     <img src="images/arrow.png" class="arrow" onclick="changeImage()">
 </section>
     
+<img id="mappy" src="images/im the map.png">
+    <section id="mappytainer">
+    <div id="exit"></div>
+    <div id="player"></div>
+</section>
+
     <audio controls autoplay loop class="autio">
         <source src="backrooms-humming-sound-made-with-Voicemod.mp3" type="audio/mpeg">
     </audio>
 
+    <section class="loguetainer">
+        <p id="story"></p>
+        <div id="dialogue"></div>
+    </section>
+    
 </body>
 <script src="rooms.js"></script>
 </html>

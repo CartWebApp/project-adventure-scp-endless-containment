@@ -1,49 +1,290 @@
+//all arrrays/dialogue
+const imageslevel0nomap = [
+    {image: 'images/level0.png', weight: 10, arrows: [{top: '67%', left: '50%'}, {top: '67%', right: '69%'}, {top: '69%', right: '15%'}],        
+    dialogue: {
+            text: "Where am I? What is this place?",
+            delay: 800
+        }},
+    {image: 'images/arrows.png', weight: 10, arrows: [{top: '71%', left: '35%'}, {top: '63.5%', right: '52%'}, {top: '72%', right: '32%'}, {bottom: '-18%', left: '51%'}]},
+    {image: 'images/dark 1.png', weight: 10, arrows: [{top: '63%', left: '42.6%'}, {top: '63%', right: '53%'}, {top: '63%', right: '53%'}, {bottom: '-20%', left: '63%'}]},
+    {image: 'images/iconic.png', weight: 10, arrows: [{top: '50%', left: '28%'}, {top: '45%', right: '45%'}, {top: '45%', right: '45%'}, {bottom: '-20%', left: '35%'}],         
+    dialogue: {
+            text: "What if I never find my way back?",
+            delay: 800,
+            choices: [
+                ["Stay", "stay_Put"],
+                ["Keep going", "go_Explore"]
+            ],
+            stay_Put: {
+                text: "Y’know what– whatever, I’ll just stay here. The hole will open back up and everything will be fine.. Right?",
+                delay: 800,
+            },
+            go_Explore: {
+                text: "I need to get out here. I shouldn’t stay too long in one place, it doesn’t seem like a good idea..",
+                delay: 800, 
+            },
+        },
+    },
+    {image: 'images/view.png', weight: 10, arrows: [{top: '30%', left: '42.2%'}, {top: '30%', right: '53.5%'}, {top: '30%', right: '53.5%'}, {bottom: '-15%', left: '70%'}]},
+    {image: 'images/arrows.png', weight: 10, arrows: [{top: '71%', left: '35%'}, {top: '63.5%', right: '52%'}, {top: '72%', right: '34%'}, {bottom: '-18%', left: '54%'}]},
+    {image: 'images/getcloser.png', weight: 100000, arrows: [{top: '71%', left: '35%'}, {top: '63.5%', right: '52%'}, {top: '72%', right: '34%'}, {bottom: '-18%', left: '54%'}],
+    dialogue: {
+        text: "what-Hello?!",
+        delay: 800,
+        choices: [
+            ["investigate", "invest"]
+        ],
+        invest: {
+            text: "Who are you? Are you okay, what happened?  Are you.. real? Do you know how I can get out of here, I just fell into this weird hole and all of sudden–",
+        delay: 800,
+        image: 'images/gears.png',
+        choices: [
+            ["Continue", "clip1"]
+            ],
+        },
+        clip1: {
+            text: "You talk too much. Listen to me. I don't have much Time left. ",
+        delay: 800,
+        image: 'images/gears.png',
+        choices: [
+            ["Continue", "clip2"]
+            ],
+        },
+        clip2: {
+            text: "I would assume you fell through, and your got this far, despite seeming...",
+        delay: 800,
+        image: 'images/gears.png',
+        choices: [
+            ["Continue", "clip3"]
+            ],
+        },
+        clip3: {
+            text: "Nevermind, I'll give you the benfit of the doubt. Here.",
+        delay: 800,
+        image: 'images/gears.png',
+        choices: [
+            ["Continue", "clip4"]
+            ],
+        },
+        clip4: {
+            text: "Take my Keycard, and holgraphic navigator",
+        delay: 800,
+        image: 'images/gears.png',
+        choices: [
+            ["Continue", "clip5"]
+            ],
+        },
+         clip5: {
+            text: "But you'll die",
+        delay: 800,
+        image: 'images/gears.png',
+        choices: [
+            ["Continue", "clip6"]
+            ],
+        },
+         clip6: {
+            text: "Forget me. Take the map. Hide from anything that moves. If your hear something, it heard you. fear every sttep your take.",
+        delay: 800,
+        image: 'images/gears.png',
+        choices: [
+            ["Continue", "clip7"]
+            ],
+        },
+        clip7: {
+            text: "I'm sorry I couldn't save you",
+        delay: 800,
+        image: 'images/gears.png',
+        choices: [
+            ["Continue", "clip8"]
+            ],
+        },
+        clip8: {
+            text: "Its' alright.",
+        delay: 800,
+        image: 'images/gears.png',
+        choices: [
+            ['Take', () => window.location.href = 'Level0.html'],            ],
+        },
+    }},
+    {image: 'images/dark 1.png', weight: 10, arrows: [{top: '63%', left: '42.6%'}, {top: '63%', right: '53%'}, {top: '63%', right: '53%'}, {bottom: '-20%', left: '190%'}]},
+    {image: 'images/iconic.png', weight: 10, arrows: [{top: '45%', left: '29%'}, {top: '45%', right: '45%'}, {top: '45%', right: '45%'}, {bottom: '40%', left: '29%'}],         
+            dialogue: {
+            text: "I'm going in circles, aren't I?",
+            delay: 1500
+        } },
+    {image: 'images/view.png', weight: 10, arrows: [{top: '30%', left: '42.2%'}, {top: '30%', right: '53.5%'}, {top: '30%', right: '53.5%'}, {bottom: '-15%', left: '700%'}]},
+    {image: 'images/THEimage.png', weight: 10, arrows: [{top: '70%', left: '66%'}, {top: '70%', right: '29.7%'}, {top: '70%', right: '29.7%',}, {bottom: '-18%', left: '50%', id: 'rotate180'}]},
+    {image: 'images/vhs.png', weight: 1000, arrows: [{top: '70%', left: '24.1%'}, {top: '62%', right: '35%'}, {top: '62%', right: '54%'}, {bottom: '15%', left: '24.1%'}]},
+    {image: 'images/hall 1.png', weight: 10, arrows: [{top: '51%', left: '36%'}, {top: '50%', right: '45%'}, {top: '50%', right: '45%'}, {bottom: '-15%', left: '40%'}]},
+    {image: 'images/chairs.png', weight: 10, arrows: [{top: '72%', left: '73%', id: 'rotate90'}, {bottom: '-16%', left: '20%', id: 'rotate270'}, {top: '67%', right: '100000%'}, {bottom: '-15%', left: '50%', id: 'rotate180'}]},
+    {image: 'images/noshelves.png', weight: 10, arrows: [{top: '42%', left: '40%'}, {top: '44%', right: '100000%'}, {top: '46%', right: '24%', id: 'rotate90'}, {bottom: '-15%', left: '50%', id: 'rotate180'}],
+     dialogue: {
+            text: "I wish someone could help me get outta here...",
+            delay: 1500,
+            choices: [
+                ["Try communicating", "stay_Put"],
+                ["Run away", "run_Away"]
+            ]
+        } },
+    {image: 'images/lizart(1).png', enemyactive: true, weight: 1, arrows:[{top: '77%', left: '10000%', id: 'rotate90'}, {bottom: '-11%', left: '23%', id: 'rotate270'}, {top: '67%', right: '100000%'}, {bottom: '-15%', left: '50%', id: 'rotate180'}],
+     dialogue: {
+            text: "Oh my god what the hell is that-",
+            delay: 1500,
+            choices: [
+                ["Try communicating", "stay_Put"],
+                ["Run away", "run_Away"]
+            ]
+        } },
+    {image: 'images/lizart(2).png', enemyactive: true, weight: 1, arrows: [{top: '51%', left: '32%'}, {top: '50%', right: '45%'}, {top: '50%', right: '45%'}, {bottom: '-15%', left: '40%'}],
+            dialogue: {
+            text: "BROO I'm actually cooked what is that thing-",
+            delay: 1500
+        } },
+];
 
-//Defining our arrays
 const imageslevel0 = [
-    {image: 'images/level0.png', weight: 20, arrows: [{top: '57%', left: '46%'}, {top: '60%', right: '68%'}, {top: '65%', right: '19%'}]},
-    {image: 'images/door.png', weight: 30, arrows: [{top: '56%', left: '47.5%'}]},
-    {image: 'images/arrows.png', weight: 600, arrows: [{top: '60%', left: '40%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
-    {image: 'images/dark 1.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
-    {image: 'images/iconic.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
-    {image: 'images/view.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
-    {image: 'images/THEimage.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
-    {image: 'images/vhs.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
-    {image: 'images/hall 1.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
-    {image: 'images/chairs.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
-    {image: 'images/noshelves.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]}
+    {image: 'images/level0.png', weight: 10, arrows: [{top: '67%', left: '50%'}, {top: '67%', right: '69%'}, {top: '69%', right: '15%'}],        
+    dialogue: {
+            text: "Where am I? What is this place?",
+            delay: 1500
+        }},
+    {image: 'images/door.png', weight: 6, arrows: [{top: '56%', left: '47.5%', exiteer: true}],        
+    dialogue: {
+            text: "A door? This is new.",
+            delay: 1500
+        } },
+    {image: 'images/arrows.png', weight: 10, arrows: [{top: '71%', left: '35%'}, {top: '63.5%', right: '52%'}, {top: '72%', right: '32%'}, {bottom: '-18%', left: '51%'}]},
+    {image: 'images/dark 1.png', weight: 10, arrows: [{top: '63%', left: '42.6%'}, {top: '63%', right: '53%'}, {top: '63%', right: '53%'}, {bottom: '-20%', left: '63%'}]},
+    {image: 'images/iconic.png', weight: 10, arrows: [{top: '50%', left: '28%'}, {top: '45%', right: '45%'}, {top: '45%', right: '45%'}, {bottom: '-20%', left: '35%'}],         
+    dialogue: {
+            text: "What if I never find my way back?",
+            delay: 1500,
+            choices: [
+                ["Stay", "stay_Put"],
+                ["Keep going", "go_Explore"]
+            ],
+            stay_Put: {
+                text: "Y’know what– whatever, I’ll just stay here. The hole will open back up and everything will be fine.. Right?",
+                delay: 1500,
+            },
+            go_Explore: {
+                text: "I need to get out here. I shouldn’t stay too long in one place, it doesn’t seem like a good idea..",
+                delay: 1500, 
+            },
+        },
+    },
+    {image: 'images/view.png', weight: 10, arrows: [{top: '30%', left: '42.2%'}, {top: '30%', right: '53.5%'}, {top: '30%', right: '53.5%'}, {bottom: '-15%', left: '70%'}]},
+    {image: 'images/arrows.png', weight: 10, arrows: [{top: '71%', left: '35%'}, {top: '63.5%', right: '52%'}, {top: '72%', right: '34%'}, {bottom: '-18%', left: '54%'}]},
+    {image: 'images/dark 1.png', weight: 10, arrows: [{top: '63%', left: '42.6%'}, {top: '63%', right: '53%'}, {top: '63%', right: '53%'}, {bottom: '-20%', left: '190%'}]},
+    {image: 'images/iconic.png', weight: 10, arrows: [{top: '45%', left: '29%'}, {top: '45%', right: '45%'}, {top: '45%', right: '45%'}, {bottom: '40%', left: '29%'}],         
+            dialogue: {
+            text: "I'm going in circles, aren't I?",
+            delay: 1500
+        } },
+    {image: 'images/view.png', weight: 10, arrows: [{top: '30%', left: '42.2%'}, {top: '30%', right: '53.5%'}, {top: '30%', right: '53.5%'}, {bottom: '-15%', left: '700%'}]},
+    {image: 'images/THEimage.png', weight: 10, arrows: [{top: '70%', left: '66%'}, {top: '70%', right: '29.7%'}, {top: '70%', right: '29.7%',}, {bottom: '-18%', left: '50%', id: 'rotate180'}]},
+    {image: 'images/vhs.png', weight: 10, arrows: [{top: '70%', left: '24.1%'}, {top: '62%', right: '35%'}, {top: '62%', right: '54%'}, {bottom: '15%', left: '24.1%'}]},
+    {image: 'images/hall 1.png', weight: 10, arrows: [{top: '51%', left: '36%'}, {top: '50%', right: '45%'}, {top: '50%', right: '45%'}, {bottom: '-15%', left: '40%'}]},
+    {image: 'images/chairs.png', weight: 10, arrows: [{top: '72%', left: '73%', id: 'rotate90'}, {bottom: '-16%', left: '20%', id: 'rotate270'}, {top: '67%', right: '100000%'}, {bottom: '-15%', left: '50%', id: 'rotate180'}]},
+    {image: 'images/noshelves.png', weight: 10, arrows: [{top: '42%', left: '40%'}, {top: '44%', right: '100000%'}, {top: '46%', right: '24%', id: 'rotate90'}, {bottom: '-15%', left: '50%', id: 'rotate180'}],
+     dialogue: {
+            text: "I wish someone could help me get outta here...",
+            delay: 1500,
+            choices: [
+                ["Try communicating", "stay_Put"],
+                ["Run away", "run_Away"]
+            ]
+        } },
+    {image: 'images/lizart(1).png', enemyactive: true, weight: 3, arrows:[{top: '77%', left: '10000%', id: 'rotate90'}, {bottom: '-11%', left: '23%', id: 'rotate270'}, {top: '67%', right: '100000%'}, {bottom: '-15%', left: '50%', id: 'rotate180'}],
+     dialogue: {
+            text: "Oh my god what the hell is that-",
+            delay: 1500,
+            choices: [
+                ["Try communicating", "stay_Put"],
+                ["Run away", "run_Away"]
+            ]
+        } },
+    {image: 'images/lizart(2).png', enemyactive: true, weight: 3, arrows: [{top: '51%', left: '32%'}, {top: '50%', right: '45%'}, {top: '50%', right: '45%'}, {bottom: '-15%', left: '40%'}],
+            dialogue: {
+            text: "BROO I'm actually cooked what is that thing-",
+            delay: 1500
+        } },
 ];
 
 const imageslevel1 = [//make sure to position all arrrows.
-    {image: 'images/parkingarage.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
-    {image: 'images/flickering 1.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
-    {image: 'images/idkitslevel1.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
-    {image: 'images/image 67.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
-    {image: 'images/rako games 1.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
-    {image: 'images/whichway.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]}
+    {image: 'images/parkingarge.png', weight: 10, arrows: [{top: '69%', left: '68.5%', id: 'rotate90'}, {top: '53%', right: '100000%'}, {top: '47%', left: '61%'}, {bottom: '-20%', left: '30%', id: 'rotate180'}]},
+    {image: 'images/flickering 1.png', weight: 10, arrows: [{top: '70%', left: '22%'}, {top: '70%', right: '25%'}, {top: '10000%', right: '25%'}, {bottom: '-10%', left: '50%', id: 'rotate180'}]},
+    {image: 'images/idkitslevel1.png', weight: 10, arrows: [{top: '69%', left: '28%'}, {top: '55%', right: '100000%'}, {top: '61%', right: '38%'}, {bottom: '-20%', left: '45%', id: 'rotate180'}]},
+    {image: 'images/image 67.png', weight: 10, arrows: [{top: '45%', left: '20%'}, {top: '59%', right: '24%'}, {top: '59%', right: '24%'}, {bottom: '-15%', left: '43%'}]},
+    {image: 'images/rako games 1.png', weight: 10, arrows: [{top: '80%', left: '45%'}, {top: '65%', right: '400000%'}, {top: '65%', right: '40000000%'}, {bottom: '-20%', left: '80%', id: 'rotate90'}]},
+    {image: 'images/whichway.png', weight: 10, arrows: [{top: '90%', left: '39%'}, {top: '75%', right: '22%'}, {top: '75%', right: '22%'}, {bottom: '-25%', left: '69%', id: 'rotate180'}]},
+    {image: 'images/shyguy(2).png', enemyactive: true, weight: 3, arrows: [{top: '60%', left: '22%'}, {top: '60%', right: '25%'}, {top: '60%', right: '25%'}, {bottom: '-20%', left: '50%'}],
+     dialogue: {
+            text: "?!?!",
+            delay: 1500,
+            choices: [
+                ["Try communicating", "stay_Put"],
+                ["Run away", "run_Away"]
+            ]
+
+        } },
+    {image: 'images/shyguy(1).png', enemyactive: true, weight: 4, arrows: [{top: '60%', left: '22%'}, {top: '60%', right: '29%'}, {top: '60%', right: '29%'}, {bottom: '25%', left: '22%'}],
+     dialogue: {
+            text: "I just got the feeling that I shouldn't have looked at it..",
+            delay: 1500,
+            choices: [
+                ["Try communicating", "stay_Put"],
+                ["Run away", "run_Away"]
+            ]
+        } },
+    {image:  'images/Door 2.png', weight: 10, arrows: [{top: '51%', left: '50%', exiteer: true}, {top: '51%', right: '1000%'}, {top: '53%', right: '1000%'}, {bottom: '34bh%', left: '50%', exiteer: true}],
+     dialogue: {
+            text: "Another door, finally!!",
+            delay: 1500
+        } },
 ];
 
 const imageslevel5 = [
-    {image: 'images/thehotel.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
-    {image: 'images/redcarpet.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
-    {image: 'images/checkin.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
-    {image: 'images/Level-5-Ballroom 1.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
-    {image: 'images/levl5shall.jpg', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
-    {image: 'images/mainhall.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
-]
+    {image: 'images/The_Hotel 1.png', weight: 10, arrows: [{top: '60%', left: '49%'}, {top: '60%', right: '47%'}, {top: '60%', right: '47%'}, {bottom: '25%', left: '49%'}]},
+    {image: 'images/redcarpet.png', weight: 1000, arrows: [{top: '60%', left: '46.7%'}, {top: '60%', right: '49%'}, {top: '60%', right: '49%'}, {bottom: '23%', left: '46.9%'}]},
+    {image: 'images/checkin.png', weight: 10, arrows: [{top: '80%', left: '78%'}, {top: '80%', right: '18%'}, {top: '80%', right: '18%'}, {bottom: '5%', left: '78%'}]},
+    {image: 'images/Level-5-Ballroom 1.png', weight: 10, arrows: [{top: '55%', left: '24%'}, {top: '55%', right: '72%'}, {top: '53%', right: '25%'}, {bottom: '32%', left: '71%'}]},
+    {image: 'images/level5hall.jpg', weight: 10, arrows: [{top: '54%', left: '48%'}, {top: '54%', right: '48%'}, {top: '54%', right: '48%'}, {bottom: '31%', left: '48%'}]},
+    {image: 'images/mainhall.png', weight: 10, arrows: [{top: '70%', left: '52%'}, {top: '90%', right: '67%'}, {top: '90%', right: '31%'}, {bottom: '15%', left: '43%'}]},
+    {image: 'images/doctor(1).png', enemyactive: true, weight: 6, arrows: [{top: '55%', left: '24%'}, {top: '55%', right: '72%'}, {top: '53%', right: '25%'}, {bottom: '32%', left: '71%'}]},
+    {image: 'images/doctor(2).png', enemyactive: true, weight: 6, arrows: [{top: '60%', left: '49%'}, {top: '60%', right: '47%'}, {top: '60%', right: '47%'}, {bottom: '25%', left: '49%'}]},
+    {image: 'images/Door 5.png', weight: 7, arrows: [{top: '70%', left: '50%', exiteer: true}, {top: '70%', right: '46%', exiteer: true}, {top: '70%', right: '46%'}, {bottom: '15%', left: '50%', exiteer: true}]},
+];
 
 const imageslevel37 = [
-    {image: 'images/poolhall.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
-    {image: 'images/pools 1.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
-    {image: 'images/stairs.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
-    {image: 'images/winding.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
-    {image: 'images/courtyard.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]}
+    {image: 'images/poolhall.png', weight: 10, arrows: [{top: '55%', left: '47%'}, {top: '55%', right: '49%'}, {top: '55%', right: '49%'}, {bottom: '30%', left: '47%'}]},
+    {image: 'images/pools 1.png', weight: 10, arrows: [{top: '60%', left: '32.5%'}, {top: '60%', right: '55%'}, {top: '60%', right: '41%'}, {bottom: '24%', left: '48%'}]},
+    {image: 'images/stairs.png', weight: 10, arrows: [{top: '30%', left: '50%'}, {top: '30%', right: '46%'}, {top: '70%', right: '36%'}, {bottom: '15%', left: '60%'}]},
+    {image: 'images/winding.png', weight: 10, arrows: [{top: '60%', left: '54%'}, {top: '60%', right: '42%'}, {top: '60%', right: '42%'}, {bottom: '24%', left: '54%'}]},
+    {image: 'images/mask(1).png', enemyactive: true, weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
+    {image: 'images/mask(2).png', enemyactive: true, weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
+    {image: 'images/courtyard.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
+    {image: 'images/Door 37.png', weight: 1, arrows: [{top: '20%', left: '30%', exiteer: true}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]}
+];
+
+const imageslevel232 = [
+    {image: 'images/endless.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
+    {image: 'images/cart.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
+    {image: 'images/smiler.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
+    {image: 'images/oohdark.jpg', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
+    {image: 'images/atmosphere.jpg', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
+    {image: 'images/Bargain.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
+    {image: 'images/zomboi(1).png', enemyactive: true, weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
+    {image: 'images/zomboi(2).png', enemyactive: true, weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
+    {image: 'images/door 232.png', weight: 1, arrows: [{top: '20%', left: '30%', exiteer: true}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
 ];
 
 const imageslevel94 = [
     {image: 'images/house clear view.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
     {image: 'images/insidehouse(1).png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
     {image: 'images/stop.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
+    {image: 'images/4666(2).png', enemyactive: true, weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
+    {image: 'images/4666(1).png', enemyactive: true, weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
     {image: 'images/brokeninside.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
     {image: 'images/nooutlet.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]},
     {image: 'images/stop.png', weight: 10, arrows: [{top: '20%', left: '30%'}, {top: '60%', right: '10%'}, {top: '15%', right: '5%'}, {bottom: '10%', left: '50%'}]}
@@ -56,100 +297,739 @@ const imageslevellimbo = [
 ];
 
 //all documents used
-const imageArrays = {
-    'Level 0': imageslevel0,
-    'Level 1': imageslevel1,
-    'level 5': imageslevel5,
-    'Level 37': imageslevel37,
-    'Level 94': imageslevel94,
-    'limbo': imageslevellimbo
+const levTitl = {
+    'Level 0 No Map': 7,
+    'Level 0': 0,
+    'Level 1': 1,
+    'Level 5': 2,
+    'Level 37': 3,
+    'Level 232': 4,
+    'Level 94': 5,
+    'limbo': 6
 };
 
+const levelOrder = [
+    'Level0.html',
+    'level1.html',
+    'level5.html',
+    'level37.html',
+    'level232.html',
+    'level94.html',
+    'limbo.html'
+];
+
+const pageTitle = document.title.trim();
+
+const isEndingPage = pageTitle === 'You Won(?)' || pageTitle === 'You Win' || pageTitle === 'You Won' || pageTitle.startsWith('Ending');
+
+let Current = 0; 
+
+if (!isEndingPage) {
+    Current = levTitl[pageTitle];
+    
+    if (Current === undefined) {
+        const fallbackLevel = parseInt(pageTitle.replace(/[^\d]/g, ''), 10);
+        Current = Number.isFinite(fallbackLevel) ? fallbackLevel : 0;
+    }
+}
+
+const imageArrays = [
+    imageslevel0,
+    imageslevel1,
+    imageslevel5,
+    imageslevel37,
+    imageslevel232,
+    imageslevel94,
+    imageslevellimbo,
+    imageslevel0nomap
+];
+
+
+console.log('imageArrays.indexof imageslevel 0:', imageArrays['0']);
+console.log('imageArrays.indexof imageslevel 1:', imageArrays['1']);
+console.log('imageArrays.indexof imageslevel 5:', imageArrays['2']);
+console.log('imageArrays.indexof imageslevel 37:', imageArrays['3']);
+console.log('imageArrays.indexof imageslevel 232:', imageArrays['4']);
+console.log('imageArrays.indexof imageslevel 94:', imageArrays['5']);
+
 let lastImage = null;
+
 
 function weightedRandom(items) {
     if (!items || items.length === 0) return null;
     
-    // Filter to avoid immediate image reapeats
+    // Filter to avoid immediate image repeats
     let availableItems = items.length > 1 
     ? items.filter(item => item.image !== lastImage) 
     : items;
-    
-    const totalWeight = availableItems.reduce((sum, item) => sum + (item.weight || 10), 0);
+
+    const weightedItems = availableItems.map(item => {
+        let currentweight = item.weight || 10;
+        if (typeof DepleteSanity !== 'undefined' && DepleteSanity === true && item.enemyactive === true) {
+            const multiplier = typeof threat !== 'undefined' ? threat : 1;
+            currentweight = currentweight * multiplier;
+        }
+        return { ...item, tempweight: currentweight };
+    });
+
+    const totalWeight = weightedItems.reduce((sum, item) => sum + item.tempweight, 0);
     let random = Math.random() * totalWeight;
     
-    for (const item of availableItems) {
-        random -= (item.weight || 10);
+    for (const item of weightedItems) {
+        random -= item.tempweight;
         if (random <= 0) return item;
     }
-    return availableItems[0];
+    
+    return weightedItems[0];
+}
+
+let currentData = imageArrays[Current];
+let selectedItem = weightedRandom(currentData);
+
+function getSavedImageForLevel(levelName, currentPool) {
+    if (!currentPool) return null;
+
+    const savedLevel = localStorage.getItem('savedGameLevel');
+    const savedImage = localStorage.getItem('savedGameImage');
+
+    if (savedLevel === levelName && savedImage) {
+        const match = currentPool.find(item => item.image === savedImage);
+        if (match) {
+            localStorage.removeItem('savedGameLevel');
+            localStorage.removeItem('savedGameImage');
+            return match;
+        }
+    }
+    return null;
 }
 
 function repositionArrows(imageData) {
     const arrows = document.querySelectorAll('.arrow');
     
-    if (!imageData || !imageData.arrows) {
-        console.warn('No arrow positions defined for this image');
-        return;
-    }
-    
     arrows.forEach((arrow, index) => {
-        if (index < imageData.arrows.length) {
-            const position = imageData.arrows[index];
-            
-            // Clear all position properties first
+        const position = imageData && imageData.arrows ? imageData.arrows[index] : null;
+        if (position) {
             arrow.style.top = 'auto';
             arrow.style.bottom = 'auto';
             arrow.style.left = 'auto';
             arrow.style.right = 'auto';
+            arrow.style.display = 'block';
+            arrow.dataset.index = index;
+            arrow.dataset.exit = position.exiteer ? 'true' : 'false';
+            arrow.classList.toggle('exit-arrow', !!position.exiteer);
             
-            // Apply the stored positions
             if (position.top) arrow.style.top = position.top;
             if (position.bottom) arrow.style.bottom = position.bottom;
             if (position.left) arrow.style.left = position.left;
             if (position.right) arrow.style.right = position.right;
+            if (position.id) { arrow.id = position.id; }
+        } else {
+            arrow.style.display = 'none';
+            arrow.dataset.index = '';
+            arrow.dataset.exit = 'false';
+            arrow.classList.remove('exit-arrow');
+            arrow.removeAttribute('id');
         }
     });
 }
 
+function onArrowClick(event) {
+    const arrow = event.currentTarget;
+    const clickIndex = parseInt(arrow.dataset.index, 10);
+    const arrowData = selectedItem?.arrows?.[clickIndex];
+
+    if (arrowData?.exiteer) {
+        goToNextLevel();
+        return;
+    }
+
+    changeImage();
+}
+
+function goToNextLevel() {
+    if (Current >= 0 && Current < levelOrder.length - 1) {
+        const nextPage = levelOrder[Current + 1];
+        window.location.href = nextPage;
+    } else {
+        window.location.href = 'ending1.html';
+    }
+}
+
+
 function changeImage() {
-    const levelName = document.title.trim(); // (Level 1)
-    const currentPool = imageArrays[levelName];
+    const imgElement = document.getElementById('roomImage');
+    const aroow = document.getElementById('arrow-container');
+    if (!imgElement) return;
+
+    if (imgElement.tagName === 'VIDEO') {
+        const selectedVideo = localStorage.getItem('selectedGameVideo');
+        const source = imgElement.querySelector('source');
+        if (selectedVideo && source) {
+            source.src = selectedVideo;
+            imgElement.load();
+        }
+        return;
+    }
+
+    const levelName = document.title.trim();
+    const currentPool = imageArrays[Current];
     
     if (!currentPool) {
         console.error("Could not find image pool for:", levelName);
         return;
     }
     
-    const selected = weightedRandom(currentPool);
-    const imgElement = document.getElementById('roomImage');
+    const selected = getSavedImageForLevel(levelName, currentPool) || weightedRandom(currentPool);
+
+    let playerDamage;
+
+    clearInterval(playerDamage);
+
+    if (selected.enemyactive === true){
+        let playerDamage = setInterval(() => {
+            health.value -= 5;
+            if (health.value <= 0) {
+                clearInterval(playerDamage);
+                localStorage.setItem("savedGameLevel", levelOrder[Current]);
+                window.location.href = 'gameover.html';
+            }
+        }, 2000);
+    }
+
+    const imgElementImage = imgElement;
     
-    if (imgElement && selected) {
-        lastImage = selected.image;
-        imgElement.src = selected.image;
-        repositionArrows(selected); 
+    if (imgElementImage && selected) {
+    //transition wow
+        imgElementImage.classList.remove('fading-in');
+        imgElementImage.classList.add('fading-out');
         
-        // protopyte Level exit logic (only works for level 0 door at the moment)
-        if (selected.image === 'images/door.png') {
-            imgElement.style.cursor = 'pointer';
-            imgElement.onclick = (arrow) => window.location.href = 'level1.html';
+        setTimeout(() => {
+            lastImage = selected.image;
+            selectedItem = selected;
+            imgElementImage.src = selected.image;
+            repositionArrows(selected);
+            
+            imgElementImage.classList.remove('fading-out');
+            imgElementImage.classList.add('fading-in');
+            triggerDialogue(selected);
+        }, 300);
+    }
+}
+
+
+function triggerDialogue(imageData) {
+    clearDialogue();
+    const dialogue = imageData?.dialogue;
+    if (!dialogue) return;
+
+    const delay = typeof dialogue.delay === 'number' ? dialogue.delay : 1000;
+    setTimeout(() => renderDialogue(dialogue), delay);
+}
+
+const mapElement = document.getElementById('mappytainer');
+const playerElement = document.getElementById('player');
+const exitElement = document.getElementById('exit');
+const mapHintElement = document.getElementById('mapHint') || document.querySelector('.story');
+
+const gridSize = 6;
+let playerRow = 0;
+let playerCol = 0;
+let exitRow = 0;
+let exitCol = 0;
+let previousDistance = null;
+let mapActive = false;
+let exitFound = false;
+let activeExitArrowIndex = null;
+
+function getRandomGridCell() {
+    return {
+        row: Math.floor(Math.random() * gridSize),
+        col: Math.floor(Math.random() * gridSize)
+    };
+}
+
+function getDistance() {
+    return Math.abs(playerRow - exitRow) + Math.abs(playerCol - exitCol);
+}
+
+function updateMap() {
+    if (!mapElement || !playerElement || !exitElement) return;
+
+    playerElement.style.gridRowStart = playerRow + 1;
+    playerElement.style.gridColumnStart = playerCol + 1;
+    exitElement.style.gridRowStart = exitRow + 1;
+    exitElement.style.gridColumnStart = exitCol + 1;
+
+    const distance = getDistance();
+    exitFound = playerRow === exitRow && playerCol === exitCol;
+    activeExitArrowIndex = exitFound ? 0 : null;
+
+    if (mapHintElement) {
+        if (exitFound) {
+            mapHintElement.textContent = 'Nearest point of instability located! Proceed to red dot.';
+        } else if (previousDistance === null) {
+            mapHintElement.textContent = 'Use arrows to move. The map shows your position and the exit.';
+        } else if (distance < previousDistance) {
+            mapHintElement.textContent = 'getting closer to nearest instability point(exit).';
+        } else if (distance > previousDistance) {
+            mapHintElement.textContent = ' further from nearest instability point(exit).';
         } else {
-            imgElement.style.cursor = 'default';
-            imgElement.onclick = null; 
+            mapHintElement.textContent = 'You are moving on the same path. Try a different direction.';
         }
     }
+
+    previousDistance = distance;
+}
+
+function initializeThePowerSequence() {
+    if (!mapElement || !playerElement || !exitElement) {
+        mapActive = false;
+        return;
+    }
+
+    mapActive = true;
+    exitFound = false;
+
+    exitRow = Math.floor(Math.random() * gridSize);
+    exitCol = Math.floor(Math.random() * gridSize);
+
+    do {
+        playerRow = Math.floor(Math.random() * gridSize);
+        playerCol = Math.floor(Math.random() * gridSize);
+    } while (Math.abs(playerRow - exitRow) + Math.abs(playerCol - exitCol) < 3);
+
+    previousDistance = getDistance();
+    updateMap();
+}
+
+function moveitmoveit(clickIndex) {
+    if (!mapActive) return;
+
+    const moves = [
+        { dr: -1, dc: 0 },
+        { dr: 0, dc: 1 },
+        { dr: 0, dc: -1 },
+        { dr: 1, dc: 0 }
+    ];
+
+    const move = moves[clickIndex] || { dr: 0, dc: 0 };
+    const newRow = playerRow + move.dr;
+    const newCol = playerCol + move.dc;
+
+    if (newRow < 0 || newRow >= gridSize || newCol < 0 || newCol >= gridSize) {
+        if (mapHintElement) {
+            mapHintElement.textContent = 'You hit a wall. Try a different direction.';
+        }
+        return;
+    }
+
+    playerRow = newRow;
+    playerCol = newCol;
+    updateMap();
+}
+
+function repositionArrows(imageData) {
+    const arrows = document.querySelectorAll('.arrow');
+
+    arrows.forEach((arrow, index) => {
+        const position = imageData && imageData.arrows ? imageData.arrows[index] : null;
+        if (position) {
+            arrow.style.top = 'auto';
+            arrow.style.bottom = 'auto';
+            arrow.style.left = 'auto';
+            arrow.style.right = 'auto';
+            arrow.style.display = 'block';
+            arrow.dataset.index = index;
+            const isExit = position.exiteer || (exitFound && activeExitArrowIndex === index);
+            arrow.dataset.exit = isExit ? 'true' : 'false';
+            arrow.classList.toggle('exit-arrow', isExit);
+
+            if (position.top) arrow.style.top = position.top;
+            if (position.bottom) arrow.style.bottom = position.bottom;
+            if (position.left) arrow.style.left = position.left;
+            if (position.right) arrow.style.right = position.right;
+            if (position.id) {
+                arrow.id = position.id;
+            } else {
+                arrow.removeAttribute('id');
+            }
+        } else {
+            arrow.style.display = 'none';
+            arrow.removeAttribute('id');
+            arrow.dataset.index = '';
+            arrow.dataset.exit = 'false';
+            arrow.classList.remove('exit-arrow');
+        }
+    });
+}
+
+
+function onArrowClick(event) {
+    const arrow = event.currentTarget;
+    const clickIndex = parseInt(arrow.dataset.index, 10);
+    const arrowData = selectedItem?.arrows?.[clickIndex];
+    const isExitArrow = arrow.dataset.exit === 'true';
+
+    if (arrowData?.exiteer || isExitArrow) {
+        if (isExitArrow && exitFound) {
+            goToNextLevel();
+            return;
+        }
+        if (arrowData?.exiteer) {
+            goToNextLevel();
+            return;
+        }
+    }
+
+    moveitmoveit(clickIndex);
+    changeImage();
+}
+
+function ExitToLevel() {
+    goToNextLevel();
 }
 
 // Ensuring that the Html function is available globally
 window.changeImage = changeImage;
+window.onArrowClick = onArrowClick;
+window.goToNextLevel = goToNextLevel;
 
 document.addEventListener('DOMContentLoaded', () => {
-    changeImage();
+    if (!isEndingPage) {
+        initializeThePowerSequence();
+        changeImage();
+        
+        const audios = document.querySelectorAll('audio');
+        audios.forEach(audio => {
+            audio.play().catch(e => console.log('Autoplay blocked for audio:', e));
+        });
+    }
+    });
+    
+    const startButton = document.getElementById('start-button');
+    const newGameButton = document.getElementById('new-game-button');
+    const quitButton = document.getElementById('quit-button');
+
+    if (startButton) {
+        startButton.addEventListener('click', () => {
+            const selected = weightedRandom(imageslevel0);
+            if (selected) {
+                localStorage.setItem('savedGameImage', selected.image);
+                localStorage.setItem('savedGameLevel', 'Level 0 no map');
+            }
+        });
+    }
+
+    if (newGameButton) {
+        newGameButton.addEventListener('click', () => {
+            const selectedVideo = 'opening cut scene Nate.mp4';
+            localStorage.setItem('selectedGameVideo', selectedVideo);
+            window.location.href = 'beninging.html';
+        });
+    }
+
+    if (quitButton) {
+        quitButton.addEventListener('click', () => {
+            window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
+        });
+    }
+    const RewindIt = document.getElementById('Rewind');
+    if (RewindIt) {
+        RewindIt.addEventListener('click', (event) => {
+            event.preventDefault();
+            const savedFile = localStorage.getItem('savedGameLevel');
+            window.location.href = (savedFile && savedFile.trim()) ? savedFile : 'Level0nomap.html';
+        });
+    }
+    document.querySelectorAll('.arrow').forEach(arrow => {
+        arrow.onclick = onArrowClick;
+    });
+
+    //auzio
+    const audios = document.querySelectorAll('audio');
+    const startAudio = () => {
+        audios.forEach(audio => {
+            audio.play().catch(e => console.log('Audio play blocked or deferred:', e));
+        });
+        window.removeEventListener('click', startAudio);
+        window.removeEventListener('keydown', startAudio);
+    };
+
+    if (audios.length > 0) {
+        window.addEventListener('click', startAudio, { once: true });
+        window.addEventListener('keydown', startAudio, { once: true });
+    }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const video = document.getElementById('roomImage');
+        const endState = document.getElementById('end-state');
+
+    if (video && endState) {
+            video.addEventListener('ended', () => {
+            video.style.display = 'none';
+            endState.style.display = 'block';
+        });
+    }
 });
 
-function playoption () {
-    
-}
-const sound = newAudio('autio')
 
-sound.play
+//health and sanity bar
+function updateHealthBar(health) {
+    if (health < 0) health = 0;
+    if (health > 100) health = 100;
+}
+
+const health = document.getElementById("health");
+
+DepleteSanity = false;
+
+function updateSanityBar(sanity) {
+    if (sanity < 0) sanity = 0;
+    if (sanity > 20) sanity = 20;    
+}
+
+const sanityBar = document.getElementById("sanity");
+
+let timer = setInterval(() => {
+    if (!sanityBar) return;
+
+    sanityBar.value = Math.max(0, sanityBar.value - 0.1);
+    if (sanityBar.value <= 0) {
+        DepleteSanity = true;
+    }
+}, 1000);
+
+let threat = 1
+
+let threatLevel = setInterval(() => {
+    if (DepleteSanity === true) {    
+        threat += 1;
+}
+}, 1000);
+
+//story events
+const storyContainer = document.getElementById('story');
+const buttonContainer = document.getElementById('dialogue');
+
+
+
+function clearDialogue() {
+    if (storyContainer) storyContainer.textContent = '';
+    if (buttonContainer) buttonContainer.innerHTML = '';
+}
+
+function makeDialogueButton(label, onClick) {
+    if (!buttonContainer) return;
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.textContent = label;
+    button.addEventListener('click', onClick);
+    buttonContainer.appendChild(button);
+}
+
+function renderDialogue(dialogue, rootDialogue = null) {
+    if (!storyContainer || !buttonContainer || !dialogue) return;
+    
+    if (!rootDialogue) rootDialogue = dialogue;
+
+    clearDialogue();
+
+    if (dialogue.text) {
+        storyContainer.textContent = dialogue.text;
+    }
+
+    if (Array.isArray(dialogue.choices) && dialogue.choices.length) {
+        dialogue.choices.forEach(([label, action]) => {
+            makeDialogueButton(label, () => {
+                const nextStep = dialogue[action] || rootDialogue[action] || (activeEndingObject && activeEndingObject.dialogue[action]);
+                
+                if (nextStep) {
+                    if (nextStep.image) {
+                        const img = document.getElementById('roomImage');
+                        if (img) img.src = nextStep.image;
+                    }
+                    
+                    const delay = typeof nextStep.delay === 'number' ? nextStep.delay : 0;
+                    clearDialogue();
+                    setTimeout(() => renderDialogue(nextStep, rootDialogue), delay);
+                } 
+                else if (typeof action === 'function') {
+                    action();
+                } else {
+                    clearDialogue();
+                }
+            });
+        });
+    } else {
+        makeDialogueButton('Continue', clearDialogue);
+    }
+}
+
+
+const ending1 = {
+    image: 'images/houses.png',
+    dialogue: {
+        text: "It's GH0STSLAYER. I haven't seen anyone in a week.",
+        delay: 400,
+        choices: [['Continue', 'chunk2']],
+        chunk2: {
+            text: "There's no one in the streets. No one in the markets, the cars.....the houses.",
+            image: 'images/houses.png',
+            choices: [['Continue', 'chunk3']],
+        },
+        chunk3: {
+            text: "I broke into one. Nothing. Not a stain on the carpets.",
+            image: 'images/field.webp',
+            choices: [['Continue', 'chunk4']],
+        },
+        chunk4: {
+            text: "I miss everyone. I miss my family, friends. The worst part is that I'm not alone.",
+            image: 'images/field.webp',
+            choices: [['Continue', 'chunk5']],
+        },
+        chunk5: {
+            text: "There's this thing watching me. It's not hurting me, or saying anything. It's just-",
+            image: 'images/watching.png',
+            choices: [['Continue', 'chunk6']],
+        },
+        chunk6: {
+            text: "I don't think I ever left. So there was no point in staying.",
+            image: 'images/laboutside.jpg',
+            choices: [['Continue', 'chunk7']],
+        }, 
+        chunk7: {
+            text: "May the wallpaper remain eternal",
+            image: "images/level0.png",
+            choices: [['Finish', () => window.location.href = 'index.html']],
+        }
+    }
+};
+
+const ending2 = {
+    image: 'images/houses.png',
+    dialogue: {
+        text: "It's GH0STSLAYER. I haven't seen anyone in 2 weeks.",
+        delay: 400,
+        choices: [['Continue', 'chunk2']],
+        chunk2: {
+            text: "There's no one in the streets. No one in the markets, the cars.....the houses.",
+            image: 'images/houses.png',
+            choices: [['Continue', 'chunk3']],
+        },
+        chunk3: {
+            text: "I searched the ends of the earth. No one.",
+            image: 'images/field.webp',
+            choices: [['Continue', 'chunk4']],
+        },
+        chunk4: {
+            text: "I am alone.",
+            image: 'images/field.webp',
+            choices: [['Continue', 'chunk5']],
+        },
+        chunk5: {
+            text: "IF someone is out there",
+            image: 'images/watching.png',
+            choices: [['Continue', 'chunk6']],
+        },
+        chunk6: {
+            text: "Please, show me. ",
+            image: 'images/laboutside.png',
+            choices: [['Continue', 'chunk7']],
+        }, 
+        chunk7: {
+            text: "'A knock on the door'",
+            image: "images/.png",
+            choices: [['Finish', () => window.location.href = 'index.html']],
+        }
+    }
+};
+
+const ending3 = {
+    image: 'images/houses.png',
+    dialogue: {
+        text: "It's GH0STSLAYER. I haven't seen anyone in a month.",
+        delay: 400,
+        choices: [['Continue', 'chunk2']],
+        chunk2: {
+            text: "There's no one in the streets. No one in the markets, the cars...",
+            image: 'images/houses.png',
+            choices: [['Continue', 'chunk3']],
+        },
+        chunk3: {
+            text: "I am alone, save for one thing that follows me",
+            image: 'images/field.jpg',
+            choices: [['Continue', 'chunk4']],
+        },
+        chunk4: {
+            text: "I think I never left, but y'know what?",
+            image: 'images/field.webp',
+            choices: [['Continue', 'chunk5']],
+        },
+        chunk5: {
+            text: "I wanna save what I have",
+            image: 'images/watching.png',
+            choices: [['Continue', 'chunk6']],
+        },
+        chunk6: {
+            text: "I've been getting into gardening",
+            image: 'images/laboutside.jpg',
+            choices: [['Continue', 'chunk7']],
+        }, 
+        chunk7: {
+            text: "It reminds me that some things are eternally good.",
+            image: "images/thend.avif",
+            choices: [['Finish', () => window.location.href = 'index.html']],
+        }
+    }
+};
+
+let activeEndingObject = null; 
+
+document.addEventListener('DOMContentLoaded', () => {
+    const imgElement = document.getElementById('roomImage');
+
+    if (isEndingPage) {
+        if (pageTitle === 'You Won(?)') {
+            activeEndingObject = ending1;
+        } else if (pageTitle === 'You Win') {
+            activeEndingObject = ending2;
+        } else if (pageTitle === 'You Won') {
+            activeEndingObject = ending3;
+        }
+
+        if (activeEndingObject) {
+            if (imgElement && activeEndingObject.image) {
+                imgElement.src = activeEndingObject.image;
+            }
+            renderDialogue(activeEndingObject.dialogue);
+        }
+        
+        const arrowContainer = document.getElementById('arrow-container');
+        if (arrowContainer) arrowContainer.style.display = 'none';
+
+    } 
+    else {
+        initializeThePowerSequence();
+        changeImage();
+        
+        document.querySelectorAll('.arrow').forEach(arrow => {
+            arrow.onclick = onArrowClick;
+        });
+    }
+
+    const audios = document.querySelectorAll('audio');
+    const startAudio = () => {
+        audios.forEach(audio => audio.play().catch(e => {}));
+        window.removeEventListener('click', startAudio);
+    };
+    window.addEventListener('click', startAudio, { once: true });
+
+    const video = document.getElementById('roomImage');
+    const endState = document.getElementById('end-state');
+    if (video && video.tagName === 'VIDEO' && endState) {
+        video.addEventListener('ended', () => {
+            video.style.display = 'none';
+            endState.style.display = 'block';
+        });
+    }
+});

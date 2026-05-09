@@ -1,25 +1,317 @@
-body:not(starter) {
+
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&display=swap');
+
+body:not(.menu) {
+    display: grid;
     background-color: black;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas: 
+    "bars bars . . invent" 
+    ". imagery imagery imagery ."
+    ". imagery imagery imagery ."
+    ". dialogue dialogue dialogue map";
+    grid-column-gap: 0px;
+    grid-row-gap: 9px;
+    height: 100vh;
 }
 
-header {
+#gameSetMatch {
+    background-image: url(images/youlose.png);
+}
+
+h1, #Rewind {
+    position: absolute;
+    display: flex;
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: 50px;
+    bottom: 65%;
+    right: 85%;
+    color: white;
+    text-decoration: none;
+    gap: 70px;
+}
+
+header:not(#options) {
+    display: grid;
+    grid-area: bars;
+    gap: 0px;
+}
+
+.press-start-2p-regular {
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+.libre-baskerville {
+  font-family: "Libre Baskerville", serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+}
+  
+.pixelify-sans{
+    font-family: "Pixelify Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+label {
+color: white;
+font-family: "Pixelify Sans", sans-serif;
+font-size: 25px;
+}
+
+#healthbar, #sanitybar {
+    border: 2px solid white;
+    width: 240px;
+    height: 40px;
+}
+
+progress {
+    appearance: none;
+    -webkit-appearance: none;
+    height: 20px;
+    background-color: #333;
+    overflow: hidden;
+}
+
+progress::-webkit-progress-bar {
+    background-color: #333;
+}
+
+progress::-webkit-progress-value {
+    background-color: yellow;
+}
+
+.symbol {
+    height: 30px;
+    width: 30px;
+}
+
+#inventory {
+    display: flex;
+    flex-direction: row;
+    grid-area:invent;
+    gap: 10px;
+}
+
+.box {
+    width: 80px;
+    height: 80px;
+    background-color: lightgrey;
+}
+
+#THEcontainer {
+    display: grid;
+    position: relative;
+    grid-area: imagery;
+    place-items: center;
+    height: 39vh;
+}
+
+#roomImage, #ImageFromNinetyFour {
+    max-height: 470px;
+    border: 2px solid white;
+    position: relative;
+    place-items: center;
+    max-width: auto;
+    background-repeat: no-repeat;
+    transition: background-color 0.5s ease-in-out 0.2s;
+}
+
+.arrow {
+    width: 50px;
+    height: 50px;
+    margin-top: 10px;
+    cursor: pointer;
+    position: absolute;
+    z-index: 10;
+}
+
+@keyframes fadeToBlack {
+    0% {
+        opacity: 1;
+        filter: brightness(1);
+    }
+    100% {
+        opacity: 0;
+        filter: brightness(0);
+    }
+}
+
+@keyframes fadeFromBlack {
+    0% {
+        opacity: 0;
+        filter: brightness(0);
+    }
+    100% {
+        opacity: 1;
+        filter: brightness(1);
+    }
+}
+
+#roomImage, #arrow-container {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+#roomImage.fading-out {
+    animation: fadeToBlack 0.6s ease-in-out forwards;
+}
+
+#roomImage.fading-in {
+    animation: fadeFromBlack 0.6s ease-in-out forwards;
+}
+
+.fading {
+    opacity: 0; 
+    pointer-events: none;
+}
+
+.continue-arrow {
+    width: 50px;
+    height: 50px;
+    margin-top: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    rotate: 40deg;
+}
+
+.arrow-forward {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    position: absolute;
+    z-index: 10;
+}
+
+#rotate0 {
+    transform: rotate(0deg);
+}
+
+#rotate90 {
+    transform: rotate(90deg);
+}
+
+#rotate180 {
+    transform: rotate(180deg);
+}
+
+#rotate270 {
+    transform: rotate(270deg);
+}
+
+#mappytainer {
+    display: grid;
+    grid-area: map;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas: 
+    '1 2 3 4 5 6 ' 
+    '1 2 3 4 5 6 '
+    '1 2 3 4 5 6 ' 
+    '1 2 3 4 5 6 ' 
+    '1 2 3 4 5 6 '
+    '1 2 3 4 5 6 ';
+    height: 226px;
+    width: 226px;
+    place-items: center;
+}
+
+#mappy {
+    display: grid;
+    grid-area: map;
+    height: 370px;
+    width: 263px;
+}
+
+#player {
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+    background-color: white;
+    justify-self: center;
+    align-self: center;
+}
+
+#exit {
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+    background-color: red;
+    justify-self: center;
+    align-self: center;
+}
+
+.exit-arrow {
+    filter: drop-shadow(0 0 14px red);
+}
+
+#story  {
+    font-family: "Press Start 2P", system-ui;
+    display: flex;
+    grid-area: dialogue;
+    color: #e7e43d;
+    font-size: 35px;
+    text-align: center;
+}
+
+.loguetainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: dialogue;
+}
+
+video {
+    appearance: none;
+    -webkit-apppearance: none;
+     -moz-appearance: none;
+      -ms-appearance: none;
+       -o-appearance: none;
+}
+
+#menu {
+    background-image: url(images/SCPtitle.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center -110px;
+    display: flex;
+    justify-content: flex-end;
+    place-items: center;
+    text-align: center;
+}
+
+#options {
     display: flex;
     flex-direction: column;
+    appearance: none;
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
 }
 
-.theimage {
-    background-image: url(images/image\ 80.png);
-    height: 3000vh;
-    width: 400vh;
-    background-repeat: no-repeat;
+.autio {
+    appearance: none;
+    display: none;
 }
 
-.starter {
-    background-image: url(images/SCPtitle.png);
-}
-
-.button { 
+button {
     background-color: black;
-    font: white;
-    border: white;
+    color: white;
+    border-color: white;
+    height: 60px;
+    width: 250px;
+    font-size: 25px;
+    font-family: "Courier New", Courier, monospace;
 }
+
+
+
