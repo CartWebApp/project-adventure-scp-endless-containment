@@ -1,108 +1,109 @@
-
 //all arrrays/dialogue
-const imageslevel0 = [
+const imageslevel0nomap = [
     {image: 'images/level0.png', weight: 10, arrows: [{top: '67%', left: '50%'}, {top: '67%', right: '69%'}, {top: '69%', right: '15%'}],        
     dialogue: {
             text: "Where am I? What is this place?",
-            delay: 1500
+            delay: 800
         }},
-    {image: 'images/door.png', weight: 6, arrows: [{top: '56%', left: '47.5%', exiteer: true}],        
-    dialogue: {
-            text: "A door? This is new.",
-            delay: 1500
-        } },
     {image: 'images/arrows.png', weight: 10, arrows: [{top: '71%', left: '35%'}, {top: '63.5%', right: '52%'}, {top: '72%', right: '32%'}, {bottom: '-18%', left: '51%'}]},
     {image: 'images/dark 1.png', weight: 10, arrows: [{top: '63%', left: '42.6%'}, {top: '63%', right: '53%'}, {top: '63%', right: '53%'}, {bottom: '-20%', left: '63%'}]},
-    {image: 'images/iconic.png', weight: 100000, arrows: [{top: '50%', left: '28%'}, {top: '45%', right: '45%'}, {top: '45%', right: '45%'}, {bottom: '-20%', left: '35%'}],         
+    {image: 'images/iconic.png', weight: 10, arrows: [{top: '50%', left: '28%'}, {top: '45%', right: '45%'}, {top: '45%', right: '45%'}, {bottom: '-20%', left: '35%'}],         
     dialogue: {
             text: "What if I never find my way back?",
-            delay: 1500,
+            delay: 800,
             choices: [
                 ["Stay", "stay_Put"],
                 ["Keep going", "go_Explore"]
             ],
             stay_Put: {
                 text: "Y’know what– whatever, I’ll just stay here. The hole will open back up and everything will be fine.. Right?",
-                delay: 1500,
+                delay: 800,
             },
             go_Explore: {
                 text: "I need to get out here. I shouldn’t stay too long in one place, it doesn’t seem like a good idea..",
-                delay: 1500, 
+                delay: 800, 
             },
         },
     },
     {image: 'images/view.png', weight: 10, arrows: [{top: '30%', left: '42.2%'}, {top: '30%', right: '53.5%'}, {top: '30%', right: '53.5%'}, {bottom: '-15%', left: '70%'}]},
     {image: 'images/arrows.png', weight: 10, arrows: [{top: '71%', left: '35%'}, {top: '63.5%', right: '52%'}, {top: '72%', right: '34%'}, {bottom: '-18%', left: '54%'}]},
-    {image: 'images/getcloser.png', weight: 10, arrows: ({top: '71%', left: '35%'}, {top: '63.5%', right: '52%'}, {top: '72%', right: '34%'}, {bottom: '-18%', left: '54%'}),
+    {image: 'images/getcloser.png', weight: 100000, arrows: [{top: '71%', left: '35%'}, {top: '63.5%', right: '52%'}, {top: '72%', right: '34%'}, {bottom: '-18%', left: '54%'}],
     dialogue: {
         text: "what-Hello?!",
-        delay: 1500,
+        delay: 800,
         choices: [
             ["investigate", "invest"]
         ],
         invest: {
             text: "Who are you? Are you okay, what happened?  Are you.. real? Do you know how I can get out of here, I just fell into this weird hole and all of sudden–",
-        delay: 1500,
+        delay: 800,
         image: 'images/gears.png',
         choices: [
-            ["Continue", "chunk1"]
+            ["Continue", "clip1"]
             ],
         },
-        chunk1: {
+        clip1: {
             text: "You talk too much. Listen to me. I don't have much Time left. ",
-        delay: 1500,
+        delay: 800,
         image: 'images/gears.png',
         choices: [
-            ["Continue", "chunk2"]
+            ["Continue", "clip2"]
             ],
         },
-        chunk2: {
+        clip2: {
             text: "I would assume you fell through, and your got this far, despite seeming...",
-        delay: 1500,
+        delay: 800,
         image: 'images/gears.png',
         choices: [
-            ["Continue", "chunk3"]
+            ["Continue", "clip3"]
             ],
         },
-        chunk3: {
+        clip3: {
             text: "Nevermind, I'll give you the benfit of the doubt. Here.",
-        delay: 1500,
+        delay: 800,
         image: 'images/gears.png',
         choices: [
-            ["Continue", "chunk4"]
+            ["Continue", "clip4"]
             ],
         },
-        chunk4: {
+        clip4: {
             text: "Take my Keycard, and holgraphic navigator",
-        delay: 1500,
+        delay: 800,
         image: 'images/gears.png',
         choices: [
-            ["Continue", "chunk5"]
+            ["Continue", "clip5"]
             ],
         },
-         chunk5: {
+         clip5: {
             text: "But you'll die",
-        delay: 1500,
+        delay: 800,
         image: 'images/gears.png',
         choices: [
-            ["Continue", "chunk6"]
+            ["Continue", "clip6"]
             ],
         },
-         chunk6: {
+         clip6: {
             text: "Forget me. Take the map. Hide from anything that moves. If your hear something, it heard you. fear every sttep your take.",
-        delay: 1500,
+        delay: 800,
         image: 'images/gears.png',
         choices: [
-            ["Continue", "chunk7"]
+            ["Continue", "clip7"]
             ],
         },
-        chunk6: {
+        clip7: {
             text: "I'm sorry I couldn't save you",
-        delay: 1500,
+        delay: 800,
         image: 'images/gears.png',
         choices: [
-            ["Continue", "chunk7"]
+            ["Continue", "clip8"]
             ],
+        },
+        clip8: {
+            text: "Its' alright.",
+        delay: 800,
+        image: 'images/gears.png',
+        choices: [
+            ['Take', () => window.location.href = 'Level0.html'],            ],
         },
     }},
     {image: 'images/dark 1.png', weight: 10, arrows: [{top: '63%', left: '42.6%'}, {top: '63%', right: '53%'}, {top: '63%', right: '53%'}, {bottom: '-20%', left: '190%'}]},
@@ -125,7 +126,76 @@ const imageslevel0 = [
                 ["Run away", "run_Away"]
             ]
         } },
-    {image: 'images/lizart(1).png', enemyactive: true, weight: 10, arrows:[{top: '77%', left: '10000%', id: 'rotate90'}, {bottom: '-11%', left: '23%', id: 'rotate270'}, {top: '67%', right: '100000%'}, {bottom: '-15%', left: '50%', id: 'rotate180'}],
+    {image: 'images/lizart(1).png', enemyactive: true, weight: 1, arrows:[{top: '77%', left: '10000%', id: 'rotate90'}, {bottom: '-11%', left: '23%', id: 'rotate270'}, {top: '67%', right: '100000%'}, {bottom: '-15%', left: '50%', id: 'rotate180'}],
+     dialogue: {
+            text: "Oh my god what the hell is that-",
+            delay: 1500,
+            choices: [
+                ["Try communicating", "stay_Put"],
+                ["Run away", "run_Away"]
+            ]
+        } },
+    {image: 'images/lizart(2).png', enemyactive: true, weight: 1, arrows: [{top: '51%', left: '32%'}, {top: '50%', right: '45%'}, {top: '50%', right: '45%'}, {bottom: '-15%', left: '40%'}],
+            dialogue: {
+            text: "BROO I'm actually cooked what is that thing-",
+            delay: 1500
+        } },
+];
+
+const imageslevel0 = [
+    {image: 'images/level0.png', weight: 10, arrows: [{top: '67%', left: '50%'}, {top: '67%', right: '69%'}, {top: '69%', right: '15%'}],        
+    dialogue: {
+            text: "Where am I? What is this place?",
+            delay: 1500
+        }},
+    {image: 'images/door.png', weight: 6, arrows: [{top: '56%', left: '47.5%', exiteer: true}],        
+    dialogue: {
+            text: "A door? This is new.",
+            delay: 1500
+        } },
+    {image: 'images/arrows.png', weight: 10, arrows: [{top: '71%', left: '35%'}, {top: '63.5%', right: '52%'}, {top: '72%', right: '32%'}, {bottom: '-18%', left: '51%'}]},
+    {image: 'images/dark 1.png', weight: 10, arrows: [{top: '63%', left: '42.6%'}, {top: '63%', right: '53%'}, {top: '63%', right: '53%'}, {bottom: '-20%', left: '63%'}]},
+    {image: 'images/iconic.png', weight: 10, arrows: [{top: '50%', left: '28%'}, {top: '45%', right: '45%'}, {top: '45%', right: '45%'}, {bottom: '-20%', left: '35%'}],         
+    dialogue: {
+            text: "What if I never find my way back?",
+            delay: 1500,
+            choices: [
+                ["Stay", "stay_Put"],
+                ["Keep going", "go_Explore"]
+            ],
+            stay_Put: {
+                text: "Y’know what– whatever, I’ll just stay here. The hole will open back up and everything will be fine.. Right?",
+                delay: 1500,
+            },
+            go_Explore: {
+                text: "I need to get out here. I shouldn’t stay too long in one place, it doesn’t seem like a good idea..",
+                delay: 1500, 
+            },
+        },
+    },
+    {image: 'images/view.png', weight: 10, arrows: [{top: '30%', left: '42.2%'}, {top: '30%', right: '53.5%'}, {top: '30%', right: '53.5%'}, {bottom: '-15%', left: '70%'}]},
+    {image: 'images/arrows.png', weight: 10, arrows: [{top: '71%', left: '35%'}, {top: '63.5%', right: '52%'}, {top: '72%', right: '34%'}, {bottom: '-18%', left: '54%'}]},
+    {image: 'images/dark 1.png', weight: 10, arrows: [{top: '63%', left: '42.6%'}, {top: '63%', right: '53%'}, {top: '63%', right: '53%'}, {bottom: '-20%', left: '190%'}]},
+    {image: 'images/iconic.png', weight: 10, arrows: [{top: '45%', left: '29%'}, {top: '45%', right: '45%'}, {top: '45%', right: '45%'}, {bottom: '40%', left: '29%'}],         
+            dialogue: {
+            text: "I'm going in circles, aren't I?",
+            delay: 1500
+        } },
+    {image: 'images/view.png', weight: 10, arrows: [{top: '30%', left: '42.2%'}, {top: '30%', right: '53.5%'}, {top: '30%', right: '53.5%'}, {bottom: '-15%', left: '700%'}]},
+    {image: 'images/THEimage.png', weight: 10, arrows: [{top: '70%', left: '66%'}, {top: '70%', right: '29.7%'}, {top: '70%', right: '29.7%',}, {bottom: '-18%', left: '50%', id: 'rotate180'}]},
+    {image: 'images/vhs.png', weight: 10, arrows: [{top: '70%', left: '24.1%'}, {top: '62%', right: '35%'}, {top: '62%', right: '54%'}, {bottom: '15%', left: '24.1%'}]},
+    {image: 'images/hall 1.png', weight: 10, arrows: [{top: '51%', left: '36%'}, {top: '50%', right: '45%'}, {top: '50%', right: '45%'}, {bottom: '-15%', left: '40%'}]},
+    {image: 'images/chairs.png', weight: 10, arrows: [{top: '72%', left: '73%', id: 'rotate90'}, {bottom: '-16%', left: '20%', id: 'rotate270'}, {top: '67%', right: '100000%'}, {bottom: '-15%', left: '50%', id: 'rotate180'}]},
+    {image: 'images/noshelves.png', weight: 10, arrows: [{top: '42%', left: '40%'}, {top: '44%', right: '100000%'}, {top: '46%', right: '24%', id: 'rotate90'}, {bottom: '-15%', left: '50%', id: 'rotate180'}],
+     dialogue: {
+            text: "I wish someone could help me get outta here...",
+            delay: 1500,
+            choices: [
+                ["Try communicating", "stay_Put"],
+                ["Run away", "run_Away"]
+            ]
+        } },
+    {image: 'images/lizart(1).png', enemyactive: true, weight: 3, arrows:[{top: '77%', left: '10000%', id: 'rotate90'}, {bottom: '-11%', left: '23%', id: 'rotate270'}, {top: '67%', right: '100000%'}, {bottom: '-15%', left: '50%', id: 'rotate180'}],
      dialogue: {
             text: "Oh my god what the hell is that-",
             delay: 1500,
@@ -228,6 +298,7 @@ const imageslevellimbo = [
 
 //all documents used
 const levTitl = {
+    'Level 0 No Map': 7,
     'Level 0': 0,
     'Level 1': 1,
     'Level 5': 2,
@@ -269,7 +340,8 @@ const imageArrays = [
     imageslevel37,
     imageslevel232,
     imageslevel94,
-    imageslevellimbo
+    imageslevellimbo,
+    imageslevel0nomap
 ];
 
 
@@ -643,7 +715,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const selected = weightedRandom(imageslevel0);
             if (selected) {
                 localStorage.setItem('savedGameImage', selected.image);
-                localStorage.setItem('savedGameLevel', 'Level 0');
+                localStorage.setItem('savedGameLevel', 'Level 0 no map');
             }
         });
     }
@@ -666,7 +738,7 @@ document.addEventListener('DOMContentLoaded', () => {
         RewindIt.addEventListener('click', (event) => {
             event.preventDefault();
             const savedFile = localStorage.getItem('savedGameLevel');
-            window.location.href = (savedFile && savedFile.trim()) ? savedFile : 'Level0.html';
+            window.location.href = (savedFile && savedFile.trim()) ? savedFile : 'Level0nomap.html';
         });
     }
     document.querySelectorAll('.arrow').forEach(arrow => {
@@ -755,8 +827,11 @@ function makeDialogueButton(label, onClick) {
     buttonContainer.appendChild(button);
 }
 
-function renderDialogue(dialogue) {
+function renderDialogue(dialogue, rootDialogue = null) {
     if (!storyContainer || !buttonContainer || !dialogue) return;
+    
+    if (!rootDialogue) rootDialogue = dialogue;
+
     clearDialogue();
 
     if (dialogue.text) {
@@ -766,7 +841,8 @@ function renderDialogue(dialogue) {
     if (Array.isArray(dialogue.choices) && dialogue.choices.length) {
         dialogue.choices.forEach(([label, action]) => {
             makeDialogueButton(label, () => {
-            const nextStep = dialogue[action] || (activeEndingObject && activeEndingObject.dialogue[action]);
+                const nextStep = dialogue[action] || rootDialogue[action] || (activeEndingObject && activeEndingObject.dialogue[action]);
+                
                 if (nextStep) {
                     if (nextStep.image) {
                         const img = document.getElementById('roomImage');
@@ -775,7 +851,7 @@ function renderDialogue(dialogue) {
                     
                     const delay = typeof nextStep.delay === 'number' ? nextStep.delay : 0;
                     clearDialogue();
-                    setTimeout(() => renderDialogue(nextStep), delay);
+                    setTimeout(() => renderDialogue(nextStep, rootDialogue), delay);
                 } 
                 else if (typeof action === 'function') {
                     action();
