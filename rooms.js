@@ -18,6 +18,12 @@ const imageslevel0 = [
             text: "What if I never find my way back?",
             delay: 1500,
             choices: [
+<<<<<<< HEAD
+                ["Y’know what– whatever, I’ll just stay here. The hole will open back up and everything will be fine.. right?”", "stay_Put"],
+                ["I need to get out here. I shouldn’t stay too long in one place, it doesn’t seem like a good idea..", "go_Explore"]
+            ]
+        }},
+=======
                 ["Stay", "stay_Put"],
                 ["Keep going", "go_Explore"]
             ],
@@ -31,6 +37,7 @@ const imageslevel0 = [
             },
         },
     },
+>>>>>>> 2161808b0b7739240142bbce7c737c76cb3cc1e9
     {image: 'images/view.png', weight: 10, arrows: [{top: '30%', left: '42.2%'}, {top: '30%', right: '53.5%'}, {top: '30%', right: '53.5%'}, {bottom: '-15%', left: '70%'}]},
     {image: 'images/arrows.png', weight: 10, arrows: [{top: '71%', left: '35%'}, {top: '63.5%', right: '52%'}, {top: '72%', right: '34%'}, {bottom: '-18%', left: '54%'}]},
     {image: 'images/dark 1.png', weight: 10, arrows: [{top: '63%', left: '42.6%'}, {top: '63%', right: '53%'}, {top: '63%', right: '53%'}, {bottom: '-20%', left: '190%'}]},
@@ -43,6 +50,13 @@ const imageslevel0 = [
     {image: 'images/THEimage.png', weight: 10, arrows: [{top: '70%', left: '66%'}, {top: '70%', right: '29.7%'}, {top: '70%', right: '29.7%',}, {bottom: '-18%', left: '50%', id: 'rotate180'}]},
     {image: 'images/vhs.png', weight: 1000, arrows: [{top: '70%', left: '24.1%'}, {top: '62%', right: '35%'}, {top: '62%', right: '54%'}, {bottom: '15%', left: '24.1%'}]},
     {image: 'images/hall 1.png', weight: 10, arrows: [{top: '51%', left: '36%'}, {top: '50%', right: '45%'}, {top: '50%', right: '45%'}, {bottom: '-15%', left: '40%'}]},
+<<<<<<< HEAD
+    {image: 'images/chairs.png', weight: 10, arrows: [{top: '77%', left: '68.7%', id: 'rotate90'}, {bottom: '-16%', left: '20%', id: 'rotate270'}, {top: '67%', right: '100000%'}, {bottom: '-25%', left: '50%', id: 'rotate180'}]},
+    {image: 'images/noshelves.png', weight: 10, arrows: [{top: '53%', left: '45%'}, {top: '44%', right: '100000%'}, {top: '64%', right: '24%', id: 'rotate90'}, {bottom: '-23%', left: '50%', id: 'rotate180'}]},
+    {image: 'images/lizart(1).png', enemyactive: true, weight: 3, arrows:[{top: '77%', left: '68.7%', id: 'rotate90'}, {bottom: '-16%', left: '20%', id: 'rotate270'}, {top: '67%', right: '100000%'}, {bottom: '-25%', left: '50%', id: 'rotate180'}]
+    {image: 'images/lizart(2).png', enemyactive: true, weight: 3, arrows: [{top: '51%', left: '32%'}, {top: '50%', right: '45%'}, {top: '50%', right: '45%'}, {bottom: '-15%', left: '40%'}],         dialogue: {
+            text: "This is new",
+=======
     {image: 'images/chairs.png', weight: 10, arrows: [{top: '72%', left: '73%', id: 'rotate90'}, {bottom: '-16%', left: '20%', id: 'rotate270'}, {top: '67%', right: '100000%'}, {bottom: '-15%', left: '50%', id: 'rotate180'}]},
     {image: 'images/noshelves.png', weight: 10, arrows: [{top: '42%', left: '40%'}, {top: '44%', right: '100000%'}, {top: '46%', right: '24%', id: 'rotate90'}, {bottom: '-15%', left: '50%', id: 'rotate180'}],
      dialogue: {
@@ -65,6 +79,7 @@ const imageslevel0 = [
     {image: 'images/lizart(2).png', enemyactive: true, weight: 3, arrows: [{top: '51%', left: '32%'}, {top: '50%', right: '45%'}, {top: '50%', right: '45%'}, {bottom: '-15%', left: '40%'}],
             dialogue: {
             text: "BROO I'm actually cooked what is that thing-",
+>>>>>>> 2161808b0b7739240142bbce7c737c76cb3cc1e9
             delay: 1500
         } },
 ];
@@ -104,7 +119,7 @@ const imageslevel1 = [//make sure to position all arrrows.
 
 const imageslevel5 = [
     {image: 'images/The_Hotel 1.png', weight: 10, arrows: [{top: '60%', left: '49%'}, {top: '60%', right: '47%'}, {top: '60%', right: '47%'}, {bottom: '25%', left: '49%'}]},
-    {image: 'images/redcarpet.png', weight: 10, arrows: [{top: '60%', left: '48%'}, {top: '60%', right: '48%'}, {top: '60%', right: '48%'}, {bottom: '25%', left: '48%'}]},
+    {image: 'images/redcarpet.png', weight: 1000, arrows: [{top: '60%', left: '46.7%'}, {top: '60%', right: '49%'}, {top: '60%', right: '49%'}, {bottom: '23%', left: '46.9%'}]},
     {image: 'images/checkin.png', weight: 10, arrows: [{top: '80%', left: '78%'}, {top: '80%', right: '18%'}, {top: '80%', right: '18%'}, {bottom: '5%', left: '78%'}]},
     {image: 'images/Level-5-Ballroom 1.png', weight: 10, arrows: [{top: '55%', left: '24%'}, {top: '55%', right: '72%'}, {top: '53%', right: '25%'}, {bottom: '32%', left: '71%'}]},
     {image: 'images/level5hall.jpg', weight: 10, arrows: [{top: '54%', left: '48%'}, {top: '54%', right: '48%'}, {top: '54%', right: '48%'}, {bottom: '31%', left: '48%'}]},
