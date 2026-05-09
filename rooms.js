@@ -176,11 +176,18 @@ const levelOrder = [
 ];
 
 const pageTitle = document.title.trim();
-const isEndingPage = pageTitle === 'You Won(?)' || pageTitle === 'Ending 2' || pageTitle.startsWith('Ending');
-let Current = levTitl[pageTitle];
-if (Current === undefined) {
-    const fallbackLevel = parseInt(pageTitle.replace('Level ', '').trim(), 10);
-    Current = Number.isFinite(fallbackLevel) ? fallbackLevel : 0;
+
+const isEndingPage = pageTitle === 'You Won(?)' || pageTitle === 'You Win' || pageTitle === 'You Won' || pageTitle.startsWith('Ending');
+
+let Current = 0; 
+
+if (!isEndingPage) {
+    Current = levTitl[pageTitle];
+    
+    if (Current === undefined) {
+        const fallbackLevel = parseInt(pageTitle.replace(/[^\d]/g, ''), 10);
+        Current = Number.isFinite(fallbackLevel) ? fallbackLevel : 0;
+    }
 }
 
 const imageArrays = [
@@ -687,8 +694,7 @@ function renderDialogue(dialogue) {
     if (Array.isArray(dialogue.choices) && dialogue.choices.length) {
         dialogue.choices.forEach(([label, action]) => {
             makeDialogueButton(label, () => {
-                const nextStep = dialogue[action] || ending1.dialogue[action];
-                
+            const nextStep = dialogue[action] || (activeEndingObject && activeEndingObject.dialogue[action]);
                 if (nextStep) {
                     if (nextStep.image) {
                         const img = document.getElementById('roomImage');
@@ -725,12 +731,12 @@ const ending1 = {
         },
         chunk3: {
             text: "I broke into one. Nothing. Not a stain on the carpets.",
-            image: 'images/field.jpg',
+            image: 'images/field.webp',
             choices: [['Continue', 'chunk4']],
         },
         chunk4: {
             text: "I miss everyone. I miss my family, friends. The worst part is that I'm not alone.",
-            image: 'images/feild.png',
+            image: 'images/field.webp',
             choices: [['Continue', 'chunk5']],
         },
         chunk5: {
@@ -740,7 +746,7 @@ const ending1 = {
         },
         chunk6: {
             text: "I don't think I ever left. So there was no point in staying.",
-            image: 'images/laboutside.png',
+            image: 'images/laboutside.jpg',
             choices: [['Continue', 'chunk7']],
         }, 
         chunk7: {
@@ -751,45 +757,131 @@ const ending1 = {
     }
 };
 
-
 const ending2 = {
-    image: 'images/houses.png', 
+    image: 'images/houses.png',
     dialogue: {
-        text: "I found an elevator. It's moving down.",
+        text: "It's GH0STSLAYER. I haven't seen people in 5 days.",
+        delay: 400,
         choices: [['Continue', 'chunk2']],
         chunk2: {
-            text: "The doors opened to a familiar office... but the windows show only yellow fog.",
-            image: 'images/office_alt.png',
+            text: "There's no one in the streets. No one in the markets, the cars.....the houses.",
+            image: 'images/houses.png',
             choices: [['Continue', 'chunk3']],
         },
         chunk3: {
-            text: "I guess this is my life now. Back to work.",
-            image: 'images/desk.jpg',
+            text: "I searched the ends of the earth. No one.",
+            image: 'images/field.webp',
+            choices: [['Continue', 'chunk4']],
+        },
+        chunk4: {
+            text: "I am alone.",
+            image: 'images/field.webp',
+            choices: [['Continue', 'chunk5']],
+        },
+        chunk5: {
+            text: "IF someone is out there",
+            image: 'images/watching.png',
+            choices: [['Continue', 'chunk6']],
+        },
+        chunk6: {
+            text: "Please, show me. ",
+            image: 'images/laboutside.png',
+            choices: [['Continue', 'chunk7']],
+        }, 
+        chunk7: {
+            text: "'A knock on the door'",
+            image: "images/.png",
             choices: [['Finish', () => window.location.href = 'index.html']],
         }
     }
 };
 
+const ending3 = {
+    image: 'images/houses.png',
+    dialogue: {
+        text: "It's GH0STSLAYER. I haven't seen people in 5 days.",
+        delay: 400,
+        choices: [['Continue', 'chunk2']],
+        chunk2: {
+            text: "There's no one in the streets. No one in the markets, the cars...",
+            image: 'images/houses.png',
+            choices: [['Continue', 'chunk3']],
+        },
+        chunk3: {
+            text: "I am alone, save for one thing that follows me",
+            image: 'images/field.jpg',
+            choices: [['Continue', 'chunk4']],
+        },
+        chunk4: {
+            text: "I think I never left, but y'know what?",
+            image: 'images/field.webp',
+            choices: [['Continue', 'chunk5']],
+        },
+        chunk5: {
+            text: "I wanna save what I have",
+            image: 'images/watching.png',
+            choices: [['Continue', 'chunk6']],
+        },
+        chunk6: {
+            text: "I've been getting into gardening",
+            image: 'images/laboutside.jpg',
+            choices: [['Continue', 'chunk7']],
+        }, 
+        chunk7: {
+            text: "It reminds me that some things are eternally good.",
+            image: "images/thend.avif",
+            choices: [['Finish', () => window.location.href = 'index.html']],
+        }
+    }
+};
+
+let activeEndingObject = null; 
+
 document.addEventListener('DOMContentLoaded', () => {
-    // Logic for normal game levels
-    if (!isEndingPage) {
+    const imgElement = document.getElementById('roomImage');
+
+    if (isEndingPage) {
+        if (pageTitle === 'You Won(?)') {
+            activeEndingObject = ending1;
+        } else if (pageTitle === 'You Win') {
+            activeEndingObject = ending2;
+        } else if (pageTitle === 'You Won') {
+            activeEndingObject = ending3;
+        }
+
+        if (activeEndingObject) {
+            if (imgElement && activeEndingObject.image) {
+                imgElement.src = activeEndingObject.image;
+            }
+            renderDialogue(activeEndingObject.dialogue);
+        }
+        
+        const arrowContainer = document.getElementById('arrow-container');
+        if (arrowContainer) arrowContainer.style.display = 'none';
+
+    } 
+    else {
         initializeThePowerSequence();
         changeImage();
         
-        const audios = document.querySelectorAll('audio');
-        audios.forEach(audio => {
-            audio.play().catch(e => console.log('Autoplay blocked:', e));
+        document.querySelectorAll('.arrow').forEach(arrow => {
+            arrow.onclick = onArrowClick;
         });
-    } 
-    // ADD THIS: Logic for the Ending Page
-    else {
-        if (typeof ending1 !== 'undefined') {
-            // Set the very first image immediately
-            const img = document.getElementById('roomImage');
-            if (img && ending1.image) img.src = ending1.image;
-            
-            // Start the dialogue sequence
-            renderDialogue(ending1.dialogue);
-        }
+    }
+
+    const audios = document.querySelectorAll('audio');
+    const startAudio = () => {
+        audios.forEach(audio => audio.play().catch(e => {}));
+        window.removeEventListener('click', startAudio);
+    };
+    window.addEventListener('click', startAudio, { once: true });
+
+    const video = document.getElementById('roomImage');
+    const endState = document.getElementById('end-state');
+    if (video && video.tagName === 'VIDEO' && endState) {
+        video.addEventListener('ended', () => {
+            video.style.display = 'none';
+            endState.style.display = 'block';
+        });
     }
 });
