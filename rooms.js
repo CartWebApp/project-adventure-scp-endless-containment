@@ -18,12 +18,6 @@ const imageslevel0 = [
             text: "What if I never find my way back?",
             delay: 1500,
             choices: [
-<<<<<<< HEAD
-                ["Y’know what– whatever, I’ll just stay here. The hole will open back up and everything will be fine.. right?”", "stay_Put"],
-                ["I need to get out here. I shouldn’t stay too long in one place, it doesn’t seem like a good idea..", "go_Explore"]
-            ]
-        }},
-=======
                 ["Stay", "stay_Put"],
                 ["Keep going", "go_Explore"]
             ],
@@ -37,9 +31,80 @@ const imageslevel0 = [
             },
         },
     },
->>>>>>> 2161808b0b7739240142bbce7c737c76cb3cc1e9
     {image: 'images/view.png', weight: 10, arrows: [{top: '30%', left: '42.2%'}, {top: '30%', right: '53.5%'}, {top: '30%', right: '53.5%'}, {bottom: '-15%', left: '70%'}]},
     {image: 'images/arrows.png', weight: 10, arrows: [{top: '71%', left: '35%'}, {top: '63.5%', right: '52%'}, {top: '72%', right: '34%'}, {bottom: '-18%', left: '54%'}]},
+    {image: 'images/getcloser.png', weight: 10, arrows: ({top: '71%', left: '35%'}, {top: '63.5%', right: '52%'}, {top: '72%', right: '34%'}, {bottom: '-18%', left: '54%'}),
+    dialogue: {
+        text: "what-Hello?!",
+        delay: 1500,
+        choices: [
+            ["investigate", "invest"]
+        ],
+        invest: {
+            text: "Who are you? Are you okay, what happened?  Are you.. real? Do you know how I can get out of here, I just fell into this weird hole and all of sudden–",
+        delay: 1500,
+        image: 'images/gears.png',
+        choices: [
+            ["Continue", "chunk1"]
+            ],
+        },
+        chunk1: {
+            text: "You talk too much. Listen to me. I don't have much Time left. ",
+        delay: 1500,
+        image: 'images/gears.png',
+        choices: [
+            ["Continue", "chunk2"]
+            ],
+        },
+        chunk2: {
+            text: "I would assume you fell through, and your got this far, despite seeming...",
+        delay: 1500,
+        image: 'images/gears.png',
+        choices: [
+            ["Continue", "chunk3"]
+            ],
+        },
+        chunk3: {
+            text: "Nevermind, I'll give you the benfit of the doubt. Here.",
+        delay: 1500,
+        image: 'images/gears.png',
+        choices: [
+            ["Continue", "chunk4"]
+            ],
+        },
+        chunk4: {
+            text: "Take my Keycard, and holgraphic navigator",
+        delay: 1500,
+        image: 'images/gears.png',
+        choices: [
+            ["Continue", "chunk5"]
+            ],
+        },
+         chunk5: {
+            text: "But you'll die",
+        delay: 1500,
+        image: 'images/gears.png',
+        choices: [
+            ["Continue", "chunk6"]
+            ],
+        },
+         chunk6: {
+            text: "Forget me. Take the map. Hide from anything that moves. If your hear something, it heard you. fear every sttep your take.",
+        delay: 1500,
+        image: 'images/gears.png',
+        choices: [
+            ["Continue", "chunk7"]
+            ],
+        },
+        chunk6: {
+            text: "I'm sorry I couldn't save you",
+        delay: 1500,
+        image: 'images/gears.png',
+        choices: [
+            ["Continue", "chunk7"]
+            ],
+        },
+    }},
     {image: 'images/dark 1.png', weight: 10, arrows: [{top: '63%', left: '42.6%'}, {top: '63%', right: '53%'}, {top: '63%', right: '53%'}, {bottom: '-20%', left: '190%'}]},
     {image: 'images/iconic.png', weight: 10, arrows: [{top: '45%', left: '29%'}, {top: '45%', right: '45%'}, {top: '45%', right: '45%'}, {bottom: '40%', left: '29%'}],         
             dialogue: {
@@ -50,13 +115,6 @@ const imageslevel0 = [
     {image: 'images/THEimage.png', weight: 10, arrows: [{top: '70%', left: '66%'}, {top: '70%', right: '29.7%'}, {top: '70%', right: '29.7%',}, {bottom: '-18%', left: '50%', id: 'rotate180'}]},
     {image: 'images/vhs.png', weight: 1000, arrows: [{top: '70%', left: '24.1%'}, {top: '62%', right: '35%'}, {top: '62%', right: '54%'}, {bottom: '15%', left: '24.1%'}]},
     {image: 'images/hall 1.png', weight: 10, arrows: [{top: '51%', left: '36%'}, {top: '50%', right: '45%'}, {top: '50%', right: '45%'}, {bottom: '-15%', left: '40%'}]},
-<<<<<<< HEAD
-    {image: 'images/chairs.png', weight: 10, arrows: [{top: '77%', left: '68.7%', id: 'rotate90'}, {bottom: '-16%', left: '20%', id: 'rotate270'}, {top: '67%', right: '100000%'}, {bottom: '-25%', left: '50%', id: 'rotate180'}]},
-    {image: 'images/noshelves.png', weight: 10, arrows: [{top: '53%', left: '45%'}, {top: '44%', right: '100000%'}, {top: '64%', right: '24%', id: 'rotate90'}, {bottom: '-23%', left: '50%', id: 'rotate180'}]},
-    {image: 'images/lizart(1).png', enemyactive: true, weight: 3, arrows:[{top: '77%', left: '68.7%', id: 'rotate90'}, {bottom: '-16%', left: '20%', id: 'rotate270'}, {top: '67%', right: '100000%'}, {bottom: '-25%', left: '50%', id: 'rotate180'}]
-    {image: 'images/lizart(2).png', enemyactive: true, weight: 3, arrows: [{top: '51%', left: '32%'}, {top: '50%', right: '45%'}, {top: '50%', right: '45%'}, {bottom: '-15%', left: '40%'}],         dialogue: {
-            text: "This is new",
-=======
     {image: 'images/chairs.png', weight: 10, arrows: [{top: '72%', left: '73%', id: 'rotate90'}, {bottom: '-16%', left: '20%', id: 'rotate270'}, {top: '67%', right: '100000%'}, {bottom: '-15%', left: '50%', id: 'rotate180'}]},
     {image: 'images/noshelves.png', weight: 10, arrows: [{top: '42%', left: '40%'}, {top: '44%', right: '100000%'}, {top: '46%', right: '24%', id: 'rotate90'}, {bottom: '-15%', left: '50%', id: 'rotate180'}],
      dialogue: {
@@ -79,7 +137,6 @@ const imageslevel0 = [
     {image: 'images/lizart(2).png', enemyactive: true, weight: 3, arrows: [{top: '51%', left: '32%'}, {top: '50%', right: '45%'}, {top: '50%', right: '45%'}, {bottom: '-15%', left: '40%'}],
             dialogue: {
             text: "BROO I'm actually cooked what is that thing-",
->>>>>>> 2161808b0b7739240142bbce7c737c76cb3cc1e9
             delay: 1500
         } },
 ];
@@ -736,7 +793,7 @@ function renderDialogue(dialogue) {
 const ending1 = {
     image: 'images/houses.png',
     dialogue: {
-        text: "It's GH0STSLAYER. I haven't seen people in 5 days.",
+        text: "It's GH0STSLAYER. I haven't seen anyone in a week.",
         delay: 400,
         choices: [['Continue', 'chunk2']],
         chunk2: {
@@ -775,7 +832,7 @@ const ending1 = {
 const ending2 = {
     image: 'images/houses.png',
     dialogue: {
-        text: "It's GH0STSLAYER. I haven't seen people in 5 days.",
+        text: "It's GH0STSLAYER. I haven't seen anyone in 2 weeks.",
         delay: 400,
         choices: [['Continue', 'chunk2']],
         chunk2: {
@@ -814,7 +871,7 @@ const ending2 = {
 const ending3 = {
     image: 'images/houses.png',
     dialogue: {
-        text: "It's GH0STSLAYER. I haven't seen people in 5 days.",
+        text: "It's GH0STSLAYER. I haven't seen anyone in a month.",
         delay: 400,
         choices: [['Continue', 'chunk2']],
         chunk2: {
